@@ -32,6 +32,7 @@ class AuthController extends Controller
         }
         return response()->json(['error' => 'Registration failed'], 401);
       }
+      return response()->json(['error' => 'Unauthorized'], 401);
     }
 
     public function login(Request $request)
