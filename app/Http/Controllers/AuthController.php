@@ -12,15 +12,27 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-      $user = User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => bcrypt($request->password),
-      ]);
+      $auth = auth()->user();
+      if($auth != null){
+        if($auth->admin){
+          $taken = User::where('email', $request->email)->first();
+          if($taken == null){
+            $user = User::create([
+              'name' => $request->name,
+              'email' => $request->email,
+              'password' => bcrypt($request->password),
+              'admin' => false,
+            ]);
+      
+            $token = auth()->login($user);
+      
+            return $this->respondWithToken($token);
+          }
+          return response()->json(['error' => 'Registration failed'], 401);
+        }
+      }
 
-      $token = auth()->login($user);
-
-      return $this->respondWithToken($token);
+      return response()->json(['error' => 'Unauthorized'], 401);
     }
 
     public function login(Request $request)
@@ -51,4 +63,10 @@ class AuthController extends Controller
       ]);
     }
 
+    protected function respondToFailRegistration($success)
+    {
+      return response()->json([
+        'regestration_successs' => $success,
+      ]);
+    }
 }
