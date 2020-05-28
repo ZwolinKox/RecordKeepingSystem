@@ -10,6 +10,11 @@ class AuthController extends Controller
 {
     public $loginAfterSignUp = true;
 
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login']]);
+    }
+
     public function register(Request $request)
     {
       $auth = auth()->user();

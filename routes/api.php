@@ -10,3 +10,6 @@ Route::get('user', 'AuthController@getAuthUser'); //Wysyła json z danymi o uży
 
 Route::get('users/', 'UsersController@getUsers');
 Route::get('users/{id}', 'UsersController@getUser');
+
+Route::get('clients/', 'ClientsController@getClients');
+Route::get('clients/{id}', 'ClientsController@getClient');
