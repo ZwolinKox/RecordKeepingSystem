@@ -5,34 +5,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
 class AuthController extends Controller
 {
     public $loginAfterSignUp = true;
 
     public function register(Request $request)
     {
-      $auth = auth()->user();
-      if($auth != null){
-        if($auth->admin){
-          $taken = User::where('email', $request->email)->first();
-          if($taken == null){
-            $user = User::create([
-              'name' => $request->name,
-              'email' => $request->email,
-              'password' => bcrypt($request->password),
-              'admin' => false,
-            ]);
-      
-            $token = auth()->login($user);
-      
-            return $this->respondWithToken($token);
-          }
-          return response()->json(['error' => 'Registration failed'], 401);
+      if($this->adminCheck()){
+        $taken = User::where('email', $request->email)->first();
+        if($taken == null){
+          $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'admin' => false,
+          ]);
+    
+          $token = auth()->login($user);
+    
+          return $this->respondWithToken($token);
         }
+        return response()->json(['error' => 'Registration failed'], 401);
       }
-
-      return response()->json(['error' => 'Unauthorized'], 401);
     }
 
     public function login(Request $request)
