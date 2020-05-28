@@ -21,4 +21,9 @@ class ClientsController extends Controller
     {
         return Clients::find($request->id)->toJson();
     }
+
+    function createClient(Request $request)
+    {
+        //if($request->)
+    }
 }

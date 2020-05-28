@@ -13,3 +13,5 @@ Route::get('users/{id}', 'UsersController@getUser');
 
 Route::get('clients/', 'ClientsController@getClients');
 Route::get('clients/{id}', 'ClientsController@getClient');
+
+Route::put('clients/', 'ClientsController@createClient');
