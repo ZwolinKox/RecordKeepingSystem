@@ -19,6 +19,10 @@ class UsersController extends Controller
 
     function getUser(Request $request)
     {
-        return User::find($request->id)->toJson();
+        $exist = User::find($request->id);
+        if($exist != null){
+            return User::find($request->id)->toJson();
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
     }
 }
