@@ -14,7 +14,4 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function adminCheck(){
-        return auth()->user()->admin;
-    } 
 }
