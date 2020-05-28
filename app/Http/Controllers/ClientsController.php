@@ -28,6 +28,21 @@ class ClientsController extends Controller
 
     function createClient(Request $request)
     {
-        //if($request->)
+        if($request->private == null || $request->name == null)
+            return response()->json(['error' => 'private and name cant be null'], 401);
+        
+        $user = Clients::create([
+            'name' => $request->name,
+            'private' => $request->private,
+            'phone1' => $request->phone1,
+            'phone2' => $request->phone2,
+            'email1' => $request->email1,
+            'email2' => $request->email2,
+            'address' => $request->address,
+            'send_sms' => $request->send_sms,
+            'send_email' => $request->send_email,
+        ]);
+        
+        return response()->json(['message' => 'Successful added new Client'], 200);
     }
 }
