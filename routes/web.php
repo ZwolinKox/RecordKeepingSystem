@@ -24,3 +24,7 @@ Route::get('/nowanaprawa', function () {
 Route::get('/nowyklient', function () {
     return view('nowyklient');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
