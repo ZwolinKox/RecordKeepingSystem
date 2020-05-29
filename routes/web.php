@@ -11,6 +11,16 @@
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('start');
+});
+
+Route::get('/nowanaprawa', function () {
+    return view('nowanaprawa');
+});
+
+Route::get('/nowyklient', function () {
+    return view('nowyklient');
 });

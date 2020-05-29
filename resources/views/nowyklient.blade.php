@@ -1,7 +1,8 @@
-<?php
-include('script/header.php');
-?>
-  
+<!-- Tutaj definiujemy to, że używamy szablonu 'layout' -->
+@extends('layouts\layout')
+
+<!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
+@section('content')
 
 	<div class="container">
 		<form>
@@ -123,7 +124,7 @@ include('script/header.php');
 						</div>
 					</div>
 					<div class="form-group mt-3 ml-auto">
-						<a href="index.php"><button type="button" class="btn btn-danger">Anuluj</button></a>
+						<a href="/"><button type="button" class="btn btn-danger">Anuluj</button></a>
 						<button type="submit" class="btn btn-success">Utwórz klienta</button>
 						</select>
 					</div>
@@ -131,8 +132,6 @@ include('script/header.php');
 			</div>
 		</form>
 	</div>
-<?php
-	include('script/footer.php');
-?>
 
+@stop
 					

@@ -1,6 +1,10 @@
-<?php
-include('script/header.php');
-?>
+
+<!-- Tutaj definiujemy to, że używamy szablonu 'layout' -->
+@extends('layouts\layout')
+
+<!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
+@section('content')
+
 
         <div class="container">
 
@@ -8,7 +12,7 @@ include('script/header.php');
 
                     <div class="col-md-4 mt-5"> 
                         <div class="text-center pt-5 pb-5 rounded option">
-                            <a href="nowyklient.php" class="a1">
+                            <a href="nowyklient" class="a1">
                                 <i class="icon-user-add" style="font-size: 30px; margin-right: 20px;"></i>Dodaj klienta
                             </a>
                         </div>
@@ -42,6 +46,4 @@ include('script/header.php');
     
         </div>
 
-<?php
-	include('script/footer.php');
-?>
+@stop

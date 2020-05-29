@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 
   <head>
 
@@ -17,7 +17,25 @@
     <title>System zleceń</title>
 
   </head>
-<body>
-<?php
-include('script/menu.php');
-?>
+    <body>
+
+    <div class="w-100">
+
+    <div class="p-3 header"> 
+        System zleceń
+    </div>
+
+    </div>          
+
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+    </nav>
+
+    <!-- To służy do rozszerzania szablonu  -->
+    @yield('content')
+  </body>
+</html>
