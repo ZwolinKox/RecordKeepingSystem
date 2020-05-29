@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Clients extends Model
+class Notes extends Model
 {
     use Notifiable;
 
@@ -15,7 +15,7 @@ class Clients extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'private', 'phone1', 'phone2', 'email1', 'email2', 'address', 'send_sms', 'send_email', 'created_at', 'updated_at'
+        'id', 'user', 'client', 'text'
     ];
 
 
@@ -25,16 +25,15 @@ class Clients extends Model
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
         'updated_at' => 'datetime',
         'created_at' => 'datetime'
     ];
 
-    public function notes(){
-        return $this->hasMany('App\Notes','client','id');
+    public function client(){
+        return $this->belongsTo('App/Clients', 'client', 'id');
     }
 
-    public function groups(){
-        return $this->belongsToMany('App\Groups', 'clients_groups','client','group');
+    public function user(){
+        return $this->belongsTo('App/User', 'user', 'id');
     }
- }
+}
