@@ -9,6 +9,7 @@ class Groups extends Model
 {
     use Notifiable;
 
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
