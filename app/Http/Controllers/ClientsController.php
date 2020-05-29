@@ -26,6 +26,16 @@ class ClientsController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function deleteClient(Request $request)
+    {
+        $exist = Clients::find($request->id);
+        if($exist != null){
+            $exist->delete();
+            return response()->json(['message' => 'Succesful delete client '.$request->id]);
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function createClient(Request $request)
     {
         if($request->private == null || $request->name == null)

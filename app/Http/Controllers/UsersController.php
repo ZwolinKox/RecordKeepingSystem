@@ -25,4 +25,14 @@ class UsersController extends Controller
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }
+
+    function deleteUser(Request $request)
+    {
+        $exist = User::find($request->id);
+        if($exist != null){
+            $exist->delete();
+            return response()->json(['message' => 'Succesful delete user '.$request->id]);
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
 }

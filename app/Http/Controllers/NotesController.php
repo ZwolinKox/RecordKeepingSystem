@@ -26,6 +26,16 @@ class NotesController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function deleteNote(Request $request)
+    {
+        $exist = Notes::find($request->id);
+        if($exist != null){
+            $exist->delete();
+            return response()->json(['message' => 'Succesful delete note '.$request->id]);
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function createNote(Request $request)
     {
         if($request->user == null || $request->text == null || $request->client == null)

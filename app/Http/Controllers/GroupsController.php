@@ -26,6 +26,16 @@ class GroupsController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function deleteGroup(Request $request)
+    {
+        $exist = Groups::find($request->id);
+        if($exist != null){
+            $exist->delete();
+            return response()->json(['message' => 'Succesful delete group '.$request->id]);
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function createGroup(Request $request)
     {
         if($request->name == null)
