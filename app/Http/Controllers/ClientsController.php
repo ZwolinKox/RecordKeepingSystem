@@ -31,7 +31,7 @@ class ClientsController extends Controller
         $exist = Clients::find($request->id);
         if($exist != null){
             $exist->delete();
-            return response()->json(['message' => 'Succesful delete client '.$request->id]);
+            return response()->json(['message' => 'Successful delete client '.$request->id]);
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }
@@ -39,7 +39,7 @@ class ClientsController extends Controller
     function updateClient(Request $request)
     {
         if($request->body == null)
-            return response()->json(['error' => 'body cant be null'], 401);
+            return response()->json(['error' => 'Body cant be null'], 401);
         
         try
         {
@@ -62,7 +62,7 @@ class ClientsController extends Controller
     function createClient(Request $request)
     {
         if($request->private == null || $request->name == null)
-            return response()->json(['error' => 'private and name cant be null'], 401);
+            return response()->json(['error' => 'Private and name cant be null'], 401);
         
         $user = Clients::create([
             'name' => $request->name,

@@ -31,7 +31,7 @@ class GroupsController extends Controller
         $exist = Groups::find($request->id);
         if($exist != null){
             $exist->delete();
-            return response()->json(['message' => 'Succesful delete group '.$request->id]);
+            return response()->json(['message' => 'Successful delete group '.$request->id]);
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }
@@ -39,7 +39,7 @@ class GroupsController extends Controller
     function updateGroup(Request $request)
     {
         if($request->body == null)
-            return response()->json(['error' => 'body cant be null'], 401);
+            return response()->json(['error' => 'Body cant be null'], 401);
         
         try
         {
@@ -62,7 +62,7 @@ class GroupsController extends Controller
     function createGroup(Request $request)
     {
         if($request->name == null)
-            return response()->json(['error' => 'Groups name cant be null null'], 401);
+            return response()->json(['error' => 'Groups name cant be null'], 401);
         
         $user = Groups::create([
             'name' => $request->name,

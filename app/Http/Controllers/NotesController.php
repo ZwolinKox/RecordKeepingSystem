@@ -39,7 +39,7 @@ class NotesController extends Controller
     function updateNote(Request $request)
     {
         if($request->body == null)
-            return response()->json(['error' => 'body cant be null'], 401);
+            return response()->json(['error' => 'Body cant be null'], 401);
         
         try
         {
@@ -62,7 +62,7 @@ class NotesController extends Controller
     function createNote(Request $request)
     {
         if($request->user == null || $request->text == null || $request->client == null)
-            return response()->json(['error' => 'Notes name, text and text cant be null null'], 401);
+            return response()->json(['error' => 'Notes user, client and text cant be null'], 401);
         
         $user = Notes::create([
             'user' => $request->user,
