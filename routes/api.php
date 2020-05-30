@@ -12,6 +12,12 @@ Route::get('users/{id}', 'UsersController@getUser');
 Route::get('users/delete/{id}', 'UsersController@deleteUser'); //Dodać do dokumentacji
 Route::post('users/update/{id}', 'UsersController@updateUser'); //Dodać do dokumentacji
 
+Route::get('clients/notes/', 'ClientNodesController@getClientNotes');
+Route::get('clients/notes/{id}', 'ClientNodesController@getClientNote');
+Route::put('clients/notes/', 'ClientNodesController@createClientNote');
+Route::get('clients/notes/delete/{id}', 'ClientNodesController@deleteClientNote'); //Dodać do dokumentacji
+Route::post('clients/notes/update/{id}', 'ClientNodesController@updateClientNote'); //Dodać do dokumentacji
+
 Route::get('clients/', 'ClientsController@getClients');
 Route::get('clients/{id}', 'ClientsController@getClient');
 Route::put('clients/', 'ClientsController@createClient');
@@ -26,10 +32,3 @@ Route::get('groups/{id}', 'GroupsController@getGroups');
 Route::put('groups/', 'GroupsController@createGroup');
 Route::get('groups/delete/{id}', 'GroupsController@deleteGroup'); //Dodać do dokumentacji
 Route::post('groups/update/{id}', 'GroupsController@updateGroup'); //Dodać do dokumentacji
-
-
-Route::get('notes/', 'NotesController@getNote');
-Route::get('notes/{id}', 'NotesController@getNotes');
-Route::put('notes/', 'NotesController@createNote');
-Route::get('notes/delete/{id}', 'NotesController@deleteNote'); //Dodać do dokumentacji
-Route::post('notes/update/{id}', 'NotesController@updateNote'); //Dodać do dokumentacji
