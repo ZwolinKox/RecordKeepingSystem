@@ -32,7 +32,9 @@
 
                     <div class="col-md-6 mt-5"> 
                         <div class="text-center pt-5 pb-5 rounded option">
-                            <i class="icon-doc-add" style="font-size: 30px; margin-right: 20px;"></i>dodaj zgłoszenie
+                            <a href="nowanaprawa" class="a1">
+                                <i class="icon-doc-add" style="font-size: 30px; margin-right: 20px;"></i>dodaj zgłoszenie
+                            </a>
                         </div>
                     </div>
 
