@@ -36,6 +36,29 @@ class ClientsController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function updateClient(Request $request)
+    {
+        if($request->body == null)
+            return response()->json(['error' => 'body cant be null'], 401);
+        
+        try
+        {
+            $exist = Clients::find($request->id);
+
+            if($exist != null){
+                $exist->update(json_decode($request->body, true));
+    
+                return response()->json(['message' => 'Successful edit client '.$request->id], 200);
+            }
+        }
+        catch(Illuminate\Database\QueryException $e)
+        {
+            return response()->json(['message' => 'Bad query '.$request->id], 401);
+        }
+
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function createClient(Request $request)
     {
         if($request->private == null || $request->name == null)
