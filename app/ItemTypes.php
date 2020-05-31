@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Item_types extends Model
+class ItemTypes extends Model
 {
     use Notifiable;
-
+    protected  $table = 'item_types';
     public $timestamps = false;
     /**
      * The attributes that are mass assignable.
@@ -19,4 +19,7 @@ class Item_types extends Model
         'id', 'name'
     ];
 
+    public function orders(){
+        return $this->hasMany('App\Orders', 'item_type', 'id');
+    }
 }

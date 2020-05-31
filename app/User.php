@@ -37,8 +37,20 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
-    public function notes(){
-        return $this->hasMany('App\Notes','user','id');
+    public function clientNodes(){
+        return $this->hasMany('App\ClientNodes','user','id');
+    }
+
+    public function assigned(){
+        return $this->hasMany('App\Orders', 'assigned', 'id');
+    }
+
+    public function orders(){
+        return $this->hasMany('App\Orders', 'created_by', 'id');
+    }
+
+    public function orderNotes(){
+        return $this->hasMany('App\OrderNotes', 'user', 'id');
     }
 
     public function getJWTIdentifier()

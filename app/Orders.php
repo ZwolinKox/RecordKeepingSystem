@@ -24,7 +24,23 @@ class Orders extends Model
         'estimated_price', 'advance_pay'
     ];
 
-    public function clients(){
-        return $this->belongsToMany('App\Clients', 'clients_groups','group','client');
+    public function itemType(){
+        return $this->belongsTo('App\ItemTypes', 'item_type', 'id');
+    }
+
+    public function assigned(){
+        return $this->belongsTo('App\User', 'assigned', 'id');
+    }
+
+    public function client(){
+        return $this->belongsTo('App\Clients', 'client', 'id');
+    }
+
+    public function createdBy(){
+        return $this->belongsTo('App\User', 'created_by', 'id');
+    }
+
+    public function orderNotes(){
+        return $this->hasMany('App/OrderNotes', 'order', 'id');
     }
 }

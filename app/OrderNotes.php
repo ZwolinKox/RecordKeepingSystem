@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Order_notes extends Model
+class OrderNotes extends Model
 {
     use Notifiable;
-
+    protected  $table = 'order_nodes';
     /**
      * The attributes that are mass assignable.
      *
