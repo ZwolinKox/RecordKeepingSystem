@@ -31,7 +31,7 @@ class Clients extends Model
     ];
 
     public function notes(){
-        return $this->hasMany('App\Notes','client','id');
+        return $this->hasMany('App\ClientNotes','client','id');
     }
 
     public function groups(){

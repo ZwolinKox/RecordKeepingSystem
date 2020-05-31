@@ -28,3 +28,8 @@ Route::get('/nowyklient', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/nowanaprawa', function () {
+    return view('nowanaprawa');
+});
+

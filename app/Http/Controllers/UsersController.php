@@ -32,7 +32,7 @@ class UsersController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
 
         if($request->body == null)
-            return response()->json(['error' => 'body cant be null'], 401);
+            return response()->json(['error' => 'Body cant be null'], 401);
         
         try
         {
@@ -60,7 +60,7 @@ class UsersController extends Controller
         $exist = User::find($request->id);
         if($exist != null){
             $exist->delete();
-            return response()->json(['message' => 'Succesful delete user '.$request->id]);
+            return response()->json(['message' => 'Successful delete user '.$request->id]);
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }

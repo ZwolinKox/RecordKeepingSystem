@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNotesTable extends Migration
+class CreateOrderNodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateNotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('notes', function (Blueprint $table) {
+        Schema::create('order_nodes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user')->nullable(false);
-            $table->bigInteger('client')->nullable(false);
+            $table->bigInteger('order')->nullable(false);
             $table->text('text');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateNotesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notes');
+        Schema::dropIfExists('order_nodes');
     }
 }

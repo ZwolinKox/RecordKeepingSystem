@@ -2,48 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use App\Notes;
+use App\ClientNodes;
 use Illuminate\Http\Request;
 
-class NotesController extends Controller
+class ClientNodesController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth:api');
     }
 
-    function getNote(Request $request)
+    function getClientNotes(Request $request)
     {
-        return Notes::all()->toJson();
+        return ClientNodes::all()->toJson();
     }
 
-    function getNotes(Request $request)
+    function getClientNote(Request $request)
     {
-        $exist = Notes::find($request->id);
+        $exist = ClientNodes::find($request->id);
         if($exist != null){
-            return Notes::find($request->id)->toJson();
+            return ClientNodes::find($request->id)->toJson();
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
-    function deleteNote(Request $request)
+    function deleteClientNote(Request $request)
     {
-        $exist = Notes::find($request->id);
+        $exist = ClientNodes::find($request->id);
         if($exist != null){
             $exist->delete();
-            return response()->json(['message' => 'Succesful delete note '.$request->id]);
+            return response()->json(['message' => 'Successful delete note '.$request->id]);
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
-    function updateNote(Request $request)
+    function updateClientNote(Request $request)
     {
         if($request->body == null)
-            return response()->json(['error' => 'body cant be null'], 401);
+            return response()->json(['error' => 'Body cant be null'], 401);
         
         try
         {
-            $exist = Notes::find($request->id);
+            $exist = ClientNodes::find($request->id);
 
             if($exist != null){
                 $exist->update(json_decode($request->body, true));
@@ -59,12 +59,12 @@ class NotesController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
-    function createNote(Request $request)
+    function createClientNote(Request $request)
     {
         if($request->user == null || $request->text == null || $request->client == null)
-            return response()->json(['error' => 'Notes name, text and text cant be null null'], 401);
+            return response()->json(['error' => 'Notes user, client and text cant be null'], 401);
         
-        $user = Notes::create([
+        $user = ClientNodes::create([
             'user' => $request->user,
             'text' => $request->text,
             'client' => $request->client,
