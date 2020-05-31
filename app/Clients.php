@@ -37,4 +37,8 @@ class Clients extends Model
     public function groups(){
         return $this->belongsToMany('App\Groups', 'clients_groups','client','group');
     }
+
+    public function orders(){
+        return $this->hasMany('App\Orders', 'client', 'id');
+    }
  }
