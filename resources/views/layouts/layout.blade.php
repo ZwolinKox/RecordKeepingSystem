@@ -37,5 +37,8 @@
 
     <!-- To służy do rozszerzania szablonu  -->
     @yield('content')
+
+    <!-- Biblioteka js do łatwego obsługiwania ciasteczek  -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
   </body>
 </html>

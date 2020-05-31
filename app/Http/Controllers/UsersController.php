@@ -28,6 +28,9 @@ class UsersController extends Controller
 
     function updateUser(Request $request)
     {
+        if(!$this->adminCheck())
+            return response()->json(['error' => 'Unauthorized'], 401);
+
         if($request->body == null)
             return response()->json(['error' => 'body cant be null'], 401);
         
@@ -51,6 +54,9 @@ class UsersController extends Controller
 
     function deleteUser(Request $request)
     {
+        if(!$this->adminCheck())
+            return response()->json(['error' => 'Unauthorized'], 401);
+
         $exist = User::find($request->id);
         if($exist != null){
             $exist->delete();
