@@ -16,7 +16,7 @@ class ItemTypes extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name'
+        'name'
     ];
 
     public function orders(){

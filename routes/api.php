@@ -40,3 +40,5 @@ Route::get('orders/delete/{id}', 'OrdersController@deleteOrders'); //Dodać do d
 Route::post('orders/update/{id}', 'OrdersController@updateOrders'); //Dodać do dokumentacji
 
 Route::get('itemtypes/', 'ItemTypesController@getItemTypes'); //Dodać do dokumentacji
+Route::put('itemtypes/', 'ItemTypesController@createItemTypes'); //Dodać do dokumentacji
+Route::get('itemtypes/delete', 'ItemTypesController@createItemTypes'); //Dodać do dokumentacji

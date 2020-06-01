@@ -85,6 +85,6 @@ class OrdersController extends Controller
             'advance_pay' => $request->advance_pay,
         ]);
         
-        return response()->json(['message' => 'Successful added new Client'], 200);
+        return response()->json(['message' => 'Successful added new Order'], 200);
     }
 }
