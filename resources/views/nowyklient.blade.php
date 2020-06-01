@@ -31,17 +31,7 @@
 									<input type="text" class="form-control" id="imienazwisko" placeholder="">
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="grupa"><strong>Grupa</strong></label>
-								<div class="input-group mb-2">
-									<div class="input-group-prepend">
-										<div class="input-group-text"><i class="icon-users" style="font-size: 15px;"></i></div>
-									</div>
-									<select class="form-control" id="grupa" name="grupa">
-										<option>1</option>
-									</select>
-								</div>
-							</div>
+							
 					</div>
 					</div>
 					<div class="card mt-3 mb-3" >
@@ -84,15 +74,6 @@
 										<div class="input-group-text">+48</div>
 									</div>
 									<input type="text" class="form-control" id="altertel" placeholder="000-00-00-00">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="faks"><strong>Numer faksu</strong></label>
-								<div class="input-group mb-2">
-									<div class="input-group-prepend">
-										<div class="input-group-text">+48</div>
-									</div>
-									<input type="text" class="form-control" id="faks" placeholder="000-00-00-00">
 								</div>
 							</div>
 						</div>

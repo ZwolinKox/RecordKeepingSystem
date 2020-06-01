@@ -155,7 +155,7 @@
 								<label for="grupa"><strong>Grupa</strong></label>
 								<div class="input-group mb-2">
 									<div class="input-group-prepend">
-										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i></div>
+										<div class="input-group-text"><i class="icon-users" style="font-size: 15px;"></i></div>
 									</div>
 									<select class="form-control" id="grupa" name="grupa">
 										<option>1</option>
