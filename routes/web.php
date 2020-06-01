@@ -40,3 +40,7 @@ Route::get('/nowy_uzytkownik', function () {
 Route::get('/informacje_zlecenie', function () {
     return view('informacje_zlecenie');
 });
+
+Route::get('/informacje_klient', function () {
+    return view('informacje_klient');
+});
