@@ -152,6 +152,21 @@
 					<div class="card mt-3 mb-3">
 						<div class="col-auto mt-3 mb-3">
 							<div class="form-group">
+								<label for="grupa"><strong>Grupa</strong></label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i></div>
+									</div>
+									<select class="form-control" id="grupa" name="grupa">
+										<option>1</option>
+									</select>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="card mt-3 mb-3">
+						<div class="col-auto mt-3 mb-3">
+							<div class="form-group">
 								<label for="grupa"><strong>Przypisany pracownik</strong></label>
 								<div class="input-group mb-2">
 									<div class="input-group-prepend">
