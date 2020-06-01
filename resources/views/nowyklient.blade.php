@@ -5,7 +5,7 @@
 @section('content')
 
 	<div class="container">
-		<form>
+		<div>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="card" >
@@ -15,11 +15,7 @@
 						<div class="col-auto mt-3 mb-3">
 							<div class="form-group">
 								<div class="form-check form-check-inline col-5">
-									<input class="form-check-input" type="checkbox" id="indywidualny" value="option1">
-									<label class="form-check-label" for="indywidualny">Klient indywidualny</label>
-								</div>
-								<div class="form-check form-check-inline col-5">
-									<input class="form-check-input" type="checkbox" id="firma" value="option2">
+									<input class="form-check-input" type="checkbox" id="firma">
 									<label class="form-check-label" for="firma">Firma</label>
 								</div>
 							</div>
@@ -125,13 +121,13 @@
 					</div>
 					<div class="form-group mt-3 ml-auto">
 						<a href="/"><button type="button" class="btn btn-danger">Anuluj</button></a>
-						<button type="submit" class="btn btn-success">Utwórz klienta</button>
+						<button id="createclient" class="btn btn-success">Utwórz klienta</button>
 						</select>
 					</div>
 				</div>
 			</div>
-		</form>
+		</div>
 	</div>
-
+<script src="js\newclient.js"></script>
 @stop
 					

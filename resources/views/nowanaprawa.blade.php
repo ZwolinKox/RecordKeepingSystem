@@ -166,12 +166,12 @@
 					</div>
 					<div class="form-group mt-3 ml-auto">
 						<a href="/"><button type="button" class="btn btn-danger">Anuluj</button></a>
-						<button type="submit" class="btn btn-success">Utwórz klienta</button>
+						<button class="btn btn-success" id="submit">Utwórz naprawe</button>
 						</select>
 					</div>
 				</div>
 			</div>
 		</form>
 	</div>
-
+<script src="js/neworder.js"></script>
 @stop
