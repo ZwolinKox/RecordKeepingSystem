@@ -8,6 +8,9 @@
 		<div>
 			<div class="row">
 				<div class="col-md-6">
+					<div id="error">
+						
+					</div>
 					<div class="card" >
 						<div class="card-header dark">
 							Dane klienta
@@ -128,6 +131,7 @@
 			</div>
 		</div>
 	</div>
+
 <script src="js\newclient.js"></script>
 @stop
 					

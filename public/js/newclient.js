@@ -12,7 +12,6 @@ document.querySelector("#createclient").addEventListener("click", () =>
         send_sms : document.querySelector("#smsyinformacyjne").checked,
         send_email : document.querySelector("#emaileinformacyjne").checked
     }
-    console.log("elo")
     fetch("/api/clients",
     {
         method: "put",
@@ -25,11 +24,42 @@ document.querySelector("#createclient").addEventListener("click", () =>
         body: JSON.stringify(ob)
     })
 
-    .then(res => res.json())
+    .then(res =>
+    {
+        if (res.ok)
+        {
+            return res.json()
+        }
+        else
+        {
+            console.log("siema");
+            document.querySelector("#error").innerHTML+=
+            `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>`;
+        }
+    })
 
     .then(res =>
     {
         console.log(res);
+        
     })
+    .catch(res =>
+     {
+        console.log("smieszny");
+        document.querySelector("#error").innerHTML+=
+        `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>`;
+
+    })
+    
 
 })
