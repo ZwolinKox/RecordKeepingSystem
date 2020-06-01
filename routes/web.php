@@ -33,3 +33,10 @@ Route::get('/nowanaprawa', function () {
     return view('nowanaprawa');
 });
 
+Route::get('/nowy_uzytkownik', function () {
+    return view('nowy_uzytkownik');
+});
+
+Route::get('/informacje_zlecenie', function () {
+    return view('informacje_zlecenie');
+});
