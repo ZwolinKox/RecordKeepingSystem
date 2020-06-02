@@ -5,6 +5,22 @@
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
 
+    <style>
+
+    .card
+    {
+        margin: 10px 0px 10px 0px;
+    }
+
+    .td_style
+    {
+        text-align: right;
+        color: gray;
+    }
+
+
+    </style>
+
     <div class="container-fluid">
         <ul class="nav nav-tabs">
 
@@ -103,7 +119,7 @@
 
         </ul>
 
-        <div class="row my-3">
+        <div class="row">
 
             <div class="col-md-6">
 
@@ -116,27 +132,27 @@
                         <tbody>
 
                             <tr>
-                                <td class="text-right text-muted">Imię i Nazwisko</td>
+                                <td class="td_style">Imię i Nazwisko</td>
                                 <td class="blue" id="cust_name"></td>
                             </tr>
 
                             <tr>
-                                <td class="text-right text-muted">Typ klienta</td>
+                                <td class="td_style">Typ klienta</td>
                                 <td id="cust_type"></td>
                             </tr>
 
                             <tr>
-                                <td class="text-right text-muted">Identyfikator</td>
+                                <td class="td_style">Identyfikator</td>
                                 <td id="cust_id"></td>
                             </tr>
 
                             <tr>
-                                <td class="text-right text-muted">Grupa</td>
+                                <td class="td_style">Grupa</td>
                                 <td id="cust_group"></td>
                             </tr>
 
                             <tr>
-                                <td class="text-right text-muted">Utworzony przez</td>
+                                <td class="td_style">Utworzony przez</td>
                                 <td id="cust_creator"></td>
                             </tr>
 
@@ -146,8 +162,10 @@
 
                 </div>
 
+           
 
-                <div class="card mt-3 mb-3">
+            
+                <div class="card">
 
                     <div class="card-header">Zgody
                         
@@ -160,12 +178,12 @@
                         <tbody>
 
                             <tr>
-                                <td class="text-right text-muted">Regulamin serwisu</td>
+                                <td class="td_style">Regulamin serwisu</td>
                                 <td class="cust_servreg text-center" style="width: 45px;" id="nazwa"><i class="icon-check-1"></i></td>
                             </tr>
 
                             <tr>
-                                <td class="text-right text-muted">Informacje o podmiocie przetwarzającym dane w celu realizacji usługi</td>
+                                <td class="td_style">Informacje o podmiocie przetwarzającym dane w celu realizacji usługi</td>
                                 <td id="cust_dataprocessing" class="text-center" style="width: 45px;"><i class="icon-check-1"></i></td>
                             </tr>
 
@@ -174,9 +192,10 @@
                     </table>
 
                 </div>
+            
 
-
-                <div class="card mt-3 mb-3">
+            
+                <div class="card">
 
                     <div class="card-header">Dodatkowe informacje
 
@@ -192,6 +211,7 @@
                     </div>
 
                 </div>
+            
 
 
             
@@ -208,12 +228,12 @@
                         <tbody>
 
                             <tr>
-                                <td class="text-right text-muted">Otrzymuje wiadomości e-mail?</td>
+                                <td class="td_style">Otrzymuje wiadomości e-mail?</td>
                                 <td class="blue text-center" style="width: 45px;" id="cust_email"><i class="icon-check-1"></i></td>
                             </tr>
 
                             <tr>
-                                <td class="text-right text-muted">Otrzymuje wiadomości sms?</td>
+                                <td class="td_style">Otrzymuje wiadomości sms?</td>
                                 <td class="text-center" style="width: 45px;" id="cust_sms"><i class="icon-check-1"></i></td>
                             </tr>
 
@@ -222,11 +242,13 @@
                     </table>
 
                 </div>
+            
 
             </div>
 
             <div class="col-md-6">
 
+            
                 <div class="card">
 
                     <div class="card-header">Kontakt</div>
@@ -237,7 +259,7 @@
                         <tbody>
 
                             <tr>
-                                <td class="text-right text-muted">Numer telefon</td>
+                                <td class="td_style">Numer telefon</td>
                                 <td class="blue" id="cust_telnum">+48 123 456 789</td>
                             </tr>
 
@@ -246,9 +268,10 @@
                     </table>
 
                 </div>
+            
 
-
-                <div class="card mt-3 mb-3">
+            
+                <div class="card">
 
                     <div class="card-header">Dodatkowe informacje</div>
                     
@@ -262,6 +285,7 @@
                     </div>
 
                 </div>
+        
 
             </div>
 

@@ -1,10 +1,3 @@
-//Odwołujemy się do API, metoda post, w nagłówkach podajemy informacje dotyczące typu dannych, które przesyłamy i odbieramy
-//W innym wypadku niż logowanie zwykle dodajemy jeszcze token do autoryzacji
-
-//JSON.stringify - zamienienie obiektu JS na obiekt JSON
-//JSON.parse - zamienienie JSON'a na obiekt JS
-
-//Dostajemy odpowiedź, zamieniamy ją na plik JSON, pobieramy token, zapisujemy go w ciasteczkach, na sam koniec wyświetlamy sam token
 
 document.querySelector("#login").addEventListener("click", () =>
 {

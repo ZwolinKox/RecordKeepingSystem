@@ -23,7 +23,7 @@
                             <i class="icon-users" style="font-size: 30px; margin-right: 20px;"></i>Grupy klientow
                         </div>
                     </div>
-
+ 
                     <div class="col-md-4 mt-5"> 
                         <div class="text-center pt-5 pb-5 rounded option"> 
                             <i class="icon-users" style="font-size: 30px; margin-right: 20px;"></i>Lista klientow

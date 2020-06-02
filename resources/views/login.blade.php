@@ -21,28 +21,28 @@
             <div class="p-4">
 
                 <div class="form-group">
-                    <label for="exampleDropdownFormEmail2">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                    <label>Adres email</label>
+                    <input type="email" class="form-control" id="email" placeholder="email">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleDropdownFormPassword2">Password</label>
-                    <input type="password" class="form-control" id="passwd" placeholder="Password">
+                    <label>Hasło</label>
+                    <input type="password" class="form-control" id="passwd" placeholder="hasło">
                 </div>
 
                 <div class="form-group">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                        <label class="form-check-label" for="dropdownCheck2">Remember me</label>
+                        <label class="form-check-label" for="dropdownCheck2">Pamiętaj mnie</label>
                     </div>
                 </div>
 
                 <div class="d-flex justify-content-end">
 
-                    <button class="btn btn-primary" id="login">Sign in</button>
+                    <button class="btn btn-primary" id="login">Zaloguj się</button>
 
                 </div>
-                
+                 
             </div>
 
         </div>
