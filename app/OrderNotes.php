@@ -18,4 +18,11 @@ class OrderNotes extends Model
         'id', 'user', 'order', 'text'
     ];
 
+    public function user(){
+        return $this->belongsTo('App/Users', 'user', 'id');
+    }
+
+    public function order(){
+        return $this->belongsTo('App/Orders', 'order', 'id');
+    }
 }

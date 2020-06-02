@@ -43,4 +43,12 @@ class Orders extends Model
     public function orderNotes(){
         return $this->hasMany('App/OrderNotes', 'order', 'id');
     }
+
+    public function statuses(){
+        return $this->hasMany('App\Status', 'order', 'id');
+    }
+
+    public function status(){
+        return $this->statuses()->latest('date')->first();
+    }
 }
