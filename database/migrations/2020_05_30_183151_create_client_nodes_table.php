@@ -15,10 +15,13 @@ class CreateClientNodesTable extends Migration
     {
         Schema::create('client_nodes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user')->nullable(false);
-            $table->bigInteger('client')->nullable(false);
+            $table->bigInteger('user')->unsigned()->nullable(false);
+            $table->bigInteger('client')->unsigned()->nullable(false);
             $table->text('text');
             $table->timestamps();
+
+            $table->foreign('user')->references('id')->on('users');
+            $table->foreign('client')->references('id')->on('clients');
         });
     }
 

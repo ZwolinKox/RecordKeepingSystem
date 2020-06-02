@@ -16,11 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable(false);
-            $table->unsignedTinyInteger('status')->nullable(false);
-            $table->bigInteger('created_by')->nullable(false);
-            $table->bigInteger('assigned')->nullable();
-            $table->bigInteger('client')->nullable(false);
-            $table->bigInteger('item_type')->nullable(false);
+            $table->bigInteger('created_by')->unsigned()->nullable(false);
+            $table->bigInteger('assigned')->unsigned()->nullable();
+            $table->bigInteger('client')->unsigned()->nullable(false);
+            $table->bigInteger('item_type')->unsigned()->nullable(false);
             $table->string('producer')->nullable(false);
             $table->string('model')->nullable(false);
             $table->string('serial_number')->nullable(false);
@@ -34,6 +33,11 @@ class CreateOrdersTable extends Migration
             $table->unsignedTinyInteger('pickup_method')->nullable(false);
             $table->float('estimated_price')->nullable(false);
             $table->float('advance_pay')->nullable(false);
+
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('assigned')->references('id')->on('users');
+            $table->foreign('client')->references('id')->on('clients');
+            $table->foreign('item_type')->references('id')->on('item_types');
         });
     }
 

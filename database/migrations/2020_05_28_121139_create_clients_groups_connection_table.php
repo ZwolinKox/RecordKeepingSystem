@@ -14,8 +14,11 @@ class CreateClientsGroupsConnectionTable extends Migration
     public function up()
     {
         Schema::create('clients_groups', function (Blueprint $table) {
-            $table->bigInteger('client');
-            $table->bigInteger('group');
+            $table->bigInteger('client')->unsigned()->nullable(false);
+            $table->bigInteger('group')->unsigned()->nullable(false);
+
+            $table->foreign('client')->references('id')->on('clients');
+            $table->foreign('group')->references('id')->on('groups');
         });
     }
 

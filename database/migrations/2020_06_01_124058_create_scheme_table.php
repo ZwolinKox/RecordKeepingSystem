@@ -17,11 +17,11 @@ class CreateSchemeTable extends Migration
             $table->bigIncrements('id');
             $table->string('scheme');
             $table->tinyInteger('cycle');
-            $table->bigInteger('total_number');
-            $table->bigInteger('day_number');
-            $table->bigInteger('week_number');
-            $table->bigInteger('month_number');
-            $table->bigInteger('year_number');
+            $table->bigInteger('total_number')->unsigned();
+            $table->bigInteger('day_number')->unsigned();
+            $table->bigInteger('week_number')->unsigned();
+            $table->bigInteger('month_number')->unsigned();
+            $table->bigInteger('year_number')->unsigned();
             $table->date('last_date');
         });
     }
