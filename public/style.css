@@ -8,10 +8,10 @@
     font-weight: 300;
 }
 
-.top_nav
+.a_topbar, .a_topbar:hover
 {
-    background-color: gray;
-    border-radius: 0 0 10px 10px;
+    color: rgb(78, 78, 78);
+    text-decoration: none;
 }
 
 .option

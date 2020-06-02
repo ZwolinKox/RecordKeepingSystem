@@ -17,30 +17,26 @@ Route::get('/', function () {
     return view('start');
 });
 
-Route::get('/nowanaprawa', function () {
-    return view('nowanaprawa');
+Route::get('/new_order', function () {
+    return view('new_order');
 });
 
-Route::get('/nowyklient', function () {
-    return view('nowyklient');
+Route::get('/new_client', function () {
+    return view('new_client');
 });
 
 Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/nowanaprawa', function () {
-    return view('nowanaprawa');
+Route::get('/new_employee', function () {
+    return view('new_employee');
 });
 
-Route::get('/nowy_uzytkownik', function () {
-    return view('nowy_uzytkownik');
+Route::get('/order_info', function () {
+    return view('order_info');
 });
 
-Route::get('/informacje_zlecenie', function () {
-    return view('informacje_zlecenie');
-});
-
-Route::get('/informacje_klient', function () {
-    return view('informacje_klient');
+Route::get('/client_info', function () {
+    return view('client_info');
 });

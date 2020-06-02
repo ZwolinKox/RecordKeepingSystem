@@ -5,21 +5,6 @@
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
 
-    <style>
-
-    .card
-    {
-        margin: 10px 0px 10px 0px;
-    }
-
-    .td_style
-    {
-        text-align: right;
-        color: gray;
-    }
-
-
-    </style>
 
     <div class="container-fluid">
         <ul class="nav nav-tabs">
@@ -77,8 +62,9 @@
                         <a class="dropdown-item" href="#">Odebrane</a>
                         <a class="dropdown-item" href="#">Zezłomowane</a>
 
-                        </div>
                     </div>
+                    
+                </div>
 
 
                     <div class="btn-group ml-2">
