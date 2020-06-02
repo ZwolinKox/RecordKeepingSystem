@@ -15,7 +15,7 @@ class OrderNotes extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'user', 'order', 'text'
+        'user', 'order', 'text'
     ];
 
     public function user(){

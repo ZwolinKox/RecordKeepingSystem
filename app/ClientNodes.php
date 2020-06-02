@@ -15,7 +15,7 @@ class ClientNodes extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'user', 'client', 'text'
+        'user', 'client', 'text'
     ];
 
 
