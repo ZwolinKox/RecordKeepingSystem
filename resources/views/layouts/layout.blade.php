@@ -29,8 +29,7 @@
 
     <nav aria-label="breadcrumb" id="topbar">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item"><a href="/" class="a_topbar"><i class="icon-home"></i>Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">Data</li>
     </ol>
     </nav>

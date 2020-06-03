@@ -17,7 +17,7 @@ class Orders extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'status', 'created_by', 'assigned',
+        'name', 'status', 'created_by', 'assigned',
         'client', 'item_type', 'producer', 'model',
         'serial_number', 'buy_date', 'warranty_number', 'begin_date',
         'end_date', 'info', 'issue', 'delivery_method', 'pickup_method',

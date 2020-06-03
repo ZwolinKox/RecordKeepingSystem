@@ -17,25 +17,25 @@
 
             <div class="form-inline ml-auto">
 				<div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle active" type="button" id="przykladowaListaPrimary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-primary dropdown-toggle active" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="icon-arrows-cw"></i>
                             Akcje naprawy
                         </button>
 
-                        <div class="dropdown-menu" aria-labelledby="przykladowaListaPrimary">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                            <h6 class="dropdown-header">Operacje</h6>
+                            <a class="dropdown-header text-muted font-weight-bold">Operacje</a>
                             <a class="dropdown-item" href="#">Zapisz wynikiem diagnozy</a>
                             <a class="dropdown-item" href="#">Zanotuj czynność naprawczą</a>
                             <a class="dropdown-item" href="#">Opisz naprawę podsumowaniem</a>
-                            <hr>
+                            <div class="dropdown-divider"></div>
 
-                            <h6 class="dropdown-header">Inne operacje</h6>
+                            <a class="dropdown-header text-muted font-weight-bold">Inne operacje</a>
                             <a class="dropdown-item" href="#">Dodaj notatkę</a>
                             <a class="dropdown-item" href="#">Załącz pliki</a>
-                            <hr>
+                            <div class="dropdown-divider"></div>
 
-                            <h6 class="dropdown-header">Statusy naprawy</h6>
+                            <a class="dropdown-header text-muted font-weight-bold">Statusy naprawy</a>
                             <a class="dropdown-item" href="#">Oczekuje na dostarczenie</a>
                             <a class="dropdown-item" href="#">W trakcie diagnozy</a>
                             <a class="dropdown-item" href="#">Wymaga potwierdzeia kosztów u klienta</a>
@@ -221,7 +221,7 @@
                             <tr>
                                 <td class="td_style">Status</td>
                                 <td>
-                                    <span class="badge badge-warning">Warning</span>.
+                                    <span class="badge badge-warning">-</span>
                                 </td>
                             </tr>
 
@@ -229,8 +229,8 @@
                                 <td class="td_style">Postęp prac</td>
                                 <td>
                                     <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="70"
-                                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="0"
+                                            aria-valuemin="0" aria-valuemax="100" style="width:0%">
                                         </div>
                                     </div>
                                 </td>
@@ -251,7 +251,7 @@
                                 <td>
                                     <span id="zakonczenie">
                                     </span>
-                                    <span class="badge badge-pill badge-secondary">12</span>
+                                    <span class="badge badge-pill badge-secondary">-</span>
                                     dni
                                 </td>
                             </tr>
@@ -259,14 +259,14 @@
                             <tr>
                                 <td class="td_style">Ilość dni od przyjęcia</td>
                                 <td>
-                                    <span class="badge badge-success">Success</span>dzień
+                                    <span class="badge badge-success">- dni</span>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td class="td_style">Ilość dni pozostałych do zakończenia</td>
                                 <td>
-                                    <span class="badge badge-success">Success</span>dni
+                                    <span class="badge badge-success">- dni</span>
                                 </td>
                             </tr>
 
@@ -274,8 +274,8 @@
                                 <td class="td_style">Sytuacja czasowa</td>
                                 <td>
                                     <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="70"
-                                            aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="00"
+                                            aria-valuemin="0" aria-valuemax="100" style="width:0%">
                                         </div>
                                     </div>
                                 </td>

@@ -12,7 +12,7 @@
 
                     <div class="col-md-4 mt-5"> 
                         <div class="text-center pt-5 pb-5 rounded option">
-                            <a href="nowyklient" class="a1">
+                            <a href="new_client" class="a1">
                                 <i class="icon-user-add" style="font-size: 30px; margin-right: 20px;"></i>Dodaj klienta
                             </a>
                         </div>
@@ -32,7 +32,7 @@
 
                     <div class="col-md-6 mt-5"> 
                         <div class="text-center pt-5 pb-5 rounded option">
-                            <a href="nowanaprawa" class="a1">
+                            <a href="new_order" class="a1">
                                 <i class="icon-doc-add" style="font-size: 30px; margin-right: 20px;"></i>dodaj zgłoszenie
                             </a>
                         </div>
