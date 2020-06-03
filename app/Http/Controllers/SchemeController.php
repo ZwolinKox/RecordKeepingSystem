@@ -114,8 +114,7 @@ class SchemeController extends Controller
                         $resultString .= $this->englishToPolishMonthShortNames(Carbon::now()->format('M'));
                         break;
                     case 'C':
-                        $creatorId = Orders::find($orderId)->created_by;
-                        $resultString .=  User::find($creatorId)->id;
+                        $resultString .=  Orders::find($orderId)->created_by;
                         break;
                     case 'R':
                         $resultString .= $this->numberToRomanRepresentation(Carbon::now()->month);
@@ -127,8 +126,8 @@ class SchemeController extends Controller
                         $resultString .= Carbon::now()->isoFormat('d');
                         break;
                     case 'K':
-                        $clientId = Orders::find($orderId)->client;
-                        $resultString .=  Clients::find($clientId)->id;
+                        $resultString .=  Orders::find($orderId)->client;
+
                         break;
                         
                         
