@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable(false);
+            $table->string('name')->nullable();
             $table->bigInteger('created_by')->unsigned()->nullable(false);
             $table->bigInteger('assigned')->unsigned()->nullable();
             $table->bigInteger('client')->unsigned()->nullable(false);
@@ -48,6 +48,8 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('orders');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
