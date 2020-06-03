@@ -15,69 +15,82 @@ document.querySelector("#createclient").addEventListener("click", () =>
     console.log(ob.name);
     if(ob.name!="")
       {
-        if((ob.send_sms==1&&ob.phone1!="")||(ob.send_email==1&&ob.email1!="")||ob.send_email==0||ob.send_sms==0)
+        if((ob.send_sms==1&&ob.phone1!="")||ob.send_sms==0)
         {
-          fetch("/api/clients",
+          if((ob.send_email==1&&ob.email1!="")||ob.send_email==0)
           {
-              method: "put",
-              headers:
-              {
-                  "Content-Type": "application/json",
-                  "Accept" : "application/json",
-                  "Authorization" : "Bearer "+Cookies.get("token")
-              },
-              body: JSON.stringify(ob)
-          })
+            fetch("/api/clients",
+            {
+                method: "put",
+                headers:
+                {
+                    "Content-Type": "application/json",
+                    "Accept" : "application/json",
+                    "Authorization" : "Bearer "+Cookies.get("token")
+                },
+                body: JSON.stringify(ob)
+            })
 
-          .then(res =>
-          {
-              if (res.ok)
-              {
-                  return res.json(),
-                  document.querySelector("#error").innerHTML+=
-                  `<div class="alert alert-success alert-dismissible fade show" role="alert">
-                  Udało sie utworzyć klienta.
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>`;
-              }
-              else
-              {
-                  document.querySelector("#error").innerHTML+=
-                  `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>`;
-              }
-          })
+            .then(res =>
+            {
+                if (res.ok)
+                {
+                    return res.json(),
+                    document.querySelector("#error").innerHTML+=
+                    `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Udało sie utworzyć klienta.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>`;
+                }
+                else
+                {
+                    document.querySelector("#error").innerHTML+=
+                    `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>`;
+                }
+            })
 
-          .then(res =>
+            .then(res =>
+            {
+                console.log(res);
+                
+            })
+            /*.catch(res =>
+            {
+              console.log("nie dzialo")
+                document.querySelector("#error").innerHTML+=
+                `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>`;
+
+            })
+            */
+          }
+          else
           {
-              console.log(res);
-              
-          })
-          /*.catch(res =>
-          {
-            console.log("nie dzialo")
-              document.querySelector("#error").innerHTML+=
-              `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            document.querySelector("#error").innerHTML+=
+            `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Uwaga!</strong> Musisz podać adres email klienta.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             </div>`;
-
-          })
-          */
+          }
         }
         else
         {
           document.querySelector("#error").innerHTML+=
           `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-          <strong>Uwaga!</strong> Musisz podać sms ,lub email klienta.
+          <strong>Uwaga!</strong> Musisz podać numer telefonu  klienta.
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
