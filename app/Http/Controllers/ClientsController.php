@@ -66,7 +66,7 @@ class ClientsController extends Controller
 
     function createClient(Request $request)
     {
-        if($request->private == null || $request->name == null)
+        if($request->name == null)
             return response()->json(['error' => 'Private and name cant be null'], 401);
         
         $user = Clients::create([
