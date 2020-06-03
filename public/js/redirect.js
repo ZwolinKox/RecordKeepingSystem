@@ -18,4 +18,6 @@
                 location.href = "/";        
         })
     
+    } else if(location.pathname != "/login") {
+        location.href = "login";
     }

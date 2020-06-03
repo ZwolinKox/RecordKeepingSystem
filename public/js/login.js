@@ -6,6 +6,8 @@ document.querySelector("#login").addEventListener("click", () =>
         email : document.querySelector("#email").value,
         password : document.querySelector("#passwd").value
     }
+
+    canLogin = false;
     
     fetch("/api/login",
     {
@@ -18,14 +20,21 @@ document.querySelector("#login").addEventListener("click", () =>
         body: JSON.stringify(ob)
     })
 
+    .then(res => { 
+        if(res.ok) 
+            canLogin = true; 
+        
+        return res;
+    })
     .then(res => res.json())
-
     .then(res =>
     {
-        const token = JSON.parse(JSON.stringify(res)).access_token;
-        Cookies.set('token', token, { expires: 7 });
-
-        location.href = "/";
+        if(canLogin) {
+            const token = JSON.parse(JSON.stringify(res)).access_token;
+            Cookies.set('token', token, { expires: 7 });
+    
+            location.href = "/"; 
+        }
     })
 
 })
