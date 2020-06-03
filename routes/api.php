@@ -25,8 +25,6 @@ Route::get('clients/delete/{id}', 'ClientsController@deleteClient'); //Dodać do
 Route::post('clients/update/{id}', 'ClientsController@updateClient'); //Dodać do dokumentacji
 
 
-//KONIEC DOKUMENTACJI
-
 Route::get('groups/', 'GroupsController@getGroup');
 Route::get('groups/{id}', 'GroupsController@getGroups');
 Route::put('groups/', 'GroupsController@createGroup');
@@ -42,3 +40,9 @@ Route::post('orders/update/{id}', 'OrdersController@updateOrders'); //Dodać do 
 Route::get('itemtypes/', 'ItemTypesController@getItemTypes'); //Dodać do dokumentacji
 Route::put('itemtypes/', 'ItemTypesController@createItemTypes'); //Dodać do dokumentacji
 Route::get('itemtypes/delete', 'ItemTypesController@createItemTypes'); //Dodać do dokumentacji
+
+
+
+
+//Strefa testowania
+Route::get('test', 'SchemeController@test');
