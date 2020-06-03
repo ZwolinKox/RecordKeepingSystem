@@ -14,7 +14,7 @@ class ClientNodesController extends Controller
 
     function getClientNotes(Request $request)
     {
-        return ClientNodes::all()->toJson();
+        return ClientNodes::paginate(15);
     }
 
     function getClientNote(Request $request)

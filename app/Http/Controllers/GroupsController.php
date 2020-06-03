@@ -14,7 +14,7 @@ class GroupsController extends Controller
 
     function getGroup(Request $request)
     {
-        return Groups::all()->toJson();
+        return Groups::paginate(15);
     }
 
     function getGroups(Request $request)

@@ -13,7 +13,7 @@ class ItemTypesController extends Controller
     }
 
     public function getItemTypes(Request $request){
-        return ItemTypes::all()->toJson();
+        return ItemTypes::paginate(15);
     }
 
     function deleteItemTypes(Request $request)

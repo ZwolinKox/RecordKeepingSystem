@@ -14,7 +14,7 @@ class ClientsController extends Controller
 
     function getClients(Request $request)
     {
-        return Clients::all()->toJson();
+        return Clients::paginate(15);
     }
 
     function getClient(Request $request)

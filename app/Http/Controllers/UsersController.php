@@ -14,7 +14,11 @@ class UsersController extends Controller
 
     function getUsers(Request $request)
     {
-        return User::all()->toJson();
+        return User::paginate(15);
+    }
+
+    function getUsersLight(Request $request){
+        return User::all('id','name');
     }
 
     function getUser(Request $request)
