@@ -127,13 +127,11 @@ class SchemeController extends Controller
                         break;
                     case 'K':
                         $resultString .=  Orders::find($orderId)->client;
-
                         break;
-                        
                         
                     default:
                         $number = substr($value, 1,1);
-                        if(is_numeric($number) && strlen($value) == 3) {
+                        if(is_numeric($number) && strlen($value) == 3 && $value[3] == "N") {
                             str_pad($number, 4, '0', STR_PAD_LEFT);
                         } else {
                             return false;
