@@ -8,39 +8,45 @@
 
         <div class="container">
 
-            <div class="row">
+            <div class="row start_row">
 
-                    <div class="col-md-4 mt-5"> 
-                        <div class="text-center pt-5 pb-5 rounded option">
-                            <a href="new_client" class="a1">
+                    <div class="col-md-4 start_col"> 
+                        <div class="text-center">
+                            <a href="new_client" class="a_start">
                                 <i class="icon-user-add" style="font-size: 30px; margin-right: 20px;"></i>Dodaj klienta
                             </a>
                         </div>
                     </div>
 
-                    <div class="col-md-4 mt-5"> 
-                        <div class="text-center pt-5 pb-5 rounded option"> 
-                            <i class="icon-users" style="font-size: 30px; margin-right: 20px;"></i>Grupy klientow
+                    <div class="col-md-4 start_col"> 
+                        <div class="text-center">
+                            <a href="#" class="a_start">
+                                <i class="icon-users" style="font-size: 30px; margin-right: 20px;"></i>Grupy klientow
+                            </a>
                         </div>
                     </div>
  
-                    <div class="col-md-4 mt-5"> 
-                        <div class="text-center pt-5 pb-5 rounded option"> 
-                            <i class="icon-users" style="font-size: 30px; margin-right: 20px;"></i>Lista klientow
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mt-5"> 
-                        <div class="text-center pt-5 pb-5 rounded option">
-                            <a href="new_order" class="a1">
-                                <i class="icon-doc-add" style="font-size: 30px; margin-right: 20px;"></i>dodaj zgłoszenie
+                    <div class="col-md-4 start_col"> 
+                        <div class="text-center "> 
+                            <a href="list_customers" class="a_start">
+                                <i class="icon-users" style="font-size: 30px; margin-right: 20px;"></i>Lista klientow
                             </a>
                         </div>
                     </div>
 
-                    <div class="col-md-6 mt-5"> 
-                        <div class="text-center pt-5 pb-5 rounded option">
-                            <i class="icon-wpforms" style="font-size: 30px; margin-right: 20px;"></i>Lista zgłoszeń
+                    <div class="col-md-6 start_col sep"> 
+                        <div class="text-center ">
+                            <a href="new_order" class="a_start">
+                                <i class="icon-doc-add" style="font-size: 30px; margin-right: 20px;"></i>Dodaj zgłoszenie
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 start_col"> 
+                        <div class="text-center ">
+                            <a href="list_application" class="a_start">
+                                <i class="icon-wpforms" style="font-size: 30px; margin-right: 20px;"></i>Lista zgłoszeń
+                            </a>
                         </div>
                     </div>
   

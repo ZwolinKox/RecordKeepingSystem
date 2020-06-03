@@ -17,32 +17,87 @@
     <title>System zleceń</title>
 
   </head>
-    <body>
 
-    <div class="w-100">
+  <body>
 
-    <div class="p-3 header"> 
-        System zleceń
+
+    <div class="container-fluid">
+
+      <div class="row header p-3">
+
+        <div class="col-md-8">
+
+          <div class="header-t"> 
+            System zleceń
+          </div>
+
+        </div>
+
+        <div class="col-md-4 user">
+
+          <div class="d-flex justify-content-end">
+
+            <div class="dropdown">
+
+              <button class="btn btn-primary user_btn" id="drop" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="icon-user"></i>Test
+              </button>
+
+              <div class="dropdown-menu d_menu" aria-labelledby="drop">
+
+                <a class="dropdown-header text-muted font-weight-bold">Administrator</a>
+                <a class="dropdown-item" href="#">Ustawienia konta</a>
+                <a class="dropdown-item" href="#">Zarządzaj użytkownikami</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Wyloguj się</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
-    </div>          
+    
 
-    <nav aria-label="breadcrumb" id="topbar">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/" class="a_topbar"><i class="icon-home"></i>Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Data</li>
-    </ol>
-    </nav>
+            
 
-    <!-- To służy do rozszerzania szablonu  -->
-    @yield('content')
+      <nav aria-label="breadcrumb" id="topbar">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item "><div class="side_m" onclick="openNav()">&#9776;</div></li>
+          <li class="breadcrumb-item "><a href="/" class="a_topbar"><i class="icon-home"></i>Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+      </nav>
 
-    <!-- Biblioteka js do łatwego obsługiwania ciasteczek  -->
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        
+        <div class="user_btn ub"><i class="icon-user"></i>Test</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <a class="dropdown-header text-muted font-weight-bold">Administrator</a>
+        <a class="dropdown-item" href="#">Ustawienia konta</a>
+        <a class="dropdown-item" href="#">Zarządzaj użytkownikami</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Wyloguj się</a>
 
+      </div>
+
+      <!-- To służy do rozszerzania szablonu  -->
+      @yield('content')
+
+      <!-- Biblioteka js do łatwego obsługiwania ciasteczek  -->
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+      <script src="js\side_menu.js"></script>
   </body>
 </html>

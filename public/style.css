@@ -1,11 +1,41 @@
 
-.header
+/* || layout.blade */
+
+.header 
 {
     background-color: rgb(54, 54, 54);
     color: white;
     font-family: 'Lato';
+}
+
+.header-t
+{
     font-size: 50px;
     font-weight: 300;
+}
+
+.user_btn, .user_btn:hover
+{
+    background-color: rgb(54, 54, 54) !important; 
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    border: none !important;
+    box-shadow: none !important;
+    display: block;
+}
+
+.ub
+{
+    height: 50px;
+    overflow: hidden;
+}
+
+
+
+.d_menu
+{
+    margin-right: 80px;
 }
 
 .a_topbar, .a_topbar:hover
@@ -14,21 +44,118 @@
     text-decoration: none;
 }
 
-.option
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1 !important;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #474747;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .side_m
+  {
+      display: none;
+      font-size: 17px;
+      cursor: pointer;
+  }
+  
+  @media screen and (max-height: 768px)
+   {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+   }
+
+/* || start.blade */
+
+.option 
 {
     background-color: rgb(54, 54, 54);
     color: white;
     font-family: 'Lato';
+    padding: 40px 0px 40px 0px;
+    border-radius: 5px;
+    display: block;
 }
 
-.a1, .a1:hover
+.start_col
+{
+    margin: 15px 0px 0px 0px;
+}
+
+.a_start, .a_start:hover
 {
     color: white;
     text-decoration: none;
     display: block;
     width: 100%;
     height: 100%;
+
+    background-color: rgb(54, 54, 54);
+  
+    font-family: 'Lato';
+    padding: 40px 0px 40px 0px;
+    border-radius: 5px;
 }
+
+.start_row
+{
+    padding: 15px 0px 15px 0px;
+}
+
+@media (max-width: 768px)
+{
+
+    .start_col
+    {
+        margin: 1px 0px 1px 0px;
+    }
+    
+    .sep
+    {
+        margin: 15px 0px 1px 0px;
+        
+    }
+
+    /* || layout.blade */
+
+    .user
+    {
+        display: none;
+    }
+
+    .side_m
+    {
+        display: block;
+    }
+}
+
+/* || general style */
 
 .card
 {
@@ -39,4 +166,9 @@
 {
     text-align: right;
     color: gray;
+}
+
+.active
+{
+    z-index: 0 !important;
 }
