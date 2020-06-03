@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Helpers\SchemesController;
 
 Route::post('register', 'AuthController@register'); 
 Route::post('login', 'AuthController@login');
@@ -45,4 +46,6 @@ Route::get('itemtypes/delete', 'ItemTypesController@createItemTypes'); //Dodać 
 
 
 //Strefa testowania
-Route::get('test', 'SchemeController@test');
+Route::get('test', function() {
+    return SchemesController::parser(1);
+});

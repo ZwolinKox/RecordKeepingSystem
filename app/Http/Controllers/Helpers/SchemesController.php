@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Helpers;
 
 use App\Scheme;
 use App\User;
@@ -9,10 +9,10 @@ use App\Clients;
 use Carbon\Carbon; //Bibliteka PHP, która ułatwia manipulację datą i czasem
 use Illuminate\Http\Request;
 
-class SchemeController extends Controller
+class SchemesController
 {
     //
-    public function updateNumber() {
+    public static function updateNumber() {
         $scheme = Scheme::find(1);        
         
         $lastDate = Carbon::createFromFormat('Y-m-d', $scheme->last_date, 'Europe/Stockholm');
@@ -48,7 +48,7 @@ class SchemeController extends Controller
         return $scheme->total_number;
     }
 
-    protected function englishToPolishMonthNames($monthName)
+    protected static function englishToPolishMonthNames($monthName)
     {
         $enMonths = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
         $plMonths = array("Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień");
@@ -56,7 +56,7 @@ class SchemeController extends Controller
         return str_replace($enMonths, $plMonths, $monthName);
     }
 
-    protected function englishToPolishMonthShortNames($monthName)
+    protected static function englishToPolishMonthShortNames($monthName)
     {
         $enMonths = array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
         $plMonths = array("STY", "LUT", "MAR", "KWI", "MAJ", "CZE", "LIP", "SIE", "WRZ", "PAŹ", "LIS", "GRU");
@@ -64,7 +64,7 @@ class SchemeController extends Controller
         return str_replace($enMonths, $plMonths, $monthName);
     }
 
-    protected function numberToRomanRepresentation($number) {
+    protected static function numberToRomanRepresentation($number) {
         $map = array('M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 'C' => 100, 'XC' => 90, 'L' => 50, 'XL' => 40, 'X' => 10, 'IX' => 9, 'V' => 5, 'IV' => 4, 'I' => 1);
         $returnValue = '';
         while ($number > 0) {
@@ -79,53 +79,63 @@ class SchemeController extends Controller
         return $returnValue;
     }
 
-    public function test()
-    {
-        return $this->parser(1);
-    }
-
-    public function parser($orderId) {
+    public static function parser($orderId) {
         $string = Scheme::find(1)->scheme;
         $resultString = "";
 
         $elements = explode("/", $string);
-        $documentId = $this->updateNumber(); //Od razu przy aktualizacji danych dostajemy numer dokumentu, ograniczamy ilość połączeń z bazą
+        $documentId = SchemesController::updateNumber(); //Od razu przy aktualizacji danych dostajemy numer dokumentu, ograniczamy ilość połączeń z bazą
 
         foreach ($elements as $key => $value) {
             
             if($value[0] == "%") {
                 switch ($value[1]) {
                     case 'N':
+                        //Liczba dziesiętna określająca numer dokumentu
                         $resultString .= $documentId;
                         break;
                     case 'Y':
+                        //Rok jako liczba dziesiętna w formacie YYYY
                         $resultString .= Carbon::now()->year;
                         break;
                     case 'y':
+                        //Rok jako liczba dziesiętna w formacie YY
                         $resultString .= Carbon::now()->format('y');
                         break;
                     case 'm':
+                        //Rok jako liczba dziesiętna (od 01 do 12)
                         $resultString .= Carbon::now()->format('m');
                         break;
                     case 'M':
-                        $resultString .= $this->englishToPolishMonthNames(Carbon::now()->format('F'));
+                        //Miesiąc w zapisie słownym
+                        $resultString .= SchemesController::englishToPolishMonthNames(Carbon::now()->format('F'));
                         break;
                     case 'b':
-                        $resultString .= $this->englishToPolishMonthShortNames(Carbon::now()->format('M'));
+                        //Miesiąc w zapisie słownym w krótszej formie
+                        $resultString .= SchemesController::englishToPolishMonthShortNames(Carbon::now()->format('M'));
                         break;
                     case 'C':
+                        //Id wystawiającego dokument
                         $resultString .=  Orders::find($orderId)->created_by;
                         break;
                     case 'R':
-                        $resultString .= $this->numberToRomanRepresentation(Carbon::now()->month);
+                        //Miesiąc w zapisie rzymskim
+                        $resultString .= SchemesController::numberToRomanRepresentation(Carbon::now()->month);
                         break;
                     case 'W':
+                        //Tydzień w roku
                         $resultString .= Carbon::now()->weekOfYear;
                         break;
                     case 'D':
+                        //Dzień w formie liczbowej (1-7)
                         $resultString .= Carbon::now()->isoFormat('d');
                         break;
+                    case 'd':
+                        //Dzień miesiąca                        
+                        $resultString .= Carbon::now()->day;
+                        break;
                     case 'K':
+                        //Id klienta
                         $resultString .=  Orders::find($orderId)->client;
                         break;
                         
