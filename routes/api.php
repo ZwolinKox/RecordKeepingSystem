@@ -9,6 +9,7 @@ Route::get('logout', 'AuthController@logout');
 Route::get('user', 'AuthController@getAuthUser'); //Wysyła json z danymi o użytkowniku na podstawie jwt
 
 Route::get('users/', 'UsersController@getUsers');
+Route::get('users/light', 'UsersController@getUsersLight'); //Dodać do dokumentacji
 Route::get('users/{id}', 'UsersController@getUser');
 Route::get('users/delete/{id}', 'UsersController@deleteUser'); //Dodać do dokumentacji
 Route::post('users/update/{id}', 'UsersController@updateUser'); //Dodać do dokumentacji
@@ -20,6 +21,7 @@ Route::get('clients/notes/delete/{id}', 'ClientNodesController@deleteClientNote'
 Route::post('clients/notes/update/{id}', 'ClientNodesController@updateClientNote'); //Dodać do dokumentacji
 
 Route::get('clients/', 'ClientsController@getClients');
+Route::get('clients/light', 'ClientsController@getClientsLight');
 Route::get('clients/{id}', 'ClientsController@getClient');
 Route::put('clients/', 'ClientsController@createClient');
 Route::get('clients/delete/{id}', 'ClientsController@deleteClient'); //Dodać do dokumentacji
