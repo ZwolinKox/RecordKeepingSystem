@@ -40,3 +40,11 @@ Route::get('/order_info', function () {
 Route::get('/client_info', function () {
     return view('client_info');
 });
+
+Route::get('/list_application', function () {
+    return view('list_application');
+});
+
+Route::get('/list_customers', function () {
+    return view('list_customers');
+});
