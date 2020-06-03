@@ -11,6 +11,7 @@
 			<div class="row">
 
 				<div class="col-md-6">
+					<div id="error"></div>
 
 					<div class="card">
 

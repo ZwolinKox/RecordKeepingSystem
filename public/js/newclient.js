@@ -12,54 +12,87 @@ document.querySelector("#createclient").addEventListener("click", () =>
         send_sms : document.querySelector("#smsyinformacyjne").checked,
         send_email : document.querySelector("#emaileinformacyjne").checked
     }
-    fetch("/api/clients",
-    {
-        method: "put",
-        headers:
+    console.log(ob.name);
+    if(ob.name!="")
+      {
+        if((ob.send_sms==1&&ob.phone1!="")||(ob.send_email==1&&ob.email1!="")||ob.send_email==0||ob.send_sms==0)
         {
-            "Content-Type": "application/json",
-            "Accept" : "application/json",
-            "Authorization" : "Bearer "+Cookies.get("token")
-        },
-        body: JSON.stringify(ob)
-    })
+          fetch("/api/clients",
+          {
+              method: "put",
+              headers:
+              {
+                  "Content-Type": "application/json",
+                  "Accept" : "application/json",
+                  "Authorization" : "Bearer "+Cookies.get("token")
+              },
+              body: JSON.stringify(ob)
+          })
 
-    .then(res =>
-    {
-        if (res.ok)
-        {
-            return res.json()
+          .then(res =>
+          {
+              if (res.ok)
+              {
+                  return res.json(),
+                  document.querySelector("#error").innerHTML+=
+                  `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                  Udało sie utworzyć klienta.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>`;
+              }
+              else
+              {
+                  document.querySelector("#error").innerHTML+=
+                  `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>`;
+              }
+          })
+
+          .then(res =>
+          {
+              console.log(res);
+              
+          })
+          /*.catch(res =>
+          {
+            console.log("nie dzialo")
+              document.querySelector("#error").innerHTML+=
+              `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>`;
+
+          })
+          */
         }
         else
         {
-            console.log("siema");
-            document.querySelector("#error").innerHTML+=
-            `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+          document.querySelector("#error").innerHTML+=
+          `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Uwaga!</strong> Musisz podać sms ,lub email klienta.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
           </div>`;
         }
-    })
-
-    .then(res =>
+      }
+    else
     {
-        console.log(res);
-        
-    })
-    .catch(res =>
-     {
-        console.log("smieszny");
-        document.querySelector("#error").innerHTML+=
-        `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Uwaga!</strong> Nie udało sie utworzyć klienta.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>`;
-
-    })
-    
+      document.querySelector("#error").innerHTML+=
+      `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Uwaga!</strong> Musisz podać imię i nazwisko klienta.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>`;
+    }
 
 })
