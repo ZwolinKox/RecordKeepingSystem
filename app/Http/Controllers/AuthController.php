@@ -12,6 +12,7 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('banCheck');
     }
 
     public function register(Request $request)
@@ -41,6 +42,9 @@ class AuthController extends Controller
 
       if (!$token = auth()->attempt($credentials)) {
         return response()->json(['error' => 'Unauthorized'], 401);
+      }
+      if (auth()->user()->ban){
+        return response()->json(['error' => 'Baned'], 401);
       }
 
       return $this->respondWithToken($token);

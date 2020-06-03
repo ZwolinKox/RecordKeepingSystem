@@ -10,11 +10,16 @@ class ClientsController extends Controller
     public function __construct()
     {
         $this->middleware('auth:api');
+        $this->middleware('banCheck');
     }
 
     function getClients(Request $request)
     {
-        return Clients::all()->toJson();
+        return Clients::paginate(15);
+    }
+
+    function getClientsLight(Request $request){
+        return Clients::all('id','name', 'phone1');
     }
 
     function getClient(Request $request)

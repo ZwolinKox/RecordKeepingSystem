@@ -10,10 +10,11 @@ class ItemTypesController extends Controller
     public function __construct()
     {
         $this->middleware('auth:api');
+        $this->middleware('banCheck');
     }
 
     public function getItemTypes(Request $request){
-        return ItemTypes::all()->toJson();
+        return ItemTypes::paginate(15);
     }
 
     function deleteItemTypes(Request $request)

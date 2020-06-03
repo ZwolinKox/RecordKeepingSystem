@@ -10,10 +10,11 @@ class OrdersController extends Controller
     public function __construct()
     {
         $this->middleware('auth:api');
+        $this->middleware('banCheck');
     }
 
     public function getOrders(Request $request){
-        return Orders::all()->toJson();
+        return Orders::paginate(15);
     }
 
     function getOrder(Request $request)

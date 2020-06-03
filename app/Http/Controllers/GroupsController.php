@@ -10,11 +10,12 @@ class GroupsController extends Controller
     public function __construct()
     {
         $this->middleware('auth:api');
+        $this->middleware('banCheck');
     }
 
     function getGroup(Request $request)
     {
-        return Groups::all()->toJson();
+        return Groups::paginate(15);
     }
 
     function getGroups(Request $request)
