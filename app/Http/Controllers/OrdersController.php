@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Orders;
+use App\Http\Controllers\Helpers\SchemesController;
 use Illuminate\Http\Request;
 
 class OrdersController extends Controller
@@ -61,12 +63,10 @@ class OrdersController extends Controller
 
     function createOrders(Request $request)
     {
-        if($request->name == null || $request->status == null || $request->client == null || $request->item_type == null || $request->producer == null || $request->model == null || $request->serial_number == null || $request->begin_date == null || $request->end_date == null || $request->delivery_method == null || $request->pickup_method == null || $request->estimated_price == null || $request->advance_pay == null)
+        if($request->client == null || $request->item_type == null || $request->producer == null || $request->model == null || $request->serial_number == null || $request->end_date == null || $request->delivery_method == null || $request->pickup_method == null || $request->estimated_price == null || $request->advance_pay == null)
             return response()->json(['error' => 'Missing required data'], 401);
         
         $order = Orders::create([
-            'name' => $request->name,
-            'status' => $request->status,
             'created_by' => auth()->user()->id,
             'assigned' => $request->assigned,
             'client' => $request->client,
@@ -76,7 +76,7 @@ class OrdersController extends Controller
             'serial_number' => $request->serial_number,
             'buy_date' => $request->buy_date,
             'warranty_number' => $request->warranty_number,
-            'begin_date' => $request->begin_date,
+            'begin_date' => Carbon::now(),
             'end_date' => $request->end_date,
             'info' => $request->info,
             'issue' => $request->issue,
@@ -85,7 +85,9 @@ class OrdersController extends Controller
             'estimated_price' => $request->estimated_price,
             'advance_pay' => $request->advance_pay,
         ]);
-        
+        $order->name = SchemesController::parser($order->id);
+        $order->save();
+
         return response()->json(['message' => 'Successful added new Order'], 200);
     }
 }

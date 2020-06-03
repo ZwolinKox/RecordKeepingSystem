@@ -35,6 +35,12 @@ Route::put('groups/', 'GroupsController@createGroup');
 Route::get('groups/delete/{id}', 'GroupsController@deleteGroup'); 
 Route::post('groups/update/{id}', 'GroupsController@updateGroup'); 
 
+Route::get('orders/notes/', 'OrderNodesController@getOrderNotes'); //Dodać do dokumentacji
+Route::get('orders/notes/{id}', 'OrderNodesController@getOrderNote'); //Dodać do dokumentacji
+Route::put('orders/notes/', 'OrderNodesController@createOrderNote'); //Dodać do dokumentacji
+Route::get('orders/notes/delete/{id}', 'OrderNodesController@deleteOrderNote'); //Dodać do dokumentacji
+Route::post('orders/notes/update/{id}', 'OrderNodesController@updateOrderNote'); //Dodać do dokumentacji
+
 Route::get('orders/', 'OrdersController@getOrders'); 
 Route::get('orders/{id}', 'OrdersController@getOrder'); 
 Route::put('orders/', 'OrdersController@createOrders'); 
