@@ -22,10 +22,10 @@ document.querySelector("#login").addEventListener("click", () =>
 
     .then(res =>
     {
-        console.log(res);
         const token = JSON.parse(JSON.stringify(res)).access_token;
         Cookies.set('token', token, { expires: 7 });
-        console.log( Cookies.get('token'))
+
+        location.href = "/";
     })
 
 })

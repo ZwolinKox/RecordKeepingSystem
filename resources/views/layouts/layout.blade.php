@@ -49,7 +49,7 @@
                 <a class="dropdown-item" href="#">Ustawienia konta</a>
                 <a class="dropdown-item" href="#">Zarządzaj użytkownikami</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Wyloguj się</a>
+                <a class="dropdown-item logout" href="#">Wyloguj się</a>
 
               </div>
 
@@ -84,7 +84,7 @@
         <a class="dropdown-item" href="#">Ustawienia konta</a>
         <a class="dropdown-item" href="#">Zarządzaj użytkownikami</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Wyloguj się</a>
+        <a class="dropdown-item logout" href="#">Wyloguj się</a>
 
       </div>
 
@@ -99,5 +99,8 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
       <script src="js\side_menu.js"></script>
+      <script src="js\redirect.js"></script>
+      <script src="js\logout.js"></script>
+
   </body>
 </html>
