@@ -18,10 +18,6 @@ class CreateSchemeTable extends Migration
             $table->string('scheme');
             $table->tinyInteger('cycle');
             $table->bigInteger('total_number')->unsigned();
-            $table->bigInteger('day_number')->unsigned();
-            $table->bigInteger('week_number')->unsigned();
-            $table->bigInteger('month_number')->unsigned();
-            $table->bigInteger('year_number')->unsigned();
             $table->date('last_date');
         });
     }
