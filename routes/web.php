@@ -48,3 +48,7 @@ Route::get('/list_application', function () {
 Route::get('/list_customers', function () {
     return view('list_customers');
 });
+
+Route::get('/scheme', function () {
+    return view('scheme');
+});
