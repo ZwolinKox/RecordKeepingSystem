@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Helpers\SchemesController;
+use App\Http\Controllers\Helpers\Messages;
 
 Route::post('register', 'AuthController@register'); 
 Route::post('login', 'AuthController@login');
@@ -47,5 +48,5 @@ Route::get('itemtypes/delete', 'ItemTypesController@createItemTypes'); //Dodać 
 
 //Strefa testowania
 Route::get('test', function() {
-    return SchemesController::parser(1);
+    return Messages::sendSms(509921309, "pickup", 1);
 });

@@ -1,0 +1,1 @@
+Twoje zlecenie {{ $scheme }} jest gotowe do odbioru
