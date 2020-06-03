@@ -141,8 +141,9 @@ class SchemesController
                         
                     default:
                         $number = substr($value, 1,1);
-                        if(is_numeric($number) && strlen($value) == 3 && $value[3] == "N") {
-                            str_pad($number, 4, '0', STR_PAD_LEFT);
+                        //Liczba dziesiętna określająca numer dokumentu z zerami wiodącymi
+                        if(is_numeric($number) && strlen($value) == 3 && $value[2] == "N") {
+                            $resultString .= str_pad($documentId, $number, '0', STR_PAD_LEFT);
                         } else {
                             return false;
                         }
