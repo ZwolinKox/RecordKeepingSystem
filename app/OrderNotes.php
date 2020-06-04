@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class OrderNotes extends Model
 {
     use Notifiable;
-    protected  $table = 'order_nodes';
+    protected  $table = 'order_notes';
     /**
      * The attributes that are mass assignable.
      *

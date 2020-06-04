@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ClientNodes;
+use App\ClientNotes;
 use Illuminate\Http\Request;
 
 class ClientNodesController extends Controller
@@ -15,21 +15,21 @@ class ClientNodesController extends Controller
 
     function getClientNotes(Request $request)
     {
-        return ClientNodes::paginate(15);
+        return ClientNotes::paginate(15);
     }
 
     function getClientNote(Request $request)
     {
-        $exist = ClientNodes::find($request->id);
+        $exist = ClientNotes::find($request->id);
         if($exist != null){
-            return ClientNodes::find($request->id)->toJson();
+            return ClientNotes::find($request->id)->toJson();
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
     function deleteClientNote(Request $request)
     {
-        $exist = ClientNodes::find($request->id);
+        $exist = ClientNotes::find($request->id);
         if($exist != null){
             $exist->delete();
             return response()->json(['message' => 'Successful delete note '.$request->id]);
@@ -44,7 +44,7 @@ class ClientNodesController extends Controller
         
         try
         {
-            $exist = ClientNodes::find($request->id);
+            $exist = ClientNotes::find($request->id);
 
             if($exist != null){
                 $exist->update(json_decode($request->body, true));
@@ -65,7 +65,7 @@ class ClientNodesController extends Controller
         if($request->user == null || $request->text == null || $request->client == null)
             return response()->json(['error' => 'Notes user, client and text cant be null'], 401);
         
-        $user = ClientNodes::create([
+        $user = ClientNotes::create([
             'user' => $request->user,
             'text' => $request->text,
             'client' => $request->client,

@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class ClientNodes extends Model
+class ClientNotes extends Model
 {
     use Notifiable;
-    protected  $table = 'client_nodes';
+    protected  $table = 'client_notes';
     /**
      * The attributes that are mass assignable.
      *
@@ -17,7 +17,6 @@ class ClientNodes extends Model
     protected $fillable = [
         'user', 'client', 'text'
     ];
-
 
     /**
      * The attributes that should be cast to native types.
