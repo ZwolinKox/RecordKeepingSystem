@@ -21,7 +21,7 @@ document.querySelector("#createclient").addEventListener("click", () =>
     function validateNumber(phone)
     {
       const re = /^\d{9}$/;
-      return re.test(phone)
+      return re.test(phone);
     }
     if(ob.name!="")
       {

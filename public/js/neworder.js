@@ -1,18 +1,62 @@
-document.querySelector("#login").addEventListener("click", () =>
+document.querySelector("#submit").addEventListener("click", () =>
 {
-    //Dane logowania
-    const ob = {
-        email : document.querySelector("#email").value,
-        password : document.querySelector("#passwd").value
+    let dlv;
+    const dlv1=document.querySelector("#norder_dlvr1").checked;
+    const dlv2=document.querySelector("#norder_dlvr2").checked;
+    const dlv3=document.querySelector("#norder_dlvr3").checked;
+    if(dlv1==1)
+    {
+        dlv=1;
+    }else if(dlv2==1)
+    {
+        dlv=2;
+    }else
+    {
+        dlv=3;
+    }
+
+    let pck;
+    const pck1=document.querySelector("#norder_pick1").checked;
+    const pck2=document.querySelector("#norder_pick2").checked;
+    const pck3=document.querySelector("#norder_pick3").checked;
+    if(pck1==1)
+    {
+        pck=1;
+    }else if(pck2==1)
+    {
+        pck=2;
+    }else
+    {
+        pck=3;
     }
     
-    fetch("/api/login",
+    const ob = {
+        producer : document.querySelector("#norder_mnfctr").value,
+        model : document.querySelector("#norder_model").value,
+        assigned: document.querySelector("#norder_group2").value,
+        // client: document.querySelector("#").value,
+        item_type: document.querySelector("#norder_type").value,
+        serial_number: document.querySelector("#norder_serial").value,
+        // buy_date: document.querySelector("#").value,
+        // warranty_number: document.querySelector("#").value,
+        begin_date: document.querySelector("#norder_in").value,
+        end_date: document.querySelector("#norder_out").value,
+        info: document.querySelector("#norder_descom").value,
+        issue: document.querySelector("#norder_desprob").value,
+        delivery_method: dlv,
+        pickup_method: pck,
+        estimated_price: document.querySelector("#norder_cost").value,
+        advance_pay: document.querySelector("#norder_poa").value
+    }
+    
+    fetch("/api/orders",
     {
-        method: "post",
+        method: "put",
         headers:
         {
             "Content-Type": "application/json",
-            "Accept" : "application/json"
+            "Accept" : "application/json",
+            "Authorization" : "Bearer "+Cookies.get("token")
         },
         body: JSON.stringify(ob)
     })
@@ -22,9 +66,6 @@ document.querySelector("#login").addEventListener("click", () =>
     .then(res =>
     {
         console.log(res);
-        const token = JSON.parse(JSON.stringify(res)).access_token;
-        Cookies.set('token', token, { expires: 7 });
-        console.log( Cookies.get('token'))
     })
 
 })

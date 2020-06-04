@@ -7,7 +7,7 @@
 
 	<div class="container-fluid">
 
-		<form>
+		<div>
 
 			<div class="row">
 
@@ -331,7 +331,7 @@
 
 			</div>
 
-		</form>
+		</div>
 
 	</div>
 
