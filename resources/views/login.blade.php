@@ -11,6 +11,11 @@
         display: none;
     }
 
+    #user_emb
+    {
+        display: none;
+    }
+
 
 </style>
        <div class="container">
@@ -51,8 +56,5 @@
 
         <script src="js\login.js"></script>
         
-
-
-
 
 @stop

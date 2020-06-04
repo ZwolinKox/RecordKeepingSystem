@@ -33,7 +33,7 @@
 
         </div>
 
-        <div class="col-md-4 user">
+        <div class="col-md-4 user" id="user_emb">
 
           <div class="d-flex justify-content-end">
 
@@ -68,14 +68,19 @@
             
 
       <nav aria-label="breadcrumb" id="topbar">
-      <ol class="breadcrumb">
-          <li class="breadcrumb-item "><div class="side_m" onclick="openNav()">&#9776;</div></li>
-          <li class="breadcrumb-item "><a href="/" class="a_topbar"><i class="icon-home"></i>Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Data</li>
-      </ol>
+
+        <ol class="breadcrumb">
+
+            <li class="breadcrumb-item "><div class="side_m" onclick="openNav()">&#9776;</div></li>
+            <li class="breadcrumb-item "><a href="/" class="a_topbar"><i class="icon-home"></i>Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+
+        </ol>
+
       </nav>
 
       <div id="mySidenav" class="sidenav">
+        
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         
         <div class="user_btn ub"><i class="icon-user"></i>Test</div>
