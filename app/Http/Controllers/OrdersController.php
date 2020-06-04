@@ -23,9 +23,7 @@ class OrdersController extends Controller
     {
         $exist = Orders::find($request->id);
         if($exist != null){
-            $data = Orders::find($request->id);
-            $data->status = Orders::find($request->id)->status();
-            return $data->toJson();
+            return  Orders::find($request->id)->toJson();
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }
