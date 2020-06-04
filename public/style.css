@@ -184,6 +184,28 @@
     {
         display: block;
     }
+
+    .list, .list-button, .top-menu
+    {
+        font-size: 14px;
+    }
+
+    .list-top-menu
+    {
+        border: solid 1px rgb(172, 172, 172);
+        border-radius: 3px;
+
+    }
+
+    .top-menu
+    {
+        width: 100%;
+        text-align: center;
+        margin: 1px auto 1px auto !important;
+        display: list-item !important;
+        color: black  !important;
+        border: none  !important;
+    }
 }
 
 /* || general style */
@@ -203,3 +225,4 @@
 {
     z-index: 0 !important;
 }
+
