@@ -18,7 +18,7 @@ class CreateStatusTable extends Migration
             $table->tinyInteger('status')->nullable(false);
             $table->bigInteger('created_by')->unsigned()->nullable(false);
             $table->bigInteger('order')->unsigned()->nullable(false);
-            $table->date('date');
+            $table->timestamp('date');
 
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('order')->references('id')->on('orders');

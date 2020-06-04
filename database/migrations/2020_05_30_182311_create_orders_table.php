@@ -31,8 +31,8 @@ class CreateOrdersTable extends Migration
             $table->text('issue')->nullable();
             $table->unsignedTinyInteger('delivery_method')->nullable(false);
             $table->unsignedTinyInteger('pickup_method')->nullable(false);
-            $table->float('estimated_price')->nullable(false);
-            $table->float('advance_pay')->nullable(false);
+            $table->float('estimated_price')->default(0);
+            $table->float('advance_pay')->default(0);
 
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('assigned')->references('id')->on('users');

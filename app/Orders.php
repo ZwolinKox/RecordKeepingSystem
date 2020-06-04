@@ -49,6 +49,6 @@ class Orders extends Model
     }
 
     public function status(){
-        return $this->statuses()->latest('date')->first();
+        return $this->statuses()->latest('date')->first()->status;
     }
 }

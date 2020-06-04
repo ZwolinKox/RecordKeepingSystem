@@ -23,7 +23,9 @@ class OrdersController extends Controller
     {
         $exist = Orders::find($request->id);
         if($exist != null){
-            return Orders::find($request->id)->toJson();
+            $data = Orders::find($request->id);
+            $data->status = Orders::find($request->id)->status();
+            return $data->toJson();
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }
@@ -63,7 +65,7 @@ class OrdersController extends Controller
 
     function createOrders(Request $request)
     {
-        if($request->client == null || $request->item_type == null || $request->producer == null || $request->model == null || $request->serial_number == null || $request->end_date == null || $request->delivery_method == null || $request->pickup_method == null || $request->estimated_price == null || $request->advance_pay == null)
+        if($request->client == null || $request->item_type == null || $request->producer == null || $request->model == null || $request->serial_number == null || $request->begin_date == null || $request->end_date == null || $request->delivery_method == null || $request->pickup_method == null)
             return response()->json(['error' => 'Missing required data'], 401);
         
         $order = Orders::create([
@@ -76,7 +78,7 @@ class OrdersController extends Controller
             'serial_number' => $request->serial_number,
             'buy_date' => $request->buy_date,
             'warranty_number' => $request->warranty_number,
-            'begin_date' => Carbon::now(),
+            'begin_date' => $request->begin_date,
             'end_date' => $request->end_date,
             'info' => $request->info,
             'issue' => $request->issue,
@@ -86,6 +88,11 @@ class OrdersController extends Controller
             'advance_pay' => $request->advance_pay,
         ]);
         $order->name = SchemesController::parser($order->id);
+        $order->statuses()->create([
+            'status' => 1,
+            'created_by' => $order->created_by,
+            'date' => Carbon::now(),
+        ]);
         $order->save();
 
         return response()->json(['message' => 'Successful added new Order'], 200);
