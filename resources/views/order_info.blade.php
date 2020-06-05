@@ -73,23 +73,15 @@
                         </div>
                     </div>
 
+                    <button type="button" class="btn btn-outline-secondary ml-2">
+                        <i class="icon-edit"></i>
+                        Edytuj
+                    </button>
 
-                    <div class="btn-group ml-2">
-                        <button type="button" class="btn btn-outline-secondary">
-                            <i class="icon-edit"></i>
-                            Edytuj
-                        </button>
-                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="sr-only">Rozwiń listę</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Pierwszy link</a>
-                            <a class="dropdown-item" href="#">Drugi link</a>
-                            <a class="dropdown-item" href="#">Trzeci link</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Czwarty link</a>
-                        </div>
-                    </div>
+                    <button type="button" class="btn btn-outline-secondary ml-2">
+                        <i class="icon-cancel-circled"></i>
+                        Usuń
+                    </button>
 
 
                     <button type="button" class="btn btn-outline-secondary ml-2">

@@ -15,39 +15,27 @@
             <li class="nav-item top-menu">
                 <a class="nav-link active" href="#">Lista</a>
             </li>
-            
-            <li class="nav-item top-menu">
-                <a class="nav-link" href="#">Otwarte</a>
-            </li>
 
-            <li class="nav-item top-menu">
-                <a class="nav-link" href="#">Do odbioru</a>
-            </li>
-           
-            <li class="nav-item top-menu">
-                <a class="nav-link" href="#">Moje</a>
-            </li>
+
 
 
             <div class="form-inline ml-auto top-menu">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary active">
-                        <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
-                            <path fill-rule="evenodd"
-                                d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
-                        </svg>
+
+                <div class="dropdown">
+
+                    <button class="btn btn-primary dropdown-toggle active list-button" type="button" id="addgroup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="icon-plus"></i>Dodaj grupę
                     </button>
-                    <button type="button" class="btn btn-primary active">
-                        <svg class="bi bi-filter" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-                        </svg>
-                    </button>
+
+                    <div class="dropdown-menu" style="margin-right: 120px;" aria-labelledby="addgroup">
+                        <h6 class="dropdown-header">Operacje</h6>
+                        <a class="dropdown-item" href="#">Zapisz wynikiem diagnozy</a>
+                        <a class="dropdown-item" href="#">Zanotuj czynność naprawczą</a>
+                        <a class="dropdown-item" href="#">Opisz naprawę podsumowaniem</a>
+                    </div>
+
                 </div>
+
             </div>
 
         </ul>
@@ -92,11 +80,10 @@
 
                         <div class="row"> 
 
-                            <div class="col-2 text-center">Pozostały czas</div>
-                            <div class="col-2 text-center">Numer zlecenia</div>
-                            <div class="col-3 text-center">Klient</div>
-                            <div class="col-3 text-center">Sprzęt</div>
-                            <div class="col-2 text-center">Status</div>
+                            <div class="col-3 text-center">Nazwa</div>
+                            <div class="col-3 text-center">Ilość klientów</div>
+                            <div class="col-3 text-center">Utworzona przez</div>
+                            <div class="col-3 text-center">Akcje</div>
 
                         </div>
                     </div>
@@ -107,22 +94,13 @@
 
                             <div class="row">
 
-                                 <div class="col-2 text-center">
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="70"
-                                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                        </div>
-                                    </div>
+                                 <div class="col-3 text-center">Stali klienci</div>
+                                 <div class="col-3 text-center">82</div>
+                                 <div class="col-3 text-center">Jan Kowalski</div>
+                                 <div class="col-3 text-center">
+                                    <button type="button" class="btn btn-danger">Usuń</button>
+                                    <button type="button" class="btn btn-outline-secondary">Edytuj</button>
                                 </div>
-                                <div class="col-2 text-center">X5S2</div>
-                                <div class="col-3 text-center">Dominik Kopiec</div>
-                                <div class="col-3 text-center">
-                                    Laptop Samsung
-                                    <br>
-                                    <span class="text-secondary">Model</span>
-                                </div>
-                                <div class="col-2 text-center"><span class="badge badge-warning">Warning</span>.</div>
-                                
 
                                <!-- <div class="col-3 text-center">
 

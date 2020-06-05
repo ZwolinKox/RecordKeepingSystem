@@ -52,3 +52,7 @@ Route::get('/list_customers', function () {
 Route::get('/scheme', function () {
     return view('scheme');
 });
+
+Route::get('/list_groups', function () {
+    return view('list_groups');
+});
