@@ -68,3 +68,7 @@ Route::get('/client_notes', function () {
 Route::get('/client_history', function () {
     return view('client_history');
 });
+
+Route::get('/list_employee', function () {
+    return view('list_employee');
+});

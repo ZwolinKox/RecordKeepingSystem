@@ -42,6 +42,33 @@
 
         </ul>
 
+        
+
+        <div class="side_m_list" onclick="openNav_list()"><i class="icon-plus"></i></div>
+
+        <div id="mySidenav-list" class="sidenav-list">
+            
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav_list()">&times;</a>
+            
+            <div class="side_m_list_content">
+
+                <a class="nav-link active" href="#">Lista</a>
+                <a class="nav-link" href="#">Otwarte</a>
+                <a class="nav-link" href="#">Do odbioru</a>
+                <a class="nav-link" href="#">Moje</a>
+
+                <button type="button" class="btn btn-primary active side_m_list_button">
+                    <a href="new_order" class="side_list_button_link"><i class="icon-plus"></i> Dodaj zgłoszenie</a>
+                </button>
+
+                <button type="button" class="btn btn-primary active side_m_list_button">
+                    <i class="icon-article"></i> Sortuj
+                </button>
+
+            </div>
+
+        </div>
+
         <div class="row mt-3">
 
             <div class="col-auto m-auto">
@@ -78,7 +105,7 @@
 
                 <div class="card list">
 
-                    <div class="card-header">
+                    <!--<div class="card-header">
 
                         <div class="row"> 
 
@@ -89,9 +116,49 @@
                             <div class="col-2 text-center">Status</div>
 
                         </div>
-                    </div>
+                    </div> -->
 
-                    <ul class="list-group list-group-flush">
+                    <table class="card-table table-bordered">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="td_style_list">Pozostały czas</th>
+                                <th class="td_style_list">Numer zlecenia</th>
+                                <th class="td_style_list">Klient</th>
+                                <th class="td_style_list">Sprzęt</th>
+                                <th class="td_style_list">Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td class="td_style_list">
+
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="70"
+                                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td class="td_style_list">X5S2</td>
+                                <td class="td_style_list">Customer 1</td>
+                                <td class="td_style_list">Laptop Samsung</td>
+                                <td class="td_style_list"><span class="badge badge-warning">Warning</span></td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                   <!-- <ul class="list-group list-group-flush">
 
                         <li class="list-group-item">
 
@@ -112,29 +179,13 @@
                                     <span class="text-secondary">Model</span>
                                 </div>
                                 <div class="col-2 text-center"><span class="badge badge-warning">Warning</span>.</div>
-                                
-
-                               <!-- <div class="col-3 text-center">
-
-                                    <div class="dropdown d-flex justify-content-end">
-
-                                        <button class="btn btn-outline-secondary dropdown-toggle list-button" type="button" id="details" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Szczegóły</button>
-                                                
-                                        <div class="dropdown-menu" aria-labelledby="details">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-
-                                    </div>
-
-                                </div>-->
+        
 
                             </div>
 
                         </li>
 
-                    </ul>
+                    </ul> -->
 
                 </div>
 

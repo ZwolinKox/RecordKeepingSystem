@@ -46,6 +46,46 @@
             </div>
 
         </ul>
+        
+
+
+
+        <div class="side_m_list" onclick="openNav_list()"><i class="icon-plus"></i></div>
+
+        <div id="mySidenav-list" class="sidenav-list">
+            
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav_list()">&times;</a>
+            
+            <div class="side_m_list_content">
+
+                <a class="nav-link active" href="#">Wszyscy</a>
+                <a class="nav-link" href="#">Z otwartymi naprawami</a>
+
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Grupa</a>
+                        
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary active side_m_list_button">
+                    <i class="icon-plus"></i> Dodaj klienta
+                </button>
+
+                <div class="w-100"></div>
+                
+                <button type="button" class="btn btn-primary active side_m_list_button">
+                    <i class="icon-article"></i> Sortuj
+                </button>
+
+            </div>
+
+        </div>
 
         <div class="row mt-3">
 
@@ -83,51 +123,46 @@
 
                 <div class="card list">
 
-                    <div class="card-header">
+                   <!-- <div class="card-header">
 
                         <div class="row"> 
 
                             <div class="col-4 text-center">Nazwa</div>
                             <div class="col-4 text-center">Numer telefonu</div>
-                            <div class="col-4 text-center">Email
-                                <!-- <div class="dropdown float-right">
-
-                                    <button class="btn list-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="icon-up" style="margin-right: -10px;"></i><i class="icon-down"></i> 
-                                    </button>
-
-                                    <div class="dropdown-menu" style="margin-right: 70px;" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">option</a>
-                                        <a class="dropdown-item" href="#">option</a>
-                                        <a class="dropdown-item" href="#">option</a>
-                                    </div>
-
-                                </div>-->
-
-                            </div> 
-
-                           <!-- <div class="col-3 text-center">
-   
-                                <div class="dropdown d-flex justify-content-end">
-
-                                    <button class="btn list-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="icon-up" style="margin-right: -10px;"></i><i class="icon-down"></i> 
-                                    </button>
-
-                                    <div class="dropdown-menu" style="margin-right: 70px;" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">option</a>
-                                        <a class="dropdown-item" href="#">option</a>
-                                        <a class="dropdown-item" href="#">option</a>
-                                    </div>
-
-                                </div>
-
-                            </div> -->
+                            <div class="col-4 text-center">Email</div> 
 
                         </div>
-                    </div>
+                    </div> -->
 
-                    <ul class="list-group list-group-flush">
+                    <table class="card-table table-bordered">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="td_style_list">Nazwa</th>
+                                <th class="td_style_list">Numer telefonu</th>
+                                <th class="td_style_list">Email</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td class="td_style_list">Customer 1</td>
+                                <td class="td_style_list">+48 000 000 000</td>
+                                <td class="td_style_list">email@example.com</td>
+                            
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <!-- <ul class="list-group list-group-flush">
 
                         <li class="list-group-item">
 
@@ -137,27 +172,11 @@
                                 <div class="col-4 text-center">+48 000 000 000</div>
                                 <div class="col-4 text-center">email@example.com</div>
 
-                               <!-- <div class="col-3 text-center">
-
-                                    <div class="dropdown d-flex justify-content-end">
-
-                                        <button class="btn btn-outline-secondary dropdown-toggle list-button" type="button" id="details" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Szczegóły</button>
-                                                
-                                        <div class="dropdown-menu" aria-labelledby="details">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-
-                                    </div>
-
-                                </div>-->
-
                             </div>
 
                         </li>
 
-                    </ul>
+                    </ul> -->
 
                 </div>
 

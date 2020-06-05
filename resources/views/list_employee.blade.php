@@ -13,19 +13,30 @@
         <ul class="nav nav-tabs list-top-menu">
 
             <li class="nav-item top-menu">
-                <a class="nav-link active" href="#">Lista</a>
+                <a class="nav-link active" href="#">Wszyscy</a>
+            </li>
+            
+
+            <li class="nav-item dropdown top-menu">
+
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Grupa</a>
+                    
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Pracownicy</a>
+                    <a class="dropdown-item" href="#">Administratorzy</a>
+                </div>
+
             </li>
 
             <div class="form-inline ml-auto top-menu">
 
                     <button class="btn btn-primary active list-button" type="button" id="addgroup">
-                        <i class="icon-plus"></i>Dodaj grupę
+                        <i class="icon-plus"></i>Dodaj pracownika
                     </button>
 
             </div>
 
         </ul>
-
 
         <div class="side_m_list" onclick="openNav_list()"><i class="icon-plus"></i></div>
 
@@ -35,13 +46,22 @@
             
             <div class="side_m_list_content">
 
-                <a class="nav-link active" style="margin-bottom: 10px;" href="#">Lista</a>
+                <a class="nav-link active" href="#">Wszyscy</a>
+                
+                <div class="dropdown">
 
-                <button class="btn btn-primary side-m-list-button" type="button" id="addgroup">
-                    <i class="icon-plus"></i>Dodaj grupę
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Grupa</a>
+                        
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Pracownicy</a>
+                        <a class="dropdown-item" href="#">Administratorzy</a>
+                    </div>
+
+                </div>
+
+                <button class="btn btn-primary active side_m_list_button" type="button" id="addgroup">
+                    <i class="icon-plus"></i>Dodaj pracownika
                 </button>
-
-
             </div>
 
         </div>
@@ -80,20 +100,20 @@
    
             <div class="col-md-9 mx-auto">
 
-                <div class="card list">
+                <div class="card  list">
 
                     <!--<div class="card-header">
 
                         <div class="row"> 
 
                             <div class="col-3 text-center">Nazwa</div>
-                            <div class="col-3 text-center">Ilość klientów</div>
-                            <div class="col-3 text-center">Utworzona przez</div>
-                            <div class="col-3 text-center">Akcje</div>
+                            <div class="col-3 text-center">Email</div>
+                            <div class="col-3 text-center">Status</div>
+                            <div class="col-3 text-center">Akcja</div>  
 
                         </div>
-                    </div>-->
 
+                    </div>-->
 
                     <table class="card-table table-bordered">
 
@@ -102,8 +122,8 @@
                             <tr>
 
                                 <th class="td_style_list">Nazwa</th>
-                                <th class="td_style_list">Ilość klientów</th>
-                                <th class="td_style_list">Utworzona przez</th>
+                                <th class="td_style_list">Email</th>
+                                <th class="td_style_list">Status</th>
                                 <th class="td_style_list">Akcja</th>
 
                             </tr>
@@ -114,9 +134,9 @@
 
                             <tr>
 
-                                <td class="td_style_list">Grupa 1</td>
-                                <td class="td_style_list">--</td>
-                                <td class="td_style_list">Pracownik 1</td>
+                                <td class="td_style_list">Imie_pracownika</td>
+                                <td class="td_style_list">email_pracownika</td>
+                                <td class="td_style_list">status_pracownika</td>
                                 <td class="td_style_list">
 
                                     <button type="button" class="btn btn-danger list-button">Usuń</button>
@@ -130,15 +150,33 @@
 
                     </table>
 
-                   <!-- <ul class="list-group list-group-flush">
+                </div>
+
+
+              <!--  <div class="card list">
+
+                    <div class="card-header">
+
+                        <div class="row"> 
+
+                            <div class="col-3 text-center">Nazwa</div>
+                            <div class="col-3 text-center">Email</div>
+                            <div class="col-3 text-center">Status</div>
+                            <div class="col-3 text-center">Akcja</div>  
+                           
+                        </div>
+
+                    </div>
+
+                    <ul class="list-group list-group-flush">
 
                         <li class="list-group-item">
 
                             <div class="row">
 
-                                <div class="col-3 text-center">Stali klienci</div>
-                                <div class="col-3 text-center">82</div>
-                                <div class="col-3 text-center">Jan Kowalski</div>
+                                <div class="col-3 text-center user_name">User</div>
+                                <div class="col-3 text-center user_email">email@example.com</div>
+                                <div class="col-3 text-center user_status">Pracownik</div>
                                 <div class="col-3 text-center">
                                     <button type="button" class="btn btn-danger">Usuń</button>
                                     <button type="button" class="btn btn-outline-secondary">Edytuj</button>
@@ -148,16 +186,16 @@
 
                         </li>
 
-                    </ul> -->
+                    </ul>
 
-                </div>
+                </div> -->
 
             </div>
 
             <div class="w-100"></div>
 
          
-            <div class="col-auto mt-3 ml-auto mr-auto">
+            <div class="col-auto mt-3 mx-auto">
 
                 <nav aria-label="Page navigation example ">
 
@@ -186,6 +224,8 @@
             </div>
 
         </div>
+
+        <script src="js\side_menu.js"></script>
 
     </div>
 
