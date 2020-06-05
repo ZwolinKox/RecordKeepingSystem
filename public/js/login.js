@@ -31,7 +31,10 @@ document.querySelector("#login").addEventListener("click", () =>
     {
         if(canLogin) {
             const token = JSON.parse(JSON.stringify(res)).access_token;
+            const admin = JSON.parse(JSON.stringify(res)).admin;
+
             Cookies.set('token', token, { expires: 7 });
+            Cookies.set('admin', admin, { expires: 7 });
     
             location.href = "/"; 
         }

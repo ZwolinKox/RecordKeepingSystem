@@ -47,7 +47,7 @@ class AuthController extends Controller
         return response()->json(['error' => 'Baned'], 401);
       }
 
-      return $this->respondWithToken($token);
+      return $this->respondWithToken($token, auth()->user()->admin);
     }
     public function getAuthUser(Request $request)
     {
@@ -58,12 +58,13 @@ class AuthController extends Controller
         auth()->logout();
         return response()->json(['message'=>'Successfully logged out']);
     }
-    protected function respondWithToken($token)
+    protected function respondWithToken($token, $admin=false)
     {
       return response()->json([
         'access_token' => $token,
         'token_type' => 'bearer',
-        'expires_in' => auth()->factory()->getTTL() * 60
+        'expires_in' => auth()->factory()->getTTL() * 60,
+        'admin' => $admin
       ]);
     }
 

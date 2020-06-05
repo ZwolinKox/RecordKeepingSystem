@@ -50,7 +50,7 @@
 
               <div class="dropdown-menu d_menu" aria-labelledby="drop">
 
-                <a class="dropdown-header text-muted font-weight-bold">Administrator</a>
+                <a class="dropdown-header text-muted font-weight-bold userType"></a>
                 <a class="dropdown-item" href="#">Ustawienia konta</a>
                 <a class="dropdown-item admin" href="#">Zarządzaj użytkownikami</a>
                 <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
@@ -96,7 +96,7 @@
           </div>
         </span></div>
 
-        <a class="dropdown-header text-muted font-weight-bold">Administrator</a>
+        <a class="dropdown-header text-muted font-weight-bold userType"></a>
         <a class="dropdown-item" href="#">Ustawienia konta</a>
         <a class="dropdown-item admin" href="#">Zarządzaj użytkownikami</a>
         <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
@@ -119,6 +119,7 @@
       <script src="js\redirect.js"></script>
       <script src="js\logout.js"></script>
       <script src="js\userName.js"></script>
+      <script src="js\admin.js"></script>
 
 
   </body>
