@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Orders;
 use App\Http\Controllers\Helpers\SchemesController;
+use App\OrderFiles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OrdersController extends Controller
 {
@@ -94,5 +96,30 @@ class OrdersController extends Controller
         $order->save();
 
         return response()->json(['message' => 'Successful added new Order'], 200);
+    }
+
+    function fileUpload(Request $request){
+
+        $order = Orders::find($request->id);
+        if($order != null){
+            if($request->file('file') != null){
+                $path = Storage::putFile('orders', $request->file('file'));
+                $order->files()->create([
+                    'path' => $path,
+                    'name' => $request->file('file')->getClientOriginalName(),
+                ]);
+                return response()->json(['message' => 'Successful added new file'], 200);
+            }
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
+    function fileDownload(Request $request){
+
+        $file = OrderFiles::find($request->id);
+        if($file != null){
+            return Storage::download($file->path, $file->name);
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
     }
 }

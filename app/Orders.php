@@ -52,6 +52,10 @@ class Orders extends Model
         return $this->statuses()->latest('date')->first()->status;
     }
 
+    public function files(){
+        return $this->hasMany('App\OrderFiles', 'order', 'id');
+    }
+
     public function getStatusAttribute(){
         return $this->attributes['status'] = $this->status();
     }
