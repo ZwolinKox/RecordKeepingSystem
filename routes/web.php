@@ -56,3 +56,15 @@ Route::get('/scheme', function () {
 Route::get('/list_groups', function () {
     return view('list_groups');
 });
+
+Route::get('/client_application', function () {
+    return view('client_application');
+});
+
+Route::get('/client_notes', function () {
+    return view('client_notes');
+});
+
+Route::get('/client_history', function () {
+    return view('client_history');
+});
