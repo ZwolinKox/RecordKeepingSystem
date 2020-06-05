@@ -1,10 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    fetch("/api/user",
+    {
+        method: "get",
+        headers:
+        {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer " + Cookies.get("token")
+        },
+    }).then(res => res.json())
+    .then(res => {
+        console.log(res);
+        if(!res.admin)
+            location.href = "/";
+    })
+
+
     let pattern = document.querySelector("#pattern");
     let inputState = document.querySelector("#inputState");
     let save = document.querySelector("#save");
 
     save.addEventListener('click', () => {
+        document.querySelector("#logs").innerHTML = " ";
 
         const obj = {
              body : { 
@@ -25,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body : JSON.stringify(obj)
         }).then(res => {
-            document.querySelector("#logs").innerHTML = " ";
             
             $( "#logs" ).fadeOut( "fast", function() {
             });

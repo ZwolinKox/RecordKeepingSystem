@@ -25,6 +25,9 @@ class SchemeController extends Controller
 
     function updateScheme(Request $request)
     {        
+        if(!$this->adminCheck())
+            return response()->json(['message' => "Permission denied"], 401);
+
         if($request->body == null)
             return response()->json(['error' => 'Body cant be null'], 401);
         

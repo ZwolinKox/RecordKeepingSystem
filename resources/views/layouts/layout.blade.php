@@ -40,7 +40,12 @@
             <div class="dropdown">
 
               <button class="btn btn-primary user_btn" id="drop" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="icon-user"></i>Test
+                <i class="icon-user"></i>
+                <span class="userName">
+                  <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </span>
               </button>
 
               <div class="dropdown-menu d_menu" aria-labelledby="drop">
@@ -84,7 +89,12 @@
         
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         
-        <div class="user_btn ub"><i class="icon-user"></i>Test</div>
+        <div class="user_btn ub"><i class="icon-user"></i>
+        <span class="userName">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </span></div>
 
         <a class="dropdown-header text-muted font-weight-bold">Administrator</a>
         <a class="dropdown-item" href="#">Ustawienia konta</a>
@@ -108,6 +118,8 @@
       <script src="js\side_menu.js"></script>
       <script src="js\redirect.js"></script>
       <script src="js\logout.js"></script>
+      <script src="js\userName.js"></script>
+
 
   </body>
 </html>

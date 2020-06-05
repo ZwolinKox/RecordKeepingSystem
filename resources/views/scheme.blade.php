@@ -13,7 +13,7 @@
             </div>
         </div>
     <div class="col-lg-9 mx-auto my-5 rounded border" id="main" style="display: none;">
-        <h3 class="mt-3">Edytuj plan numeracyjny</h3>
+        <h3 class="mt-3">Edytuj schemat numeracji</h3>
         <hr>
         <div id="logs" style="display: none;">
 
