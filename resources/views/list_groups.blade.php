@@ -23,16 +23,10 @@
 
                 <div class="dropdown">
 
-                    <button class="btn btn-primary dropdown-toggle active list-button" type="button" id="addgroup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-primary active list-button" type="button" id="addgroup">
                         <i class="icon-plus"></i>Dodaj grupę
                     </button>
 
-                    <div class="dropdown-menu" style="margin-right: 120px;" aria-labelledby="addgroup">
-                        <h6 class="dropdown-header">Operacje</h6>
-                        <a class="dropdown-item" href="#">Zapisz wynikiem diagnozy</a>
-                        <a class="dropdown-item" href="#">Zanotuj czynność naprawczą</a>
-                        <a class="dropdown-item" href="#">Opisz naprawę podsumowaniem</a>
-                    </div>
 
                 </div>
 

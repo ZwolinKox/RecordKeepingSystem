@@ -35,22 +35,14 @@
             </li>
 
             <div class="form-inline ml-auto top-menu">
-
-                <div class="dropdown">
-
-                    <button class="btn btn-primary dropdown-toggle active list-button" type="button" id="dodajklienta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="icon-plus"></i>Dodaj klienta
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary active">
+                        <i class="icon-plus"></i>
                     </button>
-
-                    <div class="dropdown-menu" style="margin-right: 120px;" aria-labelledby="dodajklienta">
-                        <h6 class="dropdown-header">Operacje</h6>
-                        <a class="dropdown-item" href="#">Zapisz wynikiem diagnozy</a>
-                        <a class="dropdown-item" href="#">Zanotuj czynność naprawczą</a>
-                        <a class="dropdown-item" href="#">Opisz naprawę podsumowaniem</a>
-                    </div>
-
+                    <button type="button" class="btn btn-primary active">
+                        <i class="icon-article"></i>
+                    </button>
                 </div>
-
             </div>
 
         </ul>
@@ -98,7 +90,7 @@
                             <div class="col-4 text-center">Nazwa</div>
                             <div class="col-4 text-center">Numer telefonu</div>
                             <div class="col-4 text-center">Email
-                                <div class="dropdown float-right">
+                                <!-- <div class="dropdown float-right">
 
                                     <button class="btn list-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="icon-up" style="margin-right: -10px;"></i><i class="icon-down"></i> 
@@ -110,9 +102,9 @@
                                         <a class="dropdown-item" href="#">option</a>
                                     </div>
 
-                                </div>
+                                </div>-->
 
-                            </div>
+                            </div> 
 
                            <!-- <div class="col-3 text-center">
    
