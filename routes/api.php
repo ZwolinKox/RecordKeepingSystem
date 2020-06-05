@@ -52,6 +52,8 @@ Route::put('itemtypes/', 'ItemTypesController@createItemTypes');
 Route::delete('itemtypes/delete/{id}', 'ItemTypesController@deleteItemTypes'); 
 
 
+Route::post('scheme/update/', 'SchemeController@updateScheme'); //Dodać do dokumentacji
+Route::get('scheme/', 'SchemeController@getScheme'); //Dodać do dokumentacji
 
 
 //Strefa testowania

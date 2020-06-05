@@ -226,3 +226,6 @@
     z-index: 0 !important;
 }
 
+.loading {
+    margin-top: 10px;
+}

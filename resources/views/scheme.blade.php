@@ -7,28 +7,23 @@
 <div class="container">
 
 
-    <div class="col-lg-9 mx-auto my-5 rounded border">
-
+    <div id="loading" class="loading text-center">
+            <div class="display-4">Trwa ładowanie ustawień z serwera...</div>
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            </div>
+        </div>
+    <div class="col-lg-9 mx-auto my-5 rounded border" id="main" style="display: none;">
         <h3 class="mt-3">Edytuj plan numeracyjny</h3>
         <hr>
+        <div id="logs" style="display: none;">
 
-        <form class="p-4">
+        </div>
+        <div class="p-4">
 
             <div class="form-group row">
                 <label for="colFormLabel" class="col-sm-2 col-form-label">Wzorzec:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control form-control" id="pattern" placeholder="%N/I/%m/%Y">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Dokument:</label>
-                <div class="col-sm-10">
-                    <select id="inputState" class="form-control" name="document" id="document">
-                        <option selected value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
+                    <input type="text" class="form-control form-control" id="pattern" placeholder="Przykład: %N/I/%m/%Y">
                 </div>
             </div>
 
@@ -36,22 +31,24 @@
                 <label for="colFormLabel" class="col-sm-2 col-form-label">Cykliczność:</label>
                 <div class="col-sm-10">
                     <select id="inputState" class="form-control" name="cyclicity" id="cyclicity">
-                        <option selected value="week">tygodniowo</option>
-                        <option value="month">miesięcznie</option>
-                        <option value="year">rocznie</option>
+                        <option selected value="1">tygodniowo</option>
+                        <option value="2">miesięcznie</option>
+                        <option value="3">rocznie</option>
                     </select>
                 </div>
             </div>
 
             <div class="d-flex justify-content-end">
 
-                <button type="submit" class="btn btn-primary ">Zapisz</button>
+                <button id="save" class="btn btn-primary ">Zapisz</button>
 
             </div>
-        </form>
+        </div>
 
     </div>
 
 </div>
+
+<script src="js\scheme.js"></script>
 
 @stop
