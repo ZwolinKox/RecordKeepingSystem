@@ -8,22 +8,28 @@
 <body>
 
     <div class="container-fluid">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
+        
+
+        <ul class="nav nav-tabs list-top-menu">
+
+            <li class="nav-item top-menu">
                 <a class="nav-link active" href="#">Lista</a>
             </li>
-            <li class="nav-item">
+            
+            <li class="nav-item top-menu">
                 <a class="nav-link" href="#">Otwarte</a>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item top-menu">
                 <a class="nav-link" href="#">Do odbioru</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">MOJE</a>
+           
+            <li class="nav-item top-menu">
+                <a class="nav-link" href="#">Moje</a>
             </li>
 
 
-            <div class="form-inline ml-auto">
+            <div class="form-inline ml-auto top-menu">
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-primary active">
                         <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -43,88 +49,140 @@
                     </button>
                 </div>
             </div>
+
         </ul>
+
         <div class="row mt-3">
+
             <div class="col-auto m-auto">
+
                 <nav aria-label="Page navigation example ">
+
                     <ul class="pagination">
+
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
+
                         <li class="page-item active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
+
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
+
                     </ul>
+
                 </nav>
+
             </div>
-            <div class="col-md-12 m-auto">
-                <div class="card">
+
+            <div class="w-100"></div>
+   
+            <div class="col-md-9 mx-auto">
+
+                <div class="card list">
+
                     <div class="card-header">
-                        <div class="row">
-                            <div class="col-md-1">Pozostały czas</div>
-                            <div class="col-md-1">Numer zlecenia</div>
-                            <div class="col-md-3">Klient</div>
-                            <div class="col-md-3">Sprzęt</div>
-                            <div class="col-md-4">Status</div>
+
+                        <div class="row"> 
+
+                            <div class="col-2">Pozostały czas</div>
+                            <div class="col-2">Numer zlecenia</div>
+                            <div class="col-3">Klient</div>
+                            <div class="col-3">Sprzęt</div>
+                            <div class="col-2">Status</div>
+
                         </div>
                     </div>
+
                     <ul class="list-group list-group-flush">
+
                         <li class="list-group-item">
+
                             <div class="row">
-                                <div class="col-md-1">
+
+                                 <div class="col-2">
                                     <div class="progress">
                                         <div class="progress-bar bg-success" role="progressbar" aria-valuenow="70"
                                             aria-valuemin="0" aria-valuemax="100" style="width:70%">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-1">X5S2</div>
-                                <div class="col-md-3">Dominik Kopiec</div>
-                                <div class="col-md-3">
+                                <div class="col-2">X5S2</div>
+                                <div class="col-3">Dominik Kopiec</div>
+                                <div class="col-3">
                                     Laptop Samsung
                                     <br>
                                     <span class="text-secondary">Model</span>
                                 </div>
-                                <div class="col-md-2"><span class="badge badge-warning">Warning</span>.</div>
-                                <div class="col-md-2">
-                                     <button type="button" class="btn btn-outline-secondary">Szczegóły</button>
-                                </div>
+                                <div class="col-2"><span class="badge badge-warning">Warning</span>.</div>
+                                
+
+                               <!-- <div class="col-3 text-center">
+
+                                    <div class="dropdown d-flex justify-content-end">
+
+                                        <button class="btn btn-outline-secondary dropdown-toggle list-button" type="button" id="details" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Szczegóły</button>
+                                                
+                                        <div class="dropdown-menu" aria-labelledby="details">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>-->
+
                             </div>
+
                         </li>
+
                     </ul>
+
                 </div>
 
-
-
-
             </div>
+
+            <div class="w-100"></div>
+
+         
             <div class="col-auto mt-3 ml-auto mr-auto">
+
                 <nav aria-label="Page navigation example ">
+
                     <ul class="pagination">
+
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
+
                         <li class="page-item active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
+
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
+
                     </ul>
+
                 </nav>
+
             </div>
+
         </div>
+
     </div>
 
     @stop
