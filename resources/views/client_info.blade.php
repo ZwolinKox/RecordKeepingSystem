@@ -126,7 +126,7 @@
                         <i class="icon-arrows-cw"></i>Akcje naprawy
                     </button>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu list" aria-labelledby="dropdownMenuButton">
 
                         <a class="dropdown-header text-muted font-weight-bold">Operacje</a>
                         <a class="dropdown-item" href="#">Zapisz wynikiem diagnozy</a>

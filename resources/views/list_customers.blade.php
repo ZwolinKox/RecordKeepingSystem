@@ -90,7 +90,7 @@
         <div class="row mt-3">
 
             <div class="alert alert-info alert-dismissible fade show mx-auto mb-3 list text-center col-md-6" role="alert">
-                            Aby przejść do wszystkich informacji kliknij wybraną nazwe klienta
+                     Aby przejść do wszystkich informacji kliknij wybraną nazwe klienta
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

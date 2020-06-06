@@ -37,13 +37,11 @@ body
 }
 
 
-
-.ub
+#ubb
 {
-    height: 50px;
-    overflow: hidden;
+    height: 50px !important;
+    overflow: hidden !important;
 }
-
 
 
 .d_menu
@@ -62,7 +60,7 @@ body
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 2 !important;
+    z-index: 3 !important;
     top: 0;
     left: 0;
     background-color: #111;
@@ -185,7 +183,7 @@ body
 {
     position: fixed;
     right: 20px;
-    top: 175px;
+    top: 100px;
     background-color: lightgray;
     width: 30px;
     height: 30px;
@@ -201,22 +199,13 @@ body
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1 !important;
+    z-index: 2 !important;
     top: 0;
     right: 0;
     background-color: lightgray;
-    overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-}
-
-.sidenav-list .closebtn
-{
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    overflow-x: hidden;
 }
 
 .sidenav-list .closebtn, .closebtn:hover
@@ -228,6 +217,7 @@ body
     margin-left: 50px;
     color: black;
     text-decoration: none;
+    display: none;
 }
 
 
@@ -331,6 +321,11 @@ body
         padding: 1px !important;
     }
 
+    .sidenav-list .closebtn, .closebtn:hover
+    {
+        display: block;
+    }
+
     .top-menu
     {
         width: 100%;
@@ -339,6 +334,25 @@ body
         display: list-item !important;
         color: black  !important;
         border: none  !important;
+    }
+
+    .header
+    {
+        display: none;
+    }
+
+    #topbar
+    {
+        width: 100%;
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+        z-index: 2 !important;
+    }
+
+    body
+    {
+        margin-top: 60px;
     }
 }
 

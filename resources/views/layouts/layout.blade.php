@@ -89,12 +89,16 @@
         
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         
-        <div class="user_btn ub"><i class="icon-user"></i>
-        <span class="userName">
-          <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
+        <div class="user_btn">
+          <div id="ubb">
+            <i class="icon-user"></i>
+            <span class="userName">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </span>
           </div>
-        </span></div>
+        </div>
 
         <a class="dropdown-header text-muted font-weight-bold userType"></a>
         <a class="dropdown-item" href="#">Ustawienia konta</a>

@@ -358,19 +358,35 @@
                 </div>
 
                 <div class="card">
+
                     <div class="col-auto my-1">
-                        <div class="form-group">
-                            <label for="norder_serial"><strong>Klient</strong></label>
+
+                        <div class="form-group p-3">
+
 							<div class="row">
-								<div class="input-group col-9">
+
+                                <label for="norder_client"><strong>Klient</strong></label>
+
+								<div class="input-group">
+
 									<div class="input-group-prepend">
 										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i>
 										</div>
 									</div>
-									<input type="text" class="form-control" id="norder_serial" placeholder="">
-								</div>
-								<button class="btn btn-primary active col-auto" id="submit">Wyszukaj</button>
-							</div>
+
+									<input type="text" class="form-control" id="norder_client" placeholder="">
+
+								
+                                </div>
+
+                            </div>
+
+                                <div class="d-flex justify-content-end">
+
+                                    <button class="btn btn-primary active mt-1" id="submit">Wyszukaj</button>
+
+                                </div>
+
                         </div>
 
                     </div>
