@@ -31,7 +31,7 @@
 
             <div class="form-inline ml-auto top-menu">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary active">
+                    <button type="button" class="btn btn-primary active" onclick="window.location.href='/new_order'">
                         <i class="icon-plus"></i>
                     </button>
                     <button type="button" class="btn btn-primary active">
@@ -57,8 +57,8 @@
                 <a class="nav-link" href="#">Do odbioru</a>
                 <a class="nav-link" href="#">Moje</a>
 
-                <button type="button" class="btn btn-primary active side_m_list_button">
-                    <a href="new_order" class="side_list_button_link"><i class="icon-plus"></i> Dodaj zgłoszenie</a>
+                <button type="button" class="btn btn-primary active side_m_list_button" onclick="window.location.href='/new_order'">
+                    <i class="icon-plus"></i> Dodaj zgłoszenie
                 </button>
 
                 <button type="button" class="btn btn-primary active side_m_list_button">
@@ -70,6 +70,16 @@
         </div>
 
         <div class="row mt-3">
+
+            <div class="alert alert-info alert-dismissible fade show mx-auto mb-3 list text-center col-md-6" role="alert">
+                            Aby przejść do wszystkich informacji kliknij wybrany numer zlecenia
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+        
+            <div class="w-100"></div>
 
             <div class="col-auto m-auto">
 
@@ -105,29 +115,15 @@
 
                 <div class="card list">
 
-                    <!--<div class="card-header">
-
-                        <div class="row"> 
-
-                            <div class="col-2 text-center">Pozostały czas</div>
-                            <div class="col-2 text-center">Numer zlecenia</div>
-                            <div class="col-3 text-center">Klient</div>
-                            <div class="col-3 text-center">Sprzęt</div>
-                            <div class="col-2 text-center">Status</div>
-
-                        </div>
-                    </div> -->
-
                     <table class="card-table table-bordered">
 
                         <thead>
-
+                                        <!-- SPECJALNIE ZAMIENIŁEM KOLEJNOŚĆ !!!!!!!!!!!!!!!!!! -->
                             <tr>
-
-                                <th class="td_style_list">Pozostały czas</th>
                                 <th class="td_style_list">Numer zlecenia</th>
                                 <th class="td_style_list">Klient</th>
                                 <th class="td_style_list">Sprzęt</th>
+                                <th class="td_style_list">Pozostały czas</th>
                                 <th class="td_style_list">Status</th>
 
                             </tr>
@@ -138,6 +134,9 @@
 
                             <tr>
 
+                                <td class="td_style_list"><a href="order_info" class="link-list-info">X5S2</a></td>
+                                <td class="td_style_list">Customer 1</td>
+                                <td class="td_style_list">Laptop Samsung</td>
                                 <td class="td_style_list">
 
                                     <div class="progress">
@@ -147,9 +146,6 @@
                                     </div>
 
                                 </td>
-                                <td class="td_style_list">X5S2</td>
-                                <td class="td_style_list">Customer 1</td>
-                                <td class="td_style_list">Laptop Samsung</td>
                                 <td class="td_style_list"><span class="badge badge-warning">Warning</span></td>
 
                             </tr>
@@ -157,35 +153,6 @@
                         </tbody>
 
                     </table>
-
-                   <!-- <ul class="list-group list-group-flush">
-
-                        <li class="list-group-item">
-
-                            <div class="row">
-
-                                 <div class="col-2 text-center">
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="70"
-                                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 text-center">X5S2</div>
-                                <div class="col-3 text-center">Dominik Kopiec</div>
-                                <div class="col-3 text-center">
-                                    Laptop Samsung
-                                    <br>
-                                    <span class="text-secondary">Model</span>
-                                </div>
-                                <div class="col-2 text-center"><span class="badge badge-warning">Warning</span>.</div>
-        
-
-                            </div>
-
-                        </li>
-
-                    </ul> -->
 
                 </div>
 

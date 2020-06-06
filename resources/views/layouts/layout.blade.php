@@ -52,7 +52,7 @@
 
                 <a class="dropdown-header text-muted font-weight-bold userType"></a>
                 <a class="dropdown-item" href="#">Ustawienia konta</a>
-                <a class="dropdown-item admin" href="#">Zarządzaj użytkownikami</a>
+                <a class="dropdown-item admin" href="list_employee">Zarządzaj użytkownikami</a>
                 <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item logout" href="#">Wyloguj się</a>
@@ -98,7 +98,7 @@
 
         <a class="dropdown-header text-muted font-weight-bold userType"></a>
         <a class="dropdown-item" href="#">Ustawienia konta</a>
-        <a class="dropdown-item admin" href="#">Zarządzaj użytkownikami</a>
+        <a class="dropdown-item admin" href="list_employee">Zarządzaj użytkownikami</a>
         <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item logout" href="#">Wyloguj się</a>

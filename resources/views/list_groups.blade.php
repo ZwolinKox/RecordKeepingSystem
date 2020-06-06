@@ -82,19 +82,6 @@
 
                 <div class="card list">
 
-                    <!--<div class="card-header">
-
-                        <div class="row"> 
-
-                            <div class="col-3 text-center">Nazwa</div>
-                            <div class="col-3 text-center">Ilość klientów</div>
-                            <div class="col-3 text-center">Utworzona przez</div>
-                            <div class="col-3 text-center">Akcje</div>
-
-                        </div>
-                    </div>-->
-
-
                     <table class="card-table table-bordered">
 
                         <thead>
@@ -129,26 +116,6 @@
                         </tbody>
 
                     </table>
-
-                   <!-- <ul class="list-group list-group-flush">
-
-                        <li class="list-group-item">
-
-                            <div class="row">
-
-                                <div class="col-3 text-center">Stali klienci</div>
-                                <div class="col-3 text-center">82</div>
-                                <div class="col-3 text-center">Jan Kowalski</div>
-                                <div class="col-3 text-center">
-                                    <button type="button" class="btn btn-danger">Usuń</button>
-                                    <button type="button" class="btn btn-outline-secondary">Edytuj</button>
-                                </div>
-
-                            </div>
-
-                        </li>
-
-                    </ul> -->
 
                 </div>
 

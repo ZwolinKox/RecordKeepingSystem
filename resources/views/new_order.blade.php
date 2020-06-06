@@ -86,18 +86,18 @@
                             <div class="row wrrnt_child">
 
                                 <div class="form-group col-lg-6 float-left">
-                                    <label for="norder_in"><strong>Data zakupu</strong></label>
-                                    <input type="date" class="form-control" id="norder_in" name="rozpczecie" placeholder="">
+                                    <label for="wrrnt_start"><strong>Data zakupu</strong></label>
+                                    <input type="date" class="form-control" id="wrrnt_start" name="rozpczecie" placeholder="">
                                 </div>
 
                                 <div class="form-group col-lg-6 float-right">
-                                    <label for="norder_serial"><strong>Numer dokumentu zakupu</strong></label>
+                                    <label for="wrrnt_serial"><strong>Numer dokumentu zakupu</strong></label>
                                     <div class="input-group mb-1">
 
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="icon-tag" style="font-size: 15px;"></i></div>     
                                         </div>
-                                        <input type="text" class="form-control" id="norder_serial" placeholder="">
+                                        <input type="text" class="form-control" id="wrrnt_serial" placeholder="">
 
                                     </div>
 

@@ -30,7 +30,7 @@
 
             <div class="form-inline ml-auto top-menu">
 
-                    <button class="btn btn-primary active list-button" type="button" id="addgroup">
+                    <button class="btn btn-primary active list-button" type="button" id="addgroup" onclick="window.location.href='/new_employee'">
                         <i class="icon-plus"></i>Dodaj pracownika
                     </button>
 
@@ -59,7 +59,7 @@
 
                 </div>
 
-                <button class="btn btn-primary active side_m_list_button" type="button" id="addgroup">
+                <button class="btn btn-primary active side_m_list_button" type="button" id="addgroup" onclick="window.location.href='/new_employee'">
                     <i class="icon-plus"></i>Dodaj pracownika
                 </button>
             </div>
@@ -102,19 +102,6 @@
 
                 <div class="card  list">
 
-                    <!--<div class="card-header">
-
-                        <div class="row"> 
-
-                            <div class="col-3 text-center">Nazwa</div>
-                            <div class="col-3 text-center">Email</div>
-                            <div class="col-3 text-center">Status</div>
-                            <div class="col-3 text-center">Akcja</div>  
-
-                        </div>
-
-                    </div>-->
-
                     <table class="card-table table-bordered">
 
                         <thead>
@@ -151,44 +138,6 @@
                     </table>
 
                 </div>
-
-
-              <!--  <div class="card list">
-
-                    <div class="card-header">
-
-                        <div class="row"> 
-
-                            <div class="col-3 text-center">Nazwa</div>
-                            <div class="col-3 text-center">Email</div>
-                            <div class="col-3 text-center">Status</div>
-                            <div class="col-3 text-center">Akcja</div>  
-                           
-                        </div>
-
-                    </div>
-
-                    <ul class="list-group list-group-flush">
-
-                        <li class="list-group-item">
-
-                            <div class="row">
-
-                                <div class="col-3 text-center user_name">User</div>
-                                <div class="col-3 text-center user_email">email@example.com</div>
-                                <div class="col-3 text-center user_status">Pracownik</div>
-                                <div class="col-3 text-center">
-                                    <button type="button" class="btn btn-danger">Usuń</button>
-                                    <button type="button" class="btn btn-outline-secondary">Edytuj</button>
-                                </div>
-
-                            </div>
-
-                        </li>
-
-                    </ul>
-
-                </div> -->
 
             </div>
 

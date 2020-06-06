@@ -36,7 +36,7 @@
 
             <div class="form-inline ml-auto top-menu">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary active">
+                    <button type="button" class="btn btn-primary active" onclick="window.location.href='/new_client'">
                         <i class="icon-plus"></i>
                     </button>
                     <button type="button" class="btn btn-primary active">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-primary active side_m_list_button">
+                <button type="button" class="btn btn-primary active side_m_list_button" onclick="window.location.href='/new_client'">
                     <i class="icon-plus"></i> Dodaj klienta
                 </button>
 
@@ -88,6 +88,16 @@
         </div>
 
         <div class="row mt-3">
+
+            <div class="alert alert-info alert-dismissible fade show mx-auto mb-3 list text-center col-md-6" role="alert">
+                            Aby przejść do wszystkich informacji kliknij wybraną nazwe klienta
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+
+            <div class="w-100"></div>
 
             <div class="col-auto m-auto">
 
@@ -123,17 +133,6 @@
 
                 <div class="card list">
 
-                   <!-- <div class="card-header">
-
-                        <div class="row"> 
-
-                            <div class="col-4 text-center">Nazwa</div>
-                            <div class="col-4 text-center">Numer telefonu</div>
-                            <div class="col-4 text-center">Email</div> 
-
-                        </div>
-                    </div> -->
-
                     <table class="card-table table-bordered">
 
                         <thead>
@@ -152,7 +151,7 @@
 
                             <tr>
 
-                                <td class="td_style_list">Customer 1</td>
+                                <td class="td_style_list"><a href="client_info" class="link-list-info">Customer 1</a></td>
                                 <td class="td_style_list">+48 000 000 000</td>
                                 <td class="td_style_list">email@example.com</td>
                             
@@ -161,22 +160,6 @@
                         </tbody>
 
                     </table>
-
-                    <!-- <ul class="list-group list-group-flush">
-
-                        <li class="list-group-item">
-
-                            <div class="row">
-
-                                <div class="col-4 text-center">User</div>
-                                <div class="col-4 text-center">+48 000 000 000</div>
-                                <div class="col-4 text-center">email@example.com</div>
-
-                            </div>
-
-                        </li>
-
-                    </ul> -->
 
                 </div>
 
