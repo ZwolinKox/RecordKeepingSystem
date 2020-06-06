@@ -72,3 +72,15 @@ Route::get('/client_history', function () {
 Route::get('/list_employee', function () {
     return view('list_employee');
 });
+
+Route::get('/edit_acc', function () {
+    return view('edit_acc');
+});
+
+Route::get('/edit_my_accadm', function () {
+    return view('edit_my_accadm');
+});
+
+Route::get('/edit_my_accdef', function () {
+    return view('edit_my_accdef');
+});

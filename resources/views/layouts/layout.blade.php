@@ -51,7 +51,7 @@
               <div class="dropdown-menu d_menu" aria-labelledby="drop">
 
                 <a class="dropdown-header text-muted font-weight-bold userType"></a>
-                <a class="dropdown-item" href="#">Ustawienia konta</a>
+                <a class="dropdown-item" href="edit_my_accadm">Ustawienia konta</a>
                 <a class="dropdown-item admin" href="list_employee">Zarządzaj użytkownikami</a>
                 <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
                 <div class="dropdown-divider"></div>
@@ -101,7 +101,7 @@
         </div>
 
         <a class="dropdown-header text-muted font-weight-bold userType"></a>
-        <a class="dropdown-item" href="#">Ustawienia konta</a>
+        <a class="dropdown-item" href="edit_my_accadm">Ustawienia konta</a>
         <a class="dropdown-item admin" href="list_employee">Zarządzaj użytkownikami</a>
         <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
         <div class="dropdown-divider"></div>

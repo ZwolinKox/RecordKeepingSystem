@@ -127,7 +127,7 @@
                                 <td class="td_style_list">
 
                                     <button type="button" class="btn btn-danger list-button">Usuń</button>
-                                    <button type="button" class="btn btn-outline-secondary list-button">Edytuj</button>
+                                    <button type="button" class="btn btn-outline-secondary list-button" onclick="window.location.href='/edit_acc'">Edytuj</button>
 
                                 </td>
 
