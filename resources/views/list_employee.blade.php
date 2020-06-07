@@ -8,19 +8,20 @@
 <body>
 
     <div class="container-fluid">
-        
+
 
         <ul class="nav nav-tabs list-top-menu">
 
             <li class="nav-item top-menu">
                 <a class="nav-link active" href="#">Wszyscy</a>
             </li>
-            
+
 
             <li class="nav-item dropdown top-menu">
 
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Grupa</a>
-                    
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">Grupa</a>
+
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Pracownicy</a>
                     <a class="dropdown-item" href="#">Administratorzy</a>
@@ -30,9 +31,10 @@
 
             <div class="form-inline ml-auto top-menu">
 
-                    <button class="btn btn-primary active list-button" type="button" id="addgroup" onclick="window.location.href='/new_employee'">
-                        <i class="icon-plus"></i>Dodaj pracownika
-                    </button>
+                <button class="btn btn-primary active list-button" type="button" id="addgroup"
+                    onclick="window.location.href='/new_employee'">
+                    <i class="icon-plus"></i>Dodaj pracownika
+                </button>
 
             </div>
 
@@ -41,17 +43,18 @@
         <div class="side_m_list" onclick="openNav_list()"><i class="icon-plus"></i></div>
 
         <div id="mySidenav-list" class="sidenav-list">
-            
+
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav_list()">&times;</a>
-            
+
             <div class="side_m_list_content">
 
                 <a class="nav-link active" href="#">Wszyscy</a>
-                
+
                 <div class="dropdown">
 
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Grupa</a>
-                        
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Grupa</a>
+
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Pracownicy</a>
                         <a class="dropdown-item" href="#">Administratorzy</a>
@@ -59,7 +62,8 @@
 
                 </div>
 
-                <button class="btn btn-primary active side_m_list_button" type="button" id="addgroup" onclick="window.location.href='/new_employee'">
+                <button class="btn btn-primary active side_m_list_button" type="button" id="addgroup"
+                    onclick="window.location.href='/new_employee'">
                     <i class="icon-plus"></i>Dodaj pracownika
                 </button>
             </div>
@@ -97,14 +101,14 @@
             </div>
 
             <div class="w-100"></div>
-   
+
             <div class="col-md-9 mx-auto">
 
                 <div class="card  list">
 
-                    <table class="card-table table-bordered">
+                    <table class="card-table table table-sm">
 
-                        <thead>
+                        <thead class="thead-light">
 
                             <tr>
 
@@ -121,13 +125,14 @@
 
                             <tr>
 
-                                <td class="td_style_list">Imie_pracownika</td>
-                                <td class="td_style_list">email_pracownika</td>
-                                <td class="td_style_list">status_pracownika</td>
+                                <td class="td_style_list">Imie_ pracownika</td>
+                                <td class="td_style_list">email_ pracownika</td>
+                                <td class="td_style_list">status_ pracownika</td>
                                 <td class="td_style_list">
 
                                     <button type="button" class="btn btn-danger list-button">Usuń</button>
-                                    <button type="button" class="btn btn-outline-secondary list-button" onclick="window.location.href='/edit_acc'">Edytuj</button>
+                                    <button type="button" class="btn btn-outline-secondary list-button"
+                                        onclick="window.location.href='/edit_acc'">Edytuj</button>
 
                                 </td>
 
@@ -143,7 +148,7 @@
 
             <div class="w-100"></div>
 
-         
+
             <div class="col-auto mt-3 mx-auto">
 
                 <nav aria-label="Page navigation example ">

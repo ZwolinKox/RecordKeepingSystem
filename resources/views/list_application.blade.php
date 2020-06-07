@@ -8,14 +8,14 @@
 <body>
 
     <div class="container-fluid">
-        
+
 
         <ul class="nav nav-tabs list-top-menu">
 
             <li class="nav-item top-menu">
                 <a class="nav-link active" href="#">Lista</a>
             </li>
-            
+
             <li class="nav-item top-menu">
                 <a class="nav-link" href="#">Otwarte</a>
             </li>
@@ -23,7 +23,7 @@
             <li class="nav-item top-menu">
                 <a class="nav-link" href="#">Do odbioru</a>
             </li>
-           
+
             <li class="nav-item top-menu">
                 <a class="nav-link" href="#">Moje</a>
             </li>
@@ -42,14 +42,14 @@
 
         </ul>
 
-        
+
 
         <div class="side_m_list" onclick="openNav_list()"><i class="icon-plus"></i></div>
 
         <div id="mySidenav-list" class="sidenav-list">
-            
+
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav_list()">&times;</a>
-            
+
             <div class="side_m_list_content">
 
                 <a class="nav-link active" href="#">Lista</a>
@@ -57,7 +57,8 @@
                 <a class="nav-link" href="#">Do odbioru</a>
                 <a class="nav-link" href="#">Moje</a>
 
-                <button type="button" class="btn btn-primary active side_m_list_button" onclick="window.location.href='/new_order'">
+                <button type="button" class="btn btn-primary active side_m_list_button"
+                    onclick="window.location.href='/new_order'">
                     <i class="icon-plus"></i> Dodaj zgłoszenie
                 </button>
 
@@ -71,14 +72,15 @@
 
         <div class="row mt-3">
 
-            <div class="alert alert-info alert-dismissible fade show mx-auto mb-3 list text-center col-md-6" role="alert">
-                            Aby przejść do wszystkich informacji kliknij wybrany numer zlecenia
+            <div class="alert alert-info alert-dismissible fade show mx-auto mb-3 list text-center col-md-6"
+                role="alert">
+                Aby przejść do wszystkich informacji kliknij wybrany numer zlecenia
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
 
             </div>
-        
+
             <div class="w-100"></div>
 
             <div class="col-auto m-auto">
@@ -110,15 +112,15 @@
             </div>
 
             <div class="w-100"></div>
-   
+
             <div class="col-md-9 mx-auto">
 
                 <div class="card list">
 
-                    <table class="card-table table-bordered">
+                    <table class="card-table table table-sm">
 
-                        <thead>
-                                        <!-- SPECJALNIE ZAMIENIŁEM KOLEJNOŚĆ !!!!!!!!!!!!!!!!!! -->
+                        <thead class="thead-light">
+                            <!-- SPECJALNIE ZAMIENIŁEM KOLEJNOŚĆ !!!!!!!!!!!!!!!!!! -->
                             <tr>
                                 <th class="td_style_list">Numer zlecenia</th>
                                 <th class="td_style_list">Klient</th>
@@ -160,7 +162,7 @@
 
             <div class="w-100"></div>
 
-         
+
             <div class="col-auto mt-3 ml-auto mr-auto">
 
                 <nav aria-label="Page navigation example ">

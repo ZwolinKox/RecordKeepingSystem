@@ -88,3 +88,7 @@ Route::get('/edit_my_accdef', function () {
 Route::get('/edit_client', function () {
     return view('edit_client');
 });
+
+Route::get('/order_history', function () {
+    return view('order_history');
+});

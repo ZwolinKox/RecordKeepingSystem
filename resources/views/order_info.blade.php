@@ -9,10 +9,10 @@
     <div class="container-fluid">
         <ul class="nav nav-tabs list-top-menu">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
+                <a class="nav-link active" href="#">Informacje</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Historia</a>
+                <a class="nav-link" href="order_history">Historia</a>
             </li>
 
             <div class="form-inline ml-auto">
@@ -102,8 +102,8 @@
             
             <div class="side_m_list_content">
 
-                <a class="nav-link active" href="#">Active</a>
-                <a class="nav-link" href="#">Historia</a>
+                <a class="nav-link active" href="#">Informacje</a>
+                <a class="nav-link" href="order_history">Historia</a>
 
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle active side_m_list_button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

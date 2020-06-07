@@ -8,7 +8,7 @@
 <body>
 
     <div class="container-fluid">
-        
+
 
         <ul class="nav nav-tabs list-top-menu">
 
@@ -18,9 +18,9 @@
 
             <div class="form-inline ml-auto top-menu">
 
-                    <button class="btn btn-primary active list-button" type="button" id="addgroup">
-                        <i class="icon-plus"></i>Dodaj grupę
-                    </button>
+                <button class="btn btn-primary active list-button" type="button" id="addgroup">
+                    <i class="icon-plus"></i>Dodaj grupę
+                </button>
 
             </div>
 
@@ -30,9 +30,9 @@
         <div class="side_m_list" onclick="openNav_list()"><i class="icon-plus"></i></div>
 
         <div id="mySidenav-list" class="sidenav-list">
-            
+
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav_list()">&times;</a>
-            
+
             <div class="side_m_list_content">
 
                 <a class="nav-link active" style="margin-bottom: 10px;" href="#">Lista</a>
@@ -77,14 +77,14 @@
             </div>
 
             <div class="w-100"></div>
-   
+
             <div class="col-md-9 mx-auto">
 
                 <div class="card list">
 
-                    <table class="card-table table-bordered">
+                    <table class="card-table table table-sm">
 
-                        <thead>
+                        <thead class="thead-light">
 
                             <tr>
 
@@ -123,7 +123,7 @@
 
             <div class="w-100"></div>
 
-         
+
             <div class="col-auto mt-3 ml-auto mr-auto">
 
                 <nav aria-label="Page navigation example ">
