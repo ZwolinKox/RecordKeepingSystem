@@ -5,11 +5,8 @@
 @section('content')
 
 
-<body>
-
     <div class="container-fluid">
         
-
         <ul class="nav nav-tabs list-top-menu">
 
             <li class="nav-item top-menu">
@@ -197,5 +194,7 @@
         </div>
 
     </div>
+
+    <script src="js\customerList.js"><script>
 
     @stop
