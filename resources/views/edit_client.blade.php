@@ -33,7 +33,7 @@
 
 							<div class="form-group">
 
-								<label for="imienazwisko"><strong>Imię i nazwisko</strong></label>
+								<label for="eclient_name"><strong>Imię i nazwisko</strong></label>
 
 								<div class="input-group mb-2">
 
@@ -46,6 +46,25 @@
 								</div>
 
 							</div>
+
+							<div class="form-group">
+
+                            <label for="eclient_group"><strong>Grupa</strong></label>
+
+                            <div class="input-group mb-2">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="icon-users" style="font-size: 15px;"></i>
+                                    </div>
+                                </div>
+
+                                <select class="form-control" id="eclient_group">
+                                    <option>Brak grupy</option>
+                                </select>
+
+                            </div>
+
+                        </div>
 							
 						</div>
 
@@ -167,7 +186,7 @@
 
 					<div class="d-flex justify-content-end">
 
-						<a href="/"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
+						<a href="client_info"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
 						<button id="eclient_sbutton" class="btn btn-success m-1">Zapisz zmiany</button>
 
 					</div>

@@ -1,6 +1,6 @@
 document.querySelector("#createclient").addEventListener("click", () =>
 {
-    
+    //////////////////ZMIENIŁEM ID W CLIENT_INFO
     //Dane logowania
     const ob = {
         private : !document.querySelector("#firma").checked,  
