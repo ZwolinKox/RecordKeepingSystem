@@ -86,7 +86,7 @@
 
 
 
-                    <button type="button" class="btn btn-outline-secondary ml-2">
+                    <button type="button" class="btn btn-outline-secondary ml-2" onclick="window.location.href='/edit_client'">
                         <i class="icon-edit"></i>
                         Edytuj
                     </button>
@@ -173,7 +173,7 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="window.location.href='/edit_client'">
                     <i class="icon-edit"></i>Edytuj    
                 </button>
 
