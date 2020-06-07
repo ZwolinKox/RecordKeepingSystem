@@ -279,6 +279,10 @@ body
     height: 100%;
 }
 
+.loginLoading {
+    font-size: 20px; 
+}
+
 @media (max-width: 768px)
 {
     /* || start.blade */
@@ -354,6 +358,7 @@ body
     {
         margin-top: 60px;
     }
+    
 }
 
 @media screen and (max-height: 768px)
