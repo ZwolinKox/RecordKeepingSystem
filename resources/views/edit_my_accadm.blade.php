@@ -24,12 +24,7 @@
 
                     <h5>Zmień nazwę:</h5>
                     
-                        <input type="text" class="form-control" value="Administrator 1" id="edit_my_accadm_name">
-
-                        <div class="d-flex justify-content-end mt-2 mr-3">
-                            <button type="submit" class="btn btn-primary">Zatwierdź</button>
-                        </div>
-                    
+                    <input type="text" class="form-control" value="Administrator 1" id="edit_my_accadm_name">
 
                 </div>
 
@@ -45,11 +40,24 @@
                         
                         <input type="password" class="form-control mt-2" placeholder="Powtórz nowe hasło" id="edit_my_accadm_repeatPassword">
 
-                        <div class="d-flex justify-content-end mt-2 mr-3">
-                            <button type="submit" class="btn btn-primary">Zatwierdź</button>
-                        </div>
-                        
+
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="card m-3 p-3">
+
+                    <h5>Zmień numer telefonu:</h5>
                     
+                    <div class="input-group mb-2">
+
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">+48</div>
+                        </div>
+
+                        <input type="text" class="form-control" id="edit_my_accadm_tnum" value="000 000 000" placeholder="">
+
+                    </div>
 
                 </div>
 
@@ -60,11 +68,14 @@
                     <h5>Zmień adres e-mail:</h5>
                     
                         <input type="text" class="form-control" value="stary.email@example.com" id="edit_my_accadm_email">
-                        
 
-                        <div class="d-flex justify-content-end mt-2 mr-3">
-                            <button type="submit" class="btn btn-primary">Zatwierdź</button>
-                        </div>
+                </div>
+
+
+                <div class="d-flex justify-content-end m-3">
+
+                    <a href="/"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
+                    <button type="submit" class="btn btn-primary m-1">Zatwierdź</button>
 
                 </div>
 
