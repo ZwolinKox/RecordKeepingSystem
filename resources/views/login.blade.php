@@ -16,6 +16,16 @@
         display: none;
     }
 
+    .header
+    {
+        display: block;
+    }
+
+    body
+    {
+        margin-top: 0;
+    }
+
 
 </style>
        <div class="container">

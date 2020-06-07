@@ -74,8 +74,37 @@
                     <div class="form-group col-auto my-3">
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="norder_wrrnt" value="option1">
+                            <input class="form-check-input" type="radio" id="norder_def" checked="checked" name="wrrnt" value="option1">
+                            <label class="form-check-label" for="norder_wrrnt">Naprawa zwykła</label>
+
+                            <div class="w-100"></div>
+                        
+                            <input class="form-check-input" type="radio" id="norder_wrrnt" name="wrrnt" value="option1">
                             <label class="form-check-label" for="norder_wrrnt">Naprawa gwarancyjna</label>
+
+
+                            <div class="row wrrnt_child">
+
+                                <div class="form-group col-lg-6 float-left">
+                                    <label for="norder_stwrrnt"><strong>Data zakupu</strong></label>
+                                    <input type="date" class="form-control" id="norder_stwrrnt" name="rozpczecie" placeholder="">
+                                </div>
+
+                                <div class="form-group col-lg-6 float-right">
+                                    <label for="norder_sewrrnt"><strong>Numer dokumentu zakupu</strong></label>
+                                    <div class="input-group mb-1">
+
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="icon-tag" style="font-size: 15px;"></i></div>     
+                                        </div>
+                                        <input type="text" class="form-control" id="norder_sewrrnt" placeholder="">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -329,19 +358,35 @@
                 </div>
 
                 <div class="card">
+
                     <div class="col-auto my-1">
-                        <div class="form-group">
-                            <label for="norder_serial"><strong>Klient</strong></label>
+
+                        <div class="form-group p-3">
+
 							<div class="row">
-								<div class="input-group col-9">
+
+                                <label for="norder_client"><strong>Klient</strong></label>
+
+								<div class="input-group">
+
 									<div class="input-group-prepend">
 										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i>
 										</div>
 									</div>
-									<input type="text" class="form-control" id="norder_serial" placeholder="">
-								</div>
-								<button class="btn btn-primary active col-auto" id="submit">Wyszukaj</button>
-							</div>
+
+									<input type="text" class="form-control" id="norder_client" placeholder="">
+
+								
+                                </div>
+
+                            </div>
+
+                                <div class="d-flex justify-content-end">
+
+                                    <button class="btn btn-primary active mt-1" id="submit">Wyszukaj</button>
+
+                                </div>
+
                         </div>
 
                     </div>
