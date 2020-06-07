@@ -186,7 +186,7 @@
 
 					<div class="d-flex justify-content-end">
 
-						<a href="/"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
+						<a href="client_info"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
 						<button id="eclient_sbutton" class="btn btn-success m-1">Zapisz zmiany</button>
 
 					</div>
