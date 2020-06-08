@@ -9,9 +9,12 @@
     <div class="container">
         <div class="col-lg-9 mx-auto my-5 rounded border">
             <div class="p-4">
+
+            <div id="errors"></div>
+
 			<div class="form-group">
                     <label for="email">Imię i nazwisko</label>
-                    <input type="text" class="form-control" id="email" placeholder="">
+                    <input type="text" class="form-control" id="name" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
@@ -27,17 +30,18 @@
                 </div>
                 <div class="form-group">
                     <div class="form-check">  
-                        <input type="checkbox" class="form-check-input" id="administrator">
-                        <label class="form-check-label" for="administrator">Administrator</label>
+                        <input type="checkbox" class="form-check-input" id="admin">
+                        <label class="form-check-label" for="admin">Administrator</label>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
 
-                    <button class="btn btn-primary" id="login">Dodaj</button>
+                    <button class="btn btn-primary" id="create">Dodaj</button>
 
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="js/newEmployee.js"></script>
 @stop

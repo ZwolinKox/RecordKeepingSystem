@@ -13,8 +13,8 @@
 
                 <div class="card-header p-3">
 
-                    <h5>Pracownik 1</h5>
-                    <h6 style="color: gray">pracownik</h6>
+                    <h5 id="userNameTitle">Pracownik 1</h5>
+                    <h6 id="userType" style="color: gray">pracownik</h6>
                             
                 </div>
                     
