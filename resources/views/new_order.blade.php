@@ -10,6 +10,17 @@
 
         <div class="row">
 
+            <div class="alert alert-info alert-dismissible fade show mx-auto mb-3 list text-center col-md-6"
+                role="alert">
+                Jeżeli klient rejestrowany jest pierwszy raz należy dodać go przed utworzeniem zgłoszenia
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+
+            <div class="w-100"></div>
+
             <div class="col-md-6">
 
                 <div class="card">
@@ -383,7 +394,8 @@
 
                                 <div class="d-flex justify-content-end">
 
-                                    <button class="btn btn-primary active mt-1" id="submit">Wyszukaj</button>
+                                    <button class="btn btn-primary active m-1" id="submit" onclick="window.location.href='/new_client'">Dodaj nowego klienta</button>
+                                    <button class="btn btn-primary active m-1" id="submit">Wyszukaj</button>
 
                                 </div>
 

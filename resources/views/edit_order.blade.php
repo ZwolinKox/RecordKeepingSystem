@@ -37,14 +37,14 @@
                         <div class="form-group">
 
                             <label for="eorder_mnfctr"><strong>Producent</strong></label>
-                            <input type="text" class="form-control" id="eorder_mnfctr" name="producent" placeholder="">
+                            <input type="text" class="form-control" id="eorder_mnfctr" name="producent" value="samsung" placeholder="">
 
                         </div>
 
                         <div class="form-group">
 
                             <label for="eorder_model"><strong>Model</strong></label>
-                            <input type="text" class="form-control" id="eorder_model" name="model" placeholder="">
+                            <input type="text" class="form-control" id="eorder_model" name="model" value="example" placeholder="">
 
                         </div>
 
@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
 
-                                <input type="text" class="form-control" id="eorder_serial" placeholder="">
+                                <input type="text" class="form-control" id="eorder_serial" value="XYZ" placeholder="">
 
                             </div>
 
@@ -141,7 +141,7 @@
 
                                 <div class="input-group mb-2">
 
-                                    <input type="text" class="form-control" id="eorder_cost" placeholder="">
+                                    <input type="text" class="form-control" id="eorder_cost" value="200" placeholder="">
 
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">zł</div>
@@ -157,7 +157,7 @@
 
                                 <div class="input-group mb-2">
 
-                                    <input type="number" class="form-control" id="eorder_vat" placeholder="">
+                                    <input type="number" class="form-control" id="eorder_vat" value="23" placeholder="">
 
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">%</div>
@@ -173,7 +173,7 @@
 
                                 <div class="input-group mb-2">
 
-                                    <input type="text" class="form-control" id="eorder_costt" placeholder="">
+                                    <input type="text" class="form-control" id="eorder_costt" value="256" placeholder="">
 
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">zł</div>
@@ -193,7 +193,7 @@
 
                                 <div class="input-group mb-2">
 
-                                    <input type="text" class="form-control" id="eorder_poa" placeholder="">
+                                    <input type="text" class="form-control" id="eorder_poa" value="100" placeholder="">
 
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">.00 zł</div>
@@ -217,7 +217,7 @@
 
                         <div class="form-check mt-2">
 
-                            <input class="form-check-input" type="radio" name="dostarczenie" id="eorder_dlvr1" value="1"
+                            <input class="form-check-input" type="radio" name="dostarczenie" id="eorder_dlvr1"
                                 checked>
                             <label class="form-check-label" for="eorder_dlvr1">
                                 Dostarczenie osobiste
@@ -374,7 +374,7 @@
 										</div>
 									</div>
 
-									<input type="text" class="form-control" id="eorder_client" placeholder="">
+									<input type="text" class="form-control" id="eorder_client" value="janek" placeholder="">
 
 								
                                 </div>
@@ -397,7 +397,7 @@
 
                 <div class="d-flex justify-content-end">
 
-                    <a href="/"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
+                    <a href="order_info"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
                     <button class="btn btn-success m-1" id="submit">Utwórz naprawe</button>
 
                 </div>
