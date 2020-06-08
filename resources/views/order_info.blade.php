@@ -14,6 +14,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="order_history">Historia</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="order_notes">Notatki</a>
+            </li>
 
             <div class="form-inline ml-auto">
 				<div class="dropdown">
@@ -104,6 +107,7 @@
 
                 <a class="nav-link active" href="#">Informacje</a>
                 <a class="nav-link" href="order_history">Historia</a>
+                <a class="nav-link" href="order_notes">Notatki</a>
 
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle active side_m_list_button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
