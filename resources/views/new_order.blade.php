@@ -11,7 +11,7 @@
         <div class="row">
 
             <div class="col-md-6">
-
+            <div id="error"></div>
                 <div class="card">
 
                     <div class="col-auto my-1">
@@ -373,14 +373,9 @@
 										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i>
 										</div>
 									</div>
-<<<<<<< HEAD
-									<input type="text" class="form-control" id="client_name" placeholder="">
-								</div>
-								<button class="btn btn-primary active col-auto" id="submit">Wyszukaj</button>
-							</div>
-=======
-
+                                    
 									<input type="text" class="form-control" id="norder_client" placeholder="">
+                                    
 
 								
                                 </div>
@@ -393,7 +388,6 @@
 
                                 </div>
 
->>>>>>> 93229f1474b82151a74805ba5db661bcefcf2a1d
                         </div>
 
                     </div>
