@@ -251,6 +251,14 @@
                                 <td class="td_style">Sposób odbioru naprawy</td>
                                 <td id="order_out"></td>
                             </tr>
+                            <tr>
+                                <td class="td_style">Szacowana cena naprawy</td>
+                                <td id="order_price"></td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Pobrana zaliczka</td>
+                                <td id="order_advance"></td>
+                            </tr>
 
                         </tbody>
                     </table>
