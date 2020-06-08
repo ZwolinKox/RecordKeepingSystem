@@ -88,3 +88,7 @@ Route::get('/edit_client', function () {
 Route::get('/order_history', function () {
     return view('order_history');
 });
+
+Route::get('/order_notes', function () {
+    return view('order_notes');
+});

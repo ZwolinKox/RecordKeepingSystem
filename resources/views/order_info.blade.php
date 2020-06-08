@@ -183,10 +183,17 @@
                     </div>
                     <table class="card-table table-bordered">
                         <tbody>
-
+                            <tr>
+                                <td class="td_style">Numer zlecenia</td>
+                                <td id="order_umber"></td>
+                            </tr>
                             <tr>
                                 <td class="td_style">Nazwa klienta</td>
                                 <td id="order_custname"></td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Przedmiot naprawy</td>
+                                <td id="order_type"></td>
                             </tr>
                             <tr>
                                 <td class="td_style">Utworzony przez</td>
@@ -218,7 +225,15 @@
                             </tr>
                             <tr>
                                 <td class="td_style">Naprawa gwarancyjna</td>
-                                <td id="order_wrrnt"></td>
+                                <td id="order_wrrnt">--</td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Data zakupu</td>
+                                <td id="order_wrrnt_date">--</td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Numer dokumentu zakupu</td>
+                                <td id="order_wrrnt_number">--</td>
                             </tr>
                             <tr>
                                 <td class="td_style">Uwagi wewnętrzne</td>
@@ -371,7 +386,11 @@
 
                         <li class="list-group-item">
                             <p><strong>Opis problemu:</strong></p>
-                            <p id="problem">Treść</p>
+                            <p id="oinfo_problem">Treść</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p><strong>Uwagi:</strong></p>
+                            <p id="oinfo_attnt">Treść</p>
                         </li>
 
                         <li class="list-group-item">
