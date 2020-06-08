@@ -77,12 +77,8 @@ Route::get('/edit_acc', function () {
     return view('edit_acc');
 });
 
-Route::get('/edit_my_accadm', function () {
-    return view('edit_my_accadm');
-});
-
-Route::get('/edit_my_accdef', function () {
-    return view('edit_my_accdef');
+Route::get('/edit_my_acc', function () {
+    return view('edit_my_acc');
 });
 
 Route::get('/edit_client', function () {

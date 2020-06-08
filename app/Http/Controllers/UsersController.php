@@ -44,8 +44,7 @@ class UsersController extends Controller
             $exist = User::find($request->id);
 
             if($exist != null){
-                $exist->update(json_decode($request->body, true));
-    
+                $exist->update($request->body);
                 return response()->json(['message' => 'Successful edit user '.$request->id], 200);
             }
         }

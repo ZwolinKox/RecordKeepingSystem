@@ -47,7 +47,7 @@ class ClientNodesController extends Controller
             $exist = ClientNotes::find($request->id);
 
             if($exist != null){
-                $exist->update(json_decode($request->body, true));
+                $exist->update($request->body);
     
                 return response()->json(['message' => 'Successful edit note '.$request->id], 200);
             }

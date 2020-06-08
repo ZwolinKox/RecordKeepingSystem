@@ -110,4 +110,6 @@
 
     </div>
 
+    <script src="js/editAcc.js"></script>
+
     @stop
