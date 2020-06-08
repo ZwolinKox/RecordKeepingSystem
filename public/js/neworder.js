@@ -1,4 +1,4 @@
-document.querySelector("#submit").addEventListener("click", () =>
+document.querySelector("#add_order").addEventListener("click", () =>
 {
     let dlv;
     const dlv1=document.querySelector("#norder_dlvr1").checked;
@@ -29,12 +29,12 @@ document.querySelector("#submit").addEventListener("click", () =>
     {
         pck=3;
     }
-    
+    console.log("siema1")
     const ob = {
         producer : document.querySelector("#norder_mnfctr").value,
         model : document.querySelector("#norder_model").value,
         assigned: document.querySelector("#norder_group2").value,
-        // client: document.querySelector("#").value,
+        client: document.querySelector("#client_name").value,
         item_type: document.querySelector("#norder_type").value,
         serial_number: document.querySelector("#norder_serial").value,
         // buy_date: document.querySelector("#").value,
