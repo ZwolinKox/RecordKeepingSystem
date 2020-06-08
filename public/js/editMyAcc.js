@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.querySelector("#userName").innerHTML = values.name;
             document.querySelector("#edit_my_accadm_name").value = values.name;
-            document.querySelector("#userType").innerHTML = "Administrator";
             document.querySelector("#edit_my_acc_email").value = values.email;
 
 
@@ -75,9 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 </div>`
                         }
 
-                        return res.json();
-                    }).then(res => {
-                        console.log(res);
+                        location.reload();
                     })
 
             })

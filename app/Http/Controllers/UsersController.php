@@ -33,11 +33,11 @@ class UsersController extends Controller
 
     function updateUser(Request $request)
     {
-        if(!$this->adminCheck())
+        if(!$this->adminCheck() && !$this->isUserId($request->id))
             return response()->json(['error' => 'Unauthorized'], 401);
 
         if($request->body == null)
-            return response()->json(['error' => 'Body cant be null'], 401);
+            return response()->json(['error' => 'Body cant be null'], 441);
         
         try
         {
@@ -50,10 +50,10 @@ class UsersController extends Controller
         }
         catch(Illuminate\Database\QueryException $e)
         {
-            return response()->json(['message' => 'Bad query '.$request->id], 401);
+            return response()->json(['message' => 'Bad query '.$request->id], 404);
         }
 
-        return response()->json(['error' => 'Undefined id'], 401);
+        return response()->json(['error' => 'Undefined id'], 404);
     }
 
     function deleteUser(Request $request)
@@ -66,6 +66,6 @@ class UsersController extends Controller
             $exist->delete();
             return response()->json(['message' => 'Successful delete user '.$request->id]);
         }
-        return response()->json(['error' => 'Undefined id'], 401);
+        return response()->json(['error' => 'Undefined id'], 404);
     }
 }
