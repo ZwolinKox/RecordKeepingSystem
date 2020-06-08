@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Clients extends Model
 {
     use Notifiable;
-
+    protected $hidden = ['pivot'];
     /**
      * The attributes that are mass assignable.
      *

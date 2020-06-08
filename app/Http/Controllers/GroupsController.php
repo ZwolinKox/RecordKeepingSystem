@@ -71,4 +71,10 @@ class GroupsController extends Controller
         
         return response()->json(['message' => 'Successful added new Group'], 200);
     }
+
+    function findClient(Request $request){
+        if($request->id != null){
+            return Groups::find($request->id)->clients()->paginate(15);
+        }
+    }
 }

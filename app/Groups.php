@@ -10,6 +10,7 @@ class Groups extends Model
     use Notifiable;
 
     public $timestamps = false;
+    protected $hidden = array('pivot');
     /**
      * The attributes that are mass assignable.
      *
