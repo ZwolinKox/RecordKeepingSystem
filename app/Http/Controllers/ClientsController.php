@@ -51,7 +51,7 @@ class ClientsController extends Controller
             $exist = Clients::find($request->id);
 
             if($exist != null){
-                $exist->update(json_decode($request->body, true));
+                $exist->update($request->body);
     
                 return response()->json(['message' => 'Successful edit client '.$request->id], 200);
             }

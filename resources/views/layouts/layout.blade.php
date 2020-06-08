@@ -51,8 +51,8 @@
               <div class="dropdown-menu d_menu" aria-labelledby="drop">
 
                 <a class="dropdown-header text-muted font-weight-bold userType"></a>
-                <a class="dropdown-item" href="#">Ustawienia konta</a>
-                <a class="dropdown-item admin" href="#">Zarządzaj użytkownikami</a>
+                <a class="dropdown-item" href="edit_my_acc">Ustawienia konta</a>
+                <a class="dropdown-item admin" href="list_employee">Zarządzaj użytkownikami</a>
                 <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item logout" href="#">Wyloguj się</a>
@@ -89,16 +89,20 @@
         
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         
-        <div class="user_btn ub"><i class="icon-user"></i>
-        <span class="userName">
-          <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
+        <div class="user_btn">
+          <div id="ubb">
+            <i class="icon-user"></i>
+            <span class="userName">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </span>
           </div>
-        </span></div>
+        </div>
 
         <a class="dropdown-header text-muted font-weight-bold userType"></a>
-        <a class="dropdown-item" href="#">Ustawienia konta</a>
-        <a class="dropdown-item admin" href="#">Zarządzaj użytkownikami</a>
+        <a class="dropdown-item" href="edit_my_accadm">Ustawienia konta</a>
+        <a class="dropdown-item admin" href="list_employee">Zarządzaj użytkownikami</a>
         <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item logout" href="#">Wyloguj się</a>

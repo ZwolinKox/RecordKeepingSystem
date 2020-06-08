@@ -1,6 +1,10 @@
 
 document.querySelector("#login").addEventListener("click", () =>
 {
+    document.querySelector("#errors").innerHTML = `<span class="loginLoading">Trwa logowanie..</span>
+    <span class="spinner-border text-primary" role="status">
+    </span>`;
+
     //Dane logowania
     const ob = {
         email : document.querySelector("#email").value,
@@ -23,6 +27,14 @@ document.querySelector("#login").addEventListener("click", () =>
     .then(res => { 
         if(res.ok) 
             canLogin = true; 
+        else {
+            document.querySelector("#errors").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Nie udało się zalogować
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>`;
+        }
         
         return res;
     })

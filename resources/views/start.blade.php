@@ -20,7 +20,7 @@
 
                     <div class="col-md-4 start_col"> 
                         <div class="text-center">
-                            <a href="#" class="a_start">
+                            <a href="list_groups" class="a_start">
                                 <p class="t_link"><i class="icon-users" style="font-size: 30px; margin-right: 20px;"></i>Grupy klientow</p>
                             </a>
                         </div>

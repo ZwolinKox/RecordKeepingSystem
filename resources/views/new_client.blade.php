@@ -4,179 +4,202 @@
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
 
-	<div class="container-fluid">
+<div class="container-fluid">
 
-		<div>
+    <div>
 
-			<div class="row">
+        <div class="row">
 
-				<div class="col-md-6">
-					<div id="error"></div>
+            <div class="col-md-6">
+                <div id="error"></div>
 
-					<div class="card">
+                <div class="card">
 
-						<div class="card-header dark">Dane klienta</div>
+                    <div class="card-header dark">Dane klienta</div>
 
-						<div class="col-auto my-3">
+                    <div class="col-auto my-3">
 
-							<div class="form-group">
+                        <div class="form-group">
 
-								<div class="form-check form-check-inline col-5">
-									<input class="form-check-input" type="checkbox" id="firma">
-									<label class="form-check-label" for="firma">Firma</label>
-								</div>
+                            <div class="form-check col-5">
+                                <input class="form-check-input" type="radio" checked="checked" name="nclient_radio"
+                                    id="nclient_def">
+                                <label class="form-check-label" for="nclient_def">Osoba prywatna</label>
+                                <div class="w-100"></div>
+                                <input class="form-check-input" type="radio" name="nclient_radio" id="nclient_fac">
+                                <label class="form-check-label" for="nclient_fac">Firma</label>
+                            </div>
 
-							</div>
+                        </div>
 
-							<div class="form-group">
+                        <div class="form-group">
 
-								<label for="imienazwisko"><strong>Imię i nazwisko</strong></label>
+                            <label for="nclient_name"><strong>Imię i nazwisko</strong></label>
 
-								<div class="input-group mb-2">
+                            <div class="input-group mb-2">
 
-									<div class="input-group-prepend">
-										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i></div>
-									</div>
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i>
+                                    </div>
+                                </div>
 
-									<input type="text" class="form-control" id="imienazwisko" placeholder="">
+                                <input type="text" class="form-control" id="nclient_name" placeholder="">
 
-								</div>
+                            </div>
 
-							</div>
-							
-						</div>
+                        </div>
 
-					</div>
+                        <div class="form-group">
 
-					<div class="card">
+                            <label for="nclient_group"><strong>Grupa</strong></label>
 
-						<div class="card-header">Preferencje klienta</div>
-							
-						<div class="col-auto  my-3">
+                            <div class="input-group mb-2">
 
-							<div class="form-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="icon-users" style="font-size: 15px;"></i>
+                                    </div>
+                                </div>
 
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="emaileinformacyjne" value="option1">
-									<label class="form-check-label" for="emaileinformacyjne">Wysyłaj emaile informacyjne</label>
-								</div>
+                                <select class="form-control" id="nclient_group">
+                                    <option>Brak grupy</option>
+                                </select>
 
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="smsyinformacyjne" value="option2">
-									<label class="form-check-label" for="smsyinformacyjne">Wysyłaj SMSy informacyjne</label>
-								</div>
+                            </div>
 
-							</div>
+                        </div>
 
-						</div>
+                    </div>
 
-					</div>
+                </div>
 
-				</div>
+                <div class="card">
 
+                    <div class="card-header">Preferencje klienta</div>
 
+                    <div class="col-auto  my-3">
 
-				<div class="col-md-6">
+                        <div class="form-group">
 
-					<div class="card">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="nclient_email" value="option1">
+                                <label class="form-check-label" for="nclient_email">Wysyłaj emaile informacyjne</label>
+                            </div>
 
-						<div class="card-header">Telefon</div>
-							
-						<div class="col-auto my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="nclient_sms" value="option2">
+                                <label class="form-check-label" for="nclient_sms">Wysyłaj SMSy informacyjne</label>
+                            </div>
 
-							<div class="form-group">
+                        </div>
 
-								<label for="tel"><strong>Numer telefonu</strong></label>
+                    </div>
 
-								<div class="input-group mb-2">
+                </div>
 
-									<div class="input-group-prepend">
-										<div class="input-group-text">+48</div>
-									</div>
+            </div>
 
-									<input type="text" class="form-control" id="tel" placeholder="000-00-00-00">
 
-								</div>
 
-							</div>
+            <div class="col-md-6">
 
-							<div class="form-group">
+                <div class="card">
 
-								<label for="altertel"><strong>Alternatywny numer telefonu</strong></label>
+                    <div class="card-header">Telefon</div>
 
-								<div class="input-group mb-2">
+                    <div class="col-auto my-3">
 
-									<div class="input-group-prepend">
-										<div class="input-group-text">+48</div>
-									</div>
+                        <div class="form-group">
 
-									<input type="text" class="form-control" id="altertel" placeholder="000-00-00-00">
+                            <label for="nclient_tnum"><strong>Numer telefonu</strong></label>
 
-								</div>
+                            <div class="input-group mb-2">
 
-							</div>
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">+48</div>
+                                </div>
 
-						</div>
+                                <input type="text" class="form-control" id="nclient_tnum" placeholder="000-00-00-00">
 
-					</div>
+                            </div>
 
-					<div class="card">
+                        </div>
 
-						<div class="card-header">Internet</div>
-						
-						<div class="col-auto my-3">
+                        <div class="form-group">
 
-							<div class="form-group">
+                            <label for="nclient_atnum"><strong>Alternatywny numer telefonu</strong></label>
 
-								<label for="email"><strong>Adres email</strong></label>
+                            <div class="input-group mb-2">
 
-								<div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">+48</div>
+                                </div>
 
-									<div class="input-group-prepend">
-										<div class="input-group-text">@</div>
-									</div>
+                                <input type="text" class="form-control" id="nclient_atnum" placeholder="000-00-00-00">
 
-									<input type="text" class="form-control" id="email" placeholder="">
+                            </div>
 
-								</div>
+                        </div>
 
-							</div>
+                    </div>
 
-							<div class="form-group">
+                </div>
 
-								<label for="alteremail"><strong>Alternatywny adres email</strong></label>
+                <div class="card">
 
-								<div class="input-group mb-2">
+                    <div class="card-header">Internet</div>
 
-									<div class="input-group-prepend">
-										<div class="input-group-text">@</div>
-									</div>
+                    <div class="col-auto my-3">
 
-									<input type="text" class="form-control" id="alteremail" placeholder="">
+                        <div class="form-group">
 
-								</div>
+                            <label for="nclient_dea"><strong>Adres email</strong></label>
 
-							</div>
+                            <div class="input-group mb-2">
 
-						</div>
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">@</div>
+                                </div>
 
-					</div>
+                                <input type="text" class="form-control" id="nclient_dea" placeholder="">
 
-					<div class="d-flex justify-content-end">
+                            </div>
 
-						<a href="/"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
-						<button id="createclient" class="btn btn-success m-1">Utwórz klienta</button>
+                        </div>
 
-					</div>
+                        <div class="form-group">
 
-				</div>
+                            <label for="nclient_aea"><strong>Alternatywny adres email</strong></label>
 
-			</div>
+                            <div class="input-group mb-2">
 
-		</div>
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">@</div>
+                                </div>
 
-	</div>
+                                <input type="text" class="form-control" id="nclient_aea" placeholder="">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="d-flex justify-content-end">
+
+                    <a href="/"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
+                    <button id="nclient_sbutton" class="btn btn-success m-1">Utwórz klienta</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 <script src="js\newclient.js"></script>
 @stop
-					

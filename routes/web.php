@@ -52,3 +52,39 @@ Route::get('/list_customers', function () {
 Route::get('/scheme', function () {
     return view('scheme');
 });
+
+Route::get('/list_groups', function () {
+    return view('list_groups');
+});
+
+Route::get('/client_application', function () {
+    return view('client_application');
+});
+
+Route::get('/client_notes', function () {
+    return view('client_notes');
+});
+
+Route::get('/client_history', function () {
+    return view('client_history');
+});
+
+Route::get('/list_employee', function () {
+    return view('list_employee');
+});
+
+Route::get('/edit_acc', function () {
+    return view('edit_acc');
+});
+
+Route::get('/edit_my_acc', function () {
+    return view('edit_my_acc');
+});
+
+Route::get('/edit_client', function () {
+    return view('edit_client');
+});
+
+Route::get('/order_history', function () {
+    return view('order_history');
+});
