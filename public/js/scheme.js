@@ -105,8 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 pattern.value = value.scheme; 
                 inputState.value = value.cycle;
-
-                
             }
                 
         })

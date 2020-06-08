@@ -22,7 +22,7 @@
             <div class="w-100"></div>
 
             <div class="col-md-6">
-
+            <div id="error"></div>
                 <div class="card">
 
                     <div class="col-auto my-1">
@@ -384,8 +384,9 @@
 										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i>
 										</div>
 									</div>
-
+                                    
 									<input type="text" class="form-control" id="norder_client" placeholder="">
+                                    
 
 								
                                 </div>
@@ -410,7 +411,7 @@
                 <div class="d-flex justify-content-end">
 
                     <a href="/"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
-                    <button class="btn btn-success m-1" id="submit">Utwórz naprawe</button>
+                    <button class="btn btn-success m-1" id="add_order">Utwórz naprawe</button>
 
                 </div>
 

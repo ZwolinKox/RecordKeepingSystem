@@ -50,7 +50,7 @@ class OrdersController extends Controller
             $exist = Orders::find($request->id);
 
             if($exist != null){
-                $exist->update(json_decode($request->body, true));
+                $exist->update($request->body);
     
                 return response()->json(['message' => 'Successful edit orders '.$request->id], 200);
             }

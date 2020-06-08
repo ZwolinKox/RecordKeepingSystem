@@ -47,7 +47,7 @@ class GroupsController extends Controller
             $exist = Groups::find($request->id);
 
             if($exist != null){
-                $exist->update(json_decode($request->body, true));
+                $exist->update($request->body);
     
                 return response()->json(['message' => 'Successful edit group '.$request->id], 200);
             }
@@ -70,5 +70,11 @@ class GroupsController extends Controller
         ]);
         
         return response()->json(['message' => 'Successful added new Group'], 200);
+    }
+
+    function findClient(Request $request){
+        if($request->id != null){
+            return Groups::find($request->id)->clients()->paginate(15);
+        }
     }
 }

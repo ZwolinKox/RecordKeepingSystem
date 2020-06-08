@@ -34,7 +34,9 @@
        <div class="col-lg-9 mx-auto my-5 rounded border">
 
             <div class="p-4">
-
+                <div id="errors">
+                    
+                </div>
                 <div class="form-group">
                     <label>Adres email</label>
                     <input type="email" class="form-control" id="email" placeholder="email">

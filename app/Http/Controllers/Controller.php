@@ -17,4 +17,8 @@ class Controller extends BaseController
     public function adminCheck(){
         return auth()->user()->admin;
     }
+
+    public function isUserId($id) {
+        return (auth()->user()->id == $id);
+    }
 }
