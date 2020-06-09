@@ -9,48 +9,22 @@
 
     <div class="container-fluid">
 
+        <div id="loading" class="loading text-center">
 
-        <ul class="nav nav-tabs list-top-menu">
+            <div class="display-4">Trwa ładowanie ustawień z serwera...</div>
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
 
-            <li class="nav-item top-menu">
-                <a class="nav-link active" href="#">Wszyscy</a>
-            </li>
+        </div>
+
+        <div id="main" style="display: none;">
+            <ul class="nav nav-tabs list-top-menu">
+
+                <li class="nav-item top-menu">
+                    <a class="nav-link active" href="#">Wszyscy</a>
+                </li>
 
 
-            <li class="nav-item dropdown top-menu">
-
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">Grupa</a>
-
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Pracownicy</a>
-                    <a class="dropdown-item" href="#">Administratorzy</a>
-                </div>
-
-            </li>
-
-            <div class="form-inline ml-auto top-menu">
-
-                <button class="btn btn-primary active list-button" type="button" id="addgroup"
-                    onclick="window.location.href='/new_employee'">
-                    <i class="icon-plus"></i>Dodaj pracownika
-                </button>
-
-            </div>
-
-        </ul>
-
-        <div class="side_m_list" onclick="openNav_list()"><i class="icon-plus"></i></div>
-
-        <div id="mySidenav-list" class="sidenav-list">
-
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav_list()">&times;</a>
-
-            <div class="side_m_list_content">
-
-                <a class="nav-link active" href="#">Wszyscy</a>
-
-                <div class="dropdown">
+                <li class="nav-item dropdown top-menu">
 
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">Grupa</a>
@@ -60,127 +34,149 @@
                         <a class="dropdown-item" href="#">Administratorzy</a>
                     </div>
 
+                </li>
+
+                <div class="form-inline ml-auto top-menu">
+
+                    <button class="btn btn-primary active list-button" type="button" id="addgroup"
+                        onclick="window.location.href='/new_employee'">
+                        <i class="icon-plus"></i>Dodaj pracownika
+                    </button>
+
                 </div>
 
-                <button class="btn btn-primary active side_m_list_button" type="button" id="addgroup"
-                    onclick="window.location.href='/new_employee'">
-                    <i class="icon-plus"></i>Dodaj pracownika
-                </button>
-            </div>
+            </ul>
 
-        </div>
+            <div class="side_m_list" onclick="openNav_list()"><i class="icon-plus"></i></div>
 
-        <div class="row mt-3">
+            <div id="mySidenav-list" class="sidenav-list">
 
-            <div class="col-auto m-auto">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav_list()">&times;</a>
 
-                <nav aria-label="Page navigation example ">
+                <div class="side_m_list_content">
 
-                    <ul class="pagination">
+                    <a class="nav-link active" href="#">Wszyscy</a>
 
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
+                    <div class="dropdown">
 
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Grupa</a>
 
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Pracownicy</a>
+                            <a class="dropdown-item" href="#">Administratorzy</a>
+                        </div>
 
-                    </ul>
+                    </div>
 
-                </nav>
-
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class="col-md-9 mx-auto">
-
-                <div class="card  list">
-
-                    <table class="card-table table table-sm">
-
-                        <thead class="thead-light">
-
-                            <tr>
-
-                                <th class="td_style_list">Nazwa</th>
-                                <th class="td_style_list">Email</th>
-                                <th class="td_style_list">Status</th>
-                                <th class="td_style_list">Akcja</th>
-
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-
-                                <td class="td_style_list">Imie_ pracownika</td>
-                                <td class="td_style_list">email_ pracownika</td>
-                                <td class="td_style_list">status_ pracownika</td>
-                                <td class="td_style_list">
-
-                                    <button type="button" class="btn btn-danger list-button">Usuń</button>
-                                    <button type="button" class="btn btn-outline-secondary list-button"
-                                        onclick="window.location.href='/edit_acc'">Edytuj</button>
-
-                                </td>
-
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
+                    <button class="btn btn-primary active side_m_list_button" type="button" id="addgroup"
+                        onclick="window.location.href='/new_employee'">
+                        <i class="icon-plus"></i>Dodaj pracownika
+                    </button>
                 </div>
 
             </div>
 
-            <div class="w-100"></div>
+            <div class="row mt-3">
+
+                <div class="col-auto m-auto">
+
+                    <nav aria-label="Page navigation example ">
+
+                        <ul class="pagination">
+
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-md-9 mx-auto">
+
+                    <div class="card  list">
+
+                        <table class="card-table table table-sm">
+
+                            <thead class="thead-light">
+
+                                <tr>
+
+                                    <th class="td_style_list">Nazwa</th>
+                                    <th class="td_style_list">Email</th>
+                                    <th class="td_style_list">Admin</th>
+                                    <th class="td_style_list">Akcja</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="userTable">
+
+                                
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+                <div class="w-100"></div>
 
 
-            <div class="col-auto mt-3 mx-auto">
+                <div class="col-auto mt-3 mx-auto">
 
-                <nav aria-label="Page navigation example ">
+                    <nav aria-label="Page navigation example ">
 
-                    <ul class="pagination">
+                        <ul class="pagination">
 
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
 
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
 
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
 
-                    </ul>
+                        </ul>
 
-                </nav>
+                    </nav>
+
+                </div>
 
             </div>
 
+            <script src="js\side_menu.js"></script>
         </div>
-
-        <script src="js\side_menu.js"></script>
-
     </div>
+
+    <script src="js/listEmployee.js"></script>
 
     @stop
