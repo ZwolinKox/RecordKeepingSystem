@@ -22,9 +22,6 @@
                         <div class="form-group">
 
                             <div class="form-check col-5">
-                                <input class="form-check-input" type="radio" checked="checked" name="nclient_radio"
-                                    id="nclient_def">
-                                <label class="form-check-label" for="nclient_def">Osoba prywatna</label>
                                 <div class="w-100"></div>
                                 <input class="form-check-input" type="radio" name="nclient_radio" id="nclient_fac">
                                 <label class="form-check-label" for="nclient_fac">Firma</label>
@@ -95,6 +92,35 @@
                     </div>
 
                 </div>
+
+                <div class="card">
+
+                    <div class="card-header dark">Adres</div>
+
+                    <div class="col-auto my-3">
+
+                        <div class="form-group">
+
+                            <label for="nclient_address"><strong>Adres zamieszkania</strong></label>
+
+                            <div class="input-group mb-2">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="icon-home" style="font-size: 15px;"></i>
+                                    </div>
+                                </div>
+
+                                <input type="text" class="form-control" id="nclient_address" placeholder="">
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                
 
             </div>
 

@@ -6,15 +6,15 @@
 
 
 <div class="container-fluid">
-    <ul class="nav nav-tabs list-top-menu">
+<ul class="nav nav-tabs list-top-menu">
         <li class="nav-item">
             <a class="nav-link" href="order_info">Informacje</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Historia</a>
+            <a class="nav-link" href="order_history">Historia</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="order_notes">Notatki</a>
+            <a class="nav-link active" href="#">Notatki</a>
         </li>
 
         <div class="form-inline ml-auto">
@@ -52,8 +52,8 @@
         <div class="side_m_list_content">
 
             <a class="nav-link" href="order_info">Informacje</a>
-            <a class="nav-link active" href="#">Historia</a>
-            <a class="nav-link" href="order_notes">Notatki</a>
+            <a class="nav-link" href="order_history">Historia</a>
+            <a class="nav-link active" href="#">Notatki</a>
 
             <div class="dropdown">
                 <button type="button"
@@ -79,18 +79,42 @@
         <div class="col-md-9 mx-auto">
 
             <div class="card list">
+                <!--
+                <div class="card-header">
 
+                    <div class="row">
+
+                        <div class="col-3 text-center">Autor</div>
+                        <div class="col-2 text-center">Data</div>
+                        <div class="col-7 text-center">Notatka</div>
+
+                    </div>
+                </div>
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item">
+
+                        <div class="row">
+
+                            <div class="col-3 text-center">Andrzej Kowalski</div>
+                            <div class="col-2 text-center">05.06.2020</div>
+                            <div class="col-7 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+                -->
                 <table class="card-table table table-sm">
 
                     <thead class="thead-light">
 
                         <tr>
-
-                            <th class="td_style_list">#</th>
                             <th class="td_style_list">Autor</th>
                             <th class="td_style_list">Data</th>
-                            <th class="td_style_list">Status</th>
-
+                            <th class="td_style_list">Notatka</th>
                         </tr>
 
                     </thead>
@@ -99,23 +123,33 @@
 
                         <tr>
 
-                            <td class="td_style_list">1</td>
-                            <td class="td_style_list">Kamil Kowalski</td>
+                            <td class="td_style_list">Andrzej Kowalski</td>
                             <td class="td_style_list">05.06.2020</td>
-                            <td class="td_style_list"><span class="badge badge-warning">Warning</span></td>
+                            <td class="td_style_list">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
 
                         </tr>
-                        
+                        <tr>
+
+                            <td class="td_style_list">Andrzej Kowalski</td>
+                            <td class="td_style_list">05.06.2020</td>
+                            <td class="td_style_list">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+
+                        </tr>
 
                     </tbody>
 
                 </table>
-
             </div>
 
         </div>
     </div>
 
+
 </div>
+
+
+
 
 @stop

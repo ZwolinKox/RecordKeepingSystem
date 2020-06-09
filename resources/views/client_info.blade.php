@@ -226,6 +226,16 @@
                                 <td class="td_style">Utworzony przez</td>
                                 <td id="cust_creator"></td>
                             </tr>
+                            
+                            <tr>
+                                <td class="td_style">Data utworzenia</td>
+                                <td id="cust_creation_date"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="td_style">Data edycji</td>
+                                <td id="cust_edition_date"></td>
+                            </tr>
 
                         </tbody>
 
@@ -332,6 +342,10 @@
                             <tr>
                                 <td class="td_style">Numer telefon</td>
                                 <td class="blue" id="cust_telnum">+48 123 456 789</td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Adres zamieszkania</td>
+                                <td class="blue" id="cust_telnum">47-470, Racibórz ul. Opawska 2</td>
                             </tr>
 
                         </tbody>
