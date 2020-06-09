@@ -10,7 +10,8 @@ document.querySelector("#nclient_sbutton").addEventListener("click", () =>
         email1 : document.querySelector("#nclient_dea").value,
         email2 : document.querySelector("#nclient_aea").value,
         send_sms : document.querySelector("#nclient_sms").checked,
-        send_email : document.querySelector("#nclient_email").checked
+        send_email : document.querySelector("#nclient_email").checked,
+        address : document.querySelector("nclient_address").value
     }
     // funkcja sprawdzajaca poprawnosc emaili
     function validateEmail(email) {

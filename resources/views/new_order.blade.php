@@ -6,6 +6,7 @@
 
 <div class="container-fluid">
 
+    
     <div>
 
         <div class="row">
@@ -426,6 +427,7 @@
                                 <label for="norder_client"><strong>Klient</strong></label>
 
 								<div class="input-group">
+                                <div id="cl_name">                              
 
 									<div class="input-group-prepend">
 										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i>
@@ -433,16 +435,18 @@
 									</div>
                                     
 									<input type="text" class="form-control" id="norder_client" placeholder="">
-                                    
 
-								
+                                <select id="sel">
+                                    
+                                </select>
+								</div>
                                 </div>
 
                             </div>
 
                                 <div class="d-flex justify-content-end">
 
-                                    <button class="btn btn-primary active m-1" id="submit" onclick="window.location.href='/new_client'">Dodaj nowego klienta</button>
+                                    <button class="btn btn-primary active m-1" id="addclient" onclick="window.location.href='/new_client'">Dodaj nowego klienta</button>
                                     <button class="btn btn-primary active m-1" id="submit">Wyszukaj</button>
 
                                 </div>
