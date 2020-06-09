@@ -33,7 +33,7 @@ class CreateClientNotesTable extends Migration
     public function down()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('client_nodes');
+        Schema::dropIfExists('client_notes');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
