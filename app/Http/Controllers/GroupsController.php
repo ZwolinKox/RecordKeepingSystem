@@ -77,4 +77,8 @@ class GroupsController extends Controller
             return Groups::find($request->id)->clients()->paginate(15);
         }
     }
+
+    function getGroupsLight(Request $request){
+        return Groups::all('id','name');
+    }
 }

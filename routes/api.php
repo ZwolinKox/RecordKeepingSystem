@@ -33,6 +33,7 @@ Route::post('clients/update/{id}', 'ClientsController@updateClient');
 
 Route::get('groups/', 'GroupsController@getGroup');
 Route::get('groups/{id}', 'GroupsController@getGroups');
+Route::get('groups/light', 'GroupsController@getGroupsLight'); //Dodać do dokumentacji
 Route::put('groups/', 'GroupsController@createGroup');
 Route::delete('groups/delete/{id}', 'GroupsController@deleteGroup'); 
 Route::post('groups/update/{id}', 'GroupsController@updateGroup');
