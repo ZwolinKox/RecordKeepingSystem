@@ -6,12 +6,20 @@
 
 <div class="container-fluid">
 
-    <div>
+    <div id="loading" class="loading text-center">
+        <div class="display-4">Trwa ładowanie ustawień z serwera...</div>
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        </div>
+    </div>
+
+    <div id="main" style="display: none;" >
 
         <div class="row">
 
             <div class="col-md-6">
                 <div id="error"></div>
+                
+                
 
                 <div class="card">
 

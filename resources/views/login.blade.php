@@ -50,7 +50,7 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                        <label class="form-check-label" for="dropdownCheck2">Pamiętaj mnie</label>
+                        <a href=""></a>
                     </div>
                 </div>
 
