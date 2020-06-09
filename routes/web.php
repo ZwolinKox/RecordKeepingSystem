@@ -77,18 +77,26 @@ Route::get('/edit_acc', function () {
     return view('edit_acc');
 });
 
-Route::get('/edit_my_accadm', function () {
-    return view('edit_my_accadm');
-});
-
-Route::get('/edit_my_accdef', function () {
-    return view('edit_my_accdef');
+Route::get('/edit_my_acc', function () {
+    return view('edit_my_acc');
 });
 
 Route::get('/edit_client', function () {
     return view('edit_client');
 });
 
+Route::get('/edit_order', function () {
+    return view('edit_order');
+});
+
 Route::get('/order_history', function () {
     return view('order_history');
+});
+
+Route::get('/order_notes', function () {
+    return view('order_notes');
+});
+
+Route::get('/reset_pass', function () {
+    return view('reset_pass');
 });

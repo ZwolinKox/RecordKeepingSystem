@@ -14,6 +14,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="order_history">Historia</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="order_notes">Notatki</a>
+            </li>
 
             <div class="form-inline ml-auto">
 				<div class="dropdown">
@@ -72,7 +75,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-outline-secondary ml-2">
+                    <button type="button" class="btn btn-outline-secondary ml-2" onclick="window.location.href='/edit_order'">
                         <i class="icon-edit"></i>
                         Edytuj
                     </button>
@@ -104,6 +107,7 @@
 
                 <a class="nav-link active" href="#">Informacje</a>
                 <a class="nav-link" href="order_history">Historia</a>
+                <a class="nav-link" href="order_notes">Notatki</a>
 
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle active side_m_list_button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -157,7 +161,7 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="window.location.href='/new_order'">
                     <i class="icon-edit"></i>Edytuj    
                 </button>
 
@@ -183,10 +187,17 @@
                     </div>
                     <table class="card-table table-bordered">
                         <tbody>
-
+                            <tr>
+                                <td class="td_style">Numer zlecenia</td>
+                                <td id="order_umber"></td>
+                            </tr>
                             <tr>
                                 <td class="td_style">Nazwa klienta</td>
                                 <td id="order_custname"></td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Przedmiot naprawy</td>
+                                <td id="order_type"></td>
                             </tr>
                             <tr>
                                 <td class="td_style">Utworzony przez</td>
@@ -218,7 +229,15 @@
                             </tr>
                             <tr>
                                 <td class="td_style">Naprawa gwarancyjna</td>
-                                <td id="order_wrrnt"></td>
+                                <td id="order_wrrnt">--</td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Data zakupu</td>
+                                <td id="order_wrrnt_date">--</td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Numer dokumentu zakupu</td>
+                                <td id="order_wrrnt_number">--</td>
                             </tr>
                             <tr>
                                 <td class="td_style">Uwagi wewnętrzne</td>
@@ -231,6 +250,14 @@
                             <tr>
                                 <td class="td_style">Sposób odbioru naprawy</td>
                                 <td id="order_out"></td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Szacowana cena naprawy</td>
+                                <td id="order_price"></td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Pobrana zaliczka</td>
+                                <td id="order_advance"></td>
                             </tr>
 
                         </tbody>
@@ -371,7 +398,11 @@
 
                         <li class="list-group-item">
                             <p><strong>Opis problemu:</strong></p>
-                            <p id="problem">Treść</p>
+                            <p id="oinfo_problem">Treść</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p><strong>Uwagi:</strong></p>
+                            <p id="oinfo_attnt">Treść</p>
                         </li>
 
                         <li class="list-group-item">

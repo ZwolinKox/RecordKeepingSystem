@@ -10,8 +10,19 @@
 
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="alert alert-info alert-dismissible fade show mx-auto mb-3 list text-center col-md-6"
+                role="alert">
+                Jeżeli klient rejestrowany jest pierwszy raz należy dodać go przed utworzeniem zgłoszenia
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
 
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col-md-6">
+            <div id="error"></div>
                 <div class="card">
 
                     <div class="col-auto my-1">
@@ -373,8 +384,9 @@
 										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i>
 										</div>
 									</div>
-
+                                    
 									<input type="text" class="form-control" id="norder_client" placeholder="">
+                                    
 
 								
                                 </div>
@@ -383,7 +395,8 @@
 
                                 <div class="d-flex justify-content-end">
 
-                                    <button class="btn btn-primary active mt-1" id="submit">Wyszukaj</button>
+                                    <button class="btn btn-primary active m-1" id="submit" onclick="window.location.href='/new_client'">Dodaj nowego klienta</button>
+                                    <button class="btn btn-primary active m-1" id="submit">Wyszukaj</button>
 
                                 </div>
 
@@ -398,7 +411,7 @@
                 <div class="d-flex justify-content-end">
 
                     <a href="/"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
-                    <button class="btn btn-success m-1" id="submit">Utwórz naprawe</button>
+                    <button class="btn btn-success m-1" id="add_order">Utwórz naprawe</button>
 
                 </div>
 

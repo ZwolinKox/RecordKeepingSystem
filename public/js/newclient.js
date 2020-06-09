@@ -1,16 +1,16 @@
-document.querySelector("#createclient").addEventListener("click", () =>
+document.querySelector("#nclient_sbutton").addEventListener("click", () =>
 {
     //////////////////ZMIENIŁEM ID W CLIENT_INFO
     //Dane logowania
     const ob = {
-        private : !document.querySelector("#firma").checked,  
-        name : document.querySelector("#imienazwisko").value,
-        phone1 : document.querySelector("#tel").value,
-        phone2 : document.querySelector("#altertel").value,
-        email1 : document.querySelector("#email").value,
-        email2 : document.querySelector("#alteremail").value,
-        send_sms : document.querySelector("#smsyinformacyjne").checked,
-        send_email : document.querySelector("#emaileinformacyjne").checked
+        private : !document.querySelector("#nclient_fac").checked,  
+        name : document.querySelector("#nclient_name").value,
+        phone1 : document.querySelector("#nclient_tnum").value,
+        phone2 : document.querySelector("#nclient_atnum").value,
+        email1 : document.querySelector("#nclient_dea").value,
+        email2 : document.querySelector("#nclient_aea").value,
+        send_sms : document.querySelector("#nclient_sms").checked,
+        send_email : document.querySelector("#nclient_email").checked
     }
     // funkcja sprawdzajaca poprawnosc emaili
     function validateEmail(email) {

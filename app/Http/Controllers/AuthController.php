@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Hash;
 
 
 use Illuminate\Http\Request;
@@ -35,6 +36,37 @@ class AuthController extends Controller
       }
       return response()->json(['error' => 'Unauthorized'], 401);
     }
+
+    public function changePassword(Request $request)
+    {
+        $id = auth()->user()->id;
+
+        if($request->password == null)
+            return response()->json(['error' => 'Password cant be null'], 441);
+        
+        try
+        {
+            $exist = User::find($id);
+
+            if($exist != null){
+
+              if(!Hash::check($request->oldPassword, $exist->password)) {
+                return response()->json(['message' => 'Bad old password'], 401);
+              }
+
+                $exist->password = bcrypt($request->password);
+                $exist->save();
+                return response()->json(['message' => 'Successful change password user '.$id], 200);
+            }
+        }
+        catch(Illuminate\Database\QueryException $e)
+        {
+            return response()->json(['message' => 'Bad query '.$id], 404);
+        }
+
+        return response()->json(['error' => 'Undefined id'], 404);
+    }
+
 
     public function login(Request $request)
     {

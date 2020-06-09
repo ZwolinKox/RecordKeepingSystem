@@ -1,5 +1,47 @@
 document.querySelector("#submit").addEventListener("click", () =>
 {
+    fetch("/api/clients/light",
+    {
+        method: "get",
+        headers:
+            {
+                "Content-Type": "application/json",
+                "Accept" : "application/json",
+                "Authorization" : "Bearer "+Cookies.get("token")
+            },
+    })
+    .then(res => {
+            
+        if(res.ok)
+        {
+            return res.json();
+            
+        } 
+        else
+        {
+            document.querySelector("#error").innerHTML+=
+            `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+             <strong>Uwaga!</strong> Problem z bazą danych.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>`;
+        }
+    })
+    .then(res => {
+            const clname=document.querySelector("#norder_client").value;
+            let obj;
+            obj=JSON.parse(JSON.stringify(res));
+            console.log(obj);
+            document.querySelector("#norder_client").innerHTML+=obj;
+    })
+})
+
+
+
+
+document.querySelector("#add_order").addEventListener("click", () =>
+{
     let dlv;
     const dlv1=document.querySelector("#norder_dlvr1").checked;
     const dlv2=document.querySelector("#norder_dlvr2").checked;
@@ -29,12 +71,12 @@ document.querySelector("#submit").addEventListener("click", () =>
     {
         pck=3;
     }
-    
+    console.log("siema1")
     const ob = {
         producer : document.querySelector("#norder_mnfctr").value,
         model : document.querySelector("#norder_model").value,
         assigned: document.querySelector("#norder_group2").value,
-        // client: document.querySelector("#").value,
+        client: document.querySelector("#client_name").value,
         item_type: document.querySelector("#norder_type").value,
         serial_number: document.querySelector("#norder_serial").value,
         // buy_date: document.querySelector("#").value,
