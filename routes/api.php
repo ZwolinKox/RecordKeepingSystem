@@ -11,6 +11,7 @@ Route::get('user', 'AuthController@getAuthUser'); //Wysyła json z danymi o uży
 
 Route::get('users/', 'UsersController@getUsers');
 Route::get('users/light', 'UsersController@getUsersLight'); 
+Route::post('users/passreset', 'UsersController@passwordReset'); //Dodać do dokumentacji
 Route::get('users/{id}', 'UsersController@getUser');
 Route::delete('users/delete/{id}', 'UsersController@deleteUser');
 Route::post('users/update/{id}', 'UsersController@updateUser'); 

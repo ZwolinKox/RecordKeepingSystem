@@ -10,6 +10,14 @@
     <div class="container-fluid">
 
 
+        <div id="loading" class="loading text-center">
+
+            <div class="display-4">Trwa ładowanie ustawień z serwera...</div>
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
+
+        </div>
+
+    <div id="main" style="display: none;">
         <ul class="nav nav-tabs list-top-menu">
 
             <li class="nav-item top-menu">
@@ -151,16 +159,9 @@
 
                         </thead>
 
-                        <tbody>
+                        <tbody id="customerTable">
 
-                            <tr>
-
-                                <td class="td_style_list"><a href="client_info" class="link-list-info">Customer 1</a>
-                                </td>
-                                <td class="td_style_list">+48 000 000 000</td>
-                                <td class="td_style_list">email@example.com</td>
-
-                            </tr>
+                        
 
                         </tbody>
 
@@ -204,5 +205,9 @@
         </div>
 
     </div>
+
+    </div>
+
+    <script src="js/listCustomers.js"></script>
 
     @stop

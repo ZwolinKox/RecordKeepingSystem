@@ -31,6 +31,11 @@
 
                             <div class="form-check col-5">
                                 <div class="w-100"></div>
+                                <input class="form-check-input" type="radio" name="nclient_radio" id="nclient_priv" checked>
+                                <label class="form-check-label" for="nclient_priv">Osoba prywatna</label>
+                            </div>
+
+                            <div class="form-check col-5">
                                 <input class="form-check-input" type="radio" name="nclient_radio" id="nclient_fac">
                                 <label class="form-check-label" for="nclient_fac">Firma</label>
                             </div>

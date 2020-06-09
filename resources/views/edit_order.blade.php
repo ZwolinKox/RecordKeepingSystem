@@ -20,17 +20,60 @@
 
                             <label for="eorder_type"><strong>Typ przedmiotu naprawy</strong></label>
 
-                            <div class="input-group mb-1">
+                            <div class="form-check">
 
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><strong>*</strong></div>
-                                </div>
+                            <input class="form-check-input" type="radio" id="eorder_eotype" checked="checked" name="otype" value="option1">
+                            <label class="form-check-label" for="eorder_eotype">Istniejący typ</label>
 
-                                <select class="form-control" id="eorder_type" name="typ">
-                                    <option>1</option>
-                                </select>
+                            <div class="w-100"></div>
+                        
+                            <input class="form-check-input" type="radio" id="eorder_notype" name="otype" value="option1">
+                            <label class="form-check-label" for="eorder_notype">Nowy typ</label>
+
+                            <div class="row eotype">
+
+                                <div class="form-group mx-3">
+
+                                    <label for="eorder_eotypeo"><strong>Wybierz typ naprawy</strong></label>
+
+                                    <div class="input-group mb-1">
+
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><strong>*</strong></div>
+                                        </div>
+
+                                        <select class="form-control" id="eorder_eotypeo" name="typ">
+                                            <option>1</option>
+                                        </select>
+
+
+                                    </div>
+
+
+                                </div>      
 
                             </div>
+
+
+                            <div class="row notype">
+
+                                <div class="form-group mx-3">
+                                    <label for="eorder_notypeo"><strong>Nowy typ naprawy</strong></label>
+
+                                    <div class="input-group mb-1">
+
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="icon-tag" style="font-size: 15px;"></i></div>     
+                                        </div>
+                                        <input type="text" class="form-control" id="eorder_notypeo" placeholder="">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
 
                         </div>
 

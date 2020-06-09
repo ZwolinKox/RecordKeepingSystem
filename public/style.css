@@ -259,14 +259,41 @@ body
     z-index: 2;
 }
 
-.wrrnt_child {
+.wrrnt_child, .eotype, .notype {
     display: none;
   } 
+
+#norder_eotype:checked ~ .eotype
+{
+    display: block;
+}
+
+#norder_notype:checked ~ .notype
+{
+    display: block;
+}
+
+#eorder_eotype:checked ~ .eotype
+{
+    display: block;
+}
+
+#eorder_notype:checked ~ .notype
+{
+    display: block;
+}
 
 #norder_wrrnt:checked ~ .wrrnt_child
 {
     display: block;
 }
+
+#eorder_wrrnt:checked ~ .wrrnt_child
+{
+    display: block;
+}
+
+
 
 .link-list-info, .link-list-info:hover
 {

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 
 class UsersController extends Controller
 {
@@ -67,5 +69,22 @@ class UsersController extends Controller
             return response()->json(['message' => 'Successful delete user '.$request->id]);
         }
         return response()->json(['error' => 'Undefined id'], 404);
+    }
+
+    function passwordReset(Request $request){
+        if($request->name != null && $request->email){
+            $user = User::where('name', $request->name)->where('email', $request->email)->first();
+            if($user != null){
+                $pass = Str::random(40);
+                $user->password = $pass;
+                $user->save();
+                Mail::send('emails.passreset', ['pass' => $pass], function ($message) {
+                    $message->from('us@example.com', 'Laravel')->subject('Password reset');
+                    $message->to($user->email);
+                });
+                return response()->json(['message' => 'Password send to your email'], 200);
+            }
+        }
+        return response()->json(['error' => 'Unknown email or name'], 404);
     }
 }
