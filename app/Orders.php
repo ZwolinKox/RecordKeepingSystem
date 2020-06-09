@@ -10,6 +10,7 @@ class Orders extends Model
     use Notifiable;
 
     public $timestamps = false;
+    protected $appends = ['status'];
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +22,7 @@ class Orders extends Model
         'client', 'item_type', 'producer', 'model',
         'serial_number', 'buy_date', 'warranty_number', 'begin_date',
         'end_date', 'info', 'issue', 'delivery_method', 'pickup_method',
-        'estimated_price', 'advance_pay'
+        'estimated_price', 'advance_pay', 'status'
     ];
 
     public function itemType(){
@@ -41,7 +42,7 @@ class Orders extends Model
     }
 
     public function orderNotes(){
-        return $this->hasMany('App/OrderNotes', 'order', 'id');
+        return $this->hasMany('App\OrderNotes', 'order', 'id');
     }
 
     public function statuses(){
@@ -52,13 +53,11 @@ class Orders extends Model
         return $this->statuses()->latest('date')->first()->status;
     }
 
-    public function files(){
-        return $this->hasMany('App\OrderFiles', 'order', 'id');
-    }
-
     public function getStatusAttribute(){
         return $this->attributes['status'] = $this->status();
     }
 
-    protected $appends = ['status'];
+    public function files(){
+        return $this->hasMany('App\OrderFiles', 'order', 'id');
+    }
 }

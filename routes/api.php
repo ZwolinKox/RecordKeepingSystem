@@ -43,11 +43,11 @@ Route::get('groups/findClient/{id}', 'GroupsController@findClient'); //Dodać do
 Route::post('orders/upload/{id}', 'OrdersController@fileUpload'); //Dodać do dokumentacji
 Route::post('orders/download/{id}', 'OrdersController@fileDownload'); //Dodać do dokumentacji
 
-Route::get('orders/notes/', 'OrderNodesController@getOrderNotes'); //Dodać do dokumentacji
-Route::get('orders/notes/{id}', 'OrderNodesController@getOrderNote'); //Dodać do dokumentacji
-Route::put('orders/notes/', 'OrderNodesController@createOrderNote'); //Dodać do dokumentacji
-Route::delete('orders/notes/delete/{id}', 'OrderNodesController@deleteOrderNote'); //Dodać do dokumentacji
-Route::post('orders/notes/update/{id}', 'OrderNodesController@updateOrderNote'); //Dodać do dokumentacji
+Route::get('orders/notes/', 'OrderNotesController@getOrderNotes'); //Dodać do dokumentacji
+Route::get('orders/notes/{id}', 'OrderNotesController@getOrderNote'); //Dodać do dokumentacji
+Route::put('orders/notes/', 'OrderNotesController@createOrderNote'); //Dodać do dokumentacji
+Route::delete('orders/notes/delete/{id}', 'OrderNotesController@deleteOrderNote'); //Dodać do dokumentacji
+Route::post('orders/notes/update/{id}', 'OrderNotesController@updateOrderNote'); //Dodać do dokumentacji
 
 Route::get('orders/', 'OrdersController@getOrders'); 
 Route::get('orders/{id}', 'OrdersController@getOrder'); 
