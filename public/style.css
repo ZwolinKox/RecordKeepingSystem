@@ -309,6 +309,25 @@ body
     font-size: 20px; 
 }
 
+.scrollup
+{
+	width: 30px;
+    height: 30px;
+    padding-top: 3px;;
+	text-decoration: none !important;
+	background-color: lightgray;
+	z-index: 2;
+	border-radius: 40px;
+	color: black !important;
+	font-weight: 600;
+	text-align: center;
+	position: fixed;
+	right: 30px;
+	bottom: 50px;
+	display: none;
+}
+
+
 @media (max-width: 768px)
 {
     /* || start.blade */

@@ -101,13 +101,15 @@
         </div>
 
         <a class="dropdown-header text-muted font-weight-bold userType"></a>
-        <a class="dropdown-item" href="edit_my_accadm">Ustawienia konta</a>
+        <a class="dropdown-item" href="edit_my_acc">Ustawienia konta</a>
         <a class="dropdown-item admin" href="list_employee">Zarządzaj użytkownikami</a>
         <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item logout" href="#">Wyloguj się</a>
 
       </div>
+
+      <a href="#" class="scrollup"><i class="icon-up"></i></a>
 
       <!-- To służy do rozszerzania szablonu  -->
       @yield('content')
@@ -124,6 +126,7 @@
       <script src="js\logout.js"></script>
       <script src="js\userName.js"></script>
       <script src="js\admin.js"></script>
+      <script src="js\scrollTop.js"></script>
 
 
   </body>
