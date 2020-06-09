@@ -96,3 +96,7 @@ Route::get('/order_history', function () {
 Route::get('/order_notes', function () {
     return view('order_notes');
 });
+
+Route::get('/reset_pass', function () {
+    return view('reset_pass');
+});
