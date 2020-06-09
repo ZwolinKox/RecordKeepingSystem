@@ -36,6 +36,11 @@ body {
                 <input type="email" class="form-control" id="rpass_email" placeholder="email">
             </div>
 
+            <div class="form-group">
+                <label>Numer telefonu</label>
+                <input type="text" class="form-control" id="rpass_pnumber" placeholder="numer">
+            </div>
+
             <div class="d-flex justify-content-end">
 
                 <button class="btn btn-primary" id="login">Odzyskaj hasło</button>
