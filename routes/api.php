@@ -14,6 +14,8 @@ Route::get('users/light', 'UsersController@getUsersLight');
 Route::get('users/{id}', 'UsersController@getUser');
 Route::delete('users/delete/{id}', 'UsersController@deleteUser');
 Route::post('users/update/{id}', 'UsersController@updateUser'); 
+Route::post('users/changePassword', 'AuthController@changePassword'); 
+
 
 Route::get('clients/notes/', 'ClientNodesController@getClientNotes');
 Route::get('clients/notes/{id}', 'ClientNodesController@getClientNote');

@@ -40,12 +40,34 @@
                 <div class="card m-3 p-3">
 
                     <h5>Zmień hasło:</h5>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePassword">
+                    Panel zmiany hasła
+                    </button>
+                    <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="changePasswordLabel">Zmiana hasła</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        <div id="passwordLogs"></div>
 
-                        <input type="password" class="form-control mt-2" placeholder="Aktualne hasło" id="edit_my_accadm_oldPassword">
-                    
-                        <input type="password" class="form-control mt-2" placeholder="Nowe hasło" id="edit_my_accadm_newPassword">
-                        
-                        <input type="password" class="form-control mt-2" placeholder="Powtórz nowe hasło" id="edit_my_accadm_repeatPassword">
+                            <input type="password" class="form-control mt-2" placeholder="Aktualne hasło" id="edit_my_acc_oldPassword">
+                            
+                            <input type="password" class="form-control mt-2" placeholder="Nowe hasło" id="edit_my_acc_newPassword">
+                            
+                            <input type="password" class="form-control mt-2" placeholder="Powtórz nowe hasło" id="edit_my_acc_repeatPassword">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                            <button id="saveNewPassword" type="button" class="btn btn-primary">Zapisz</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
 
                 <div class="w-100"></div>
@@ -76,5 +98,6 @@
     </div>
 
     <script src="js\editMyAcc.js"></script>
+    <script src="js\editPassword.js"></script>
 
     @stop
