@@ -35,8 +35,9 @@ class ClientsController extends Controller
         if($request->address != null) {$list = $list->where('address', 'like', '%'.$request->address.'%');}
         if($request->send_sms != null) {$list = $list->where('send_sms', 'like', '%'.$request->send_sms.'%');}
         if($request->send_email != null) {$list = $list->where('send_email', 'like', '%'.$request->send_email.'%');}
+        if($request->order != null && $request->orderType != null) {$list = $list->orderBy($request->order, $request->orderType);}
 
-        return $list->get();
+        return $list->paginate(15);
     }
 
     function getClient(Request $request)
