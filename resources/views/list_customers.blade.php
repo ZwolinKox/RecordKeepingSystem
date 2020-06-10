@@ -129,12 +129,11 @@
 
                 <div class="card list">
 
-                    <table class="card-table table table-sm">
+                    <table class="card-table table table-sm" style="overflow: hidden;">
 
                         <thead class="thead-light">
 
                             <tr>
-
                                 <th class="td_style_list">Nazwa</th>
                                 <th class="td_style_list">Numer telefonu</th>
                                 <th class="td_style_list">Email</th>
