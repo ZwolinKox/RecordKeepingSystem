@@ -1,6 +1,6 @@
 
 <!-- Tutaj definiujemy to, że używamy szablonu 'layout' -->
-@extends('layouts\layout')
+@extends('layouts.layout')
 
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
@@ -36,7 +36,8 @@
                 </div>
                 <div class="d-flex justify-content-end">
 
-                    <button class="btn btn-primary" id="create">Dodaj</button>
+                <button class="btn btn-danger m-1" onclick="window.history.back()">Powrót</button>
+                    <button class="btn btn-primary m-1" id="create">Dodaj</button>
 
                 </div>
             </div>

@@ -1,6 +1,6 @@
 
 <!-- Tutaj definiujemy to, że używamy szablonu 'layout' -->
-@extends('layouts\layout')
+@extends('layouts.layout')
 
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')

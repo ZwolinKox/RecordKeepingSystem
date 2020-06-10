@@ -29,8 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 let table = document.querySelector("#userTable");
 
                 table.innerHTML = "";
+
                 value.data.forEach(element => {
-                    
+                    if(element.admin)
+                        element.admin = "Tak";
+                    else
+                        element.admin = "Nie";
+
                     table.innerHTML += `
                     <tr>
 

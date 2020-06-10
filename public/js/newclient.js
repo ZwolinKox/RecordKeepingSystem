@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     })
     .then(res => {
+
+      console.log(res);
+
       if (res.ok) {
         $("#loading").fadeOut("slow", () => {
           $("#main").fadeIn("slow", function () {
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let groupSelect = document.querySelector("#nclient_group");
         groupSelect.innerHTML = '<option value="0">Brak grupy</option>';
 
-        value.data.forEach(element => {
+        value.forEach(element => {
           console.log(element);
           groupSelect.innerHTML += `<option value="${element.id}">${element.name}</option>`
         });
@@ -45,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //////////////////ZMIENIŁEM ID W CLIENT_INFO
     //Dane logowania
     const ob = {
-<<<<<<< HEAD
       private: !document.querySelector("#nclient_fac").checked,
       name: document.querySelector("#nclient_name").value,
       phone1: document.querySelector("#nclient_tnum").value,
@@ -55,17 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
       send_sms: document.querySelector("#nclient_sms").checked,
       send_email: document.querySelector("#nclient_email").checked,
       gruop: document.querySelector("#nclient_group").value
-=======
-        private : !document.querySelector("#nclient_fac").checked,  
-        name : document.querySelector("#nclient_name").value,
-        phone1 : document.querySelector("#nclient_tnum").value,
-        phone2 : document.querySelector("#nclient_atnum").value,
-        email1 : document.querySelector("#nclient_dea").value,
-        email2 : document.querySelector("#nclient_aea").value,
-        send_sms : document.querySelector("#nclient_sms").checked,
-        send_email : document.querySelector("#nclient_email").checked,
-        address : document.querySelector("nclient_address").value
->>>>>>> 423f27047b8eb1f975485534b0c9c114171f6052
     }
     // funkcja sprawdzajaca poprawnosc emaili
     function validateEmail(email) {

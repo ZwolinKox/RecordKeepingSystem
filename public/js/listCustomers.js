@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-    
+
+function pagination(page) {
     let validData = false;
 
-    fetch("/api/clients",
+    fetch('/api/clients?page='+page,
         {
             method: "get",
             headers:
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
                 
         }).then(res => {
+            console.log(res);
             if(validData) {
                 value = JSON.parse(JSON.stringify(res));
                 let table = document.querySelector("#customerTable");
@@ -42,14 +43,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     `
 
                 });
+
+                let paginationBodys = document.querySelectorAll(".paginationBody");
+
+                paginationBodys.forEach(body => {
+                    body.innerHTML = "";
+                    for(let i = 1; i <= value.last_page; i++) {
+
+                        if(i != value.current_page)
+                            body.innerHTML += `<li class="page-item"><a onclick="pagination(${i})" href="#" class="page-link">${i}</a></li>`;
+                        else
+                            body.innerHTML += `<li class="page-item active"><a onclick="pagination(${i})" href="#" class="page-link">${i}</a></li>`;
+                    }
+                });
             }
                 
         })
+}
 
 
 
-
-        
-
-
+document.addEventListener("DOMContentLoaded", () => {
+    pagination(1);
 })
