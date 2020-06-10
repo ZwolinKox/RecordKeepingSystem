@@ -33,6 +33,19 @@ class UsersController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function searchUsers(Request $request){
+        $list = User::query();
+
+        if($request->name != null) {$list = $list->where('name', 'like', '%'.$request->name.'%');}
+        if($request->email != null) {$list = $list->where('email', 'like', '%'.$request->email.'%');}
+        if($request->phone != null) {$list = $list->where('phone', 'like', '%'.$request->phone.'%');}
+        if($request->admin != null) {$list = $list->where('admin', '=', $request->admin);}
+        if($request->ban != null) {$list = $list->where('ban', '=', $request->ban);}
+        if($request->order != null && $request->orderType != null) {$list = $list->orderBy($request->order, $request->orderType);}
+
+        return $list->paginate(15);
+    }
+
     function updateUser(Request $request)
     {
         if(!$this->adminCheck() && !$this->isUserId($request->id))

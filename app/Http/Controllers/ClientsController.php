@@ -27,14 +27,14 @@ class ClientsController extends Controller
         $list = Clients::query();
 
         if($request->name != null) {$list = $list->where('name', 'like', '%'.$request->name.'%');}
-        if($request->private != null) {$list = $list->where('private', 'like', '%'.$request->private.'%');}
+        if($request->private != null) {$list = $list->where('private', '=', $request->private);}
         if($request->phone1 != null) {$list = $list->where('phone1', 'like', '%'.$request->phone1.'%');}
         if($request->phone2 != null) {$list = $list->where('phone2', 'like', '%'.$request->phone2.'%');}
         if($request->email1 != null) {$list = $list->where('email1', 'like', '%'.$request->email1.'%');}
         if($request->email2 != null) {$list = $list->where('email2', 'like', '%'.$request->email2.'%');}
         if($request->address != null) {$list = $list->where('address', 'like', '%'.$request->address.'%');}
-        if($request->send_sms != null) {$list = $list->where('send_sms', 'like', '%'.$request->send_sms.'%');}
-        if($request->send_email != null) {$list = $list->where('send_email', 'like', '%'.$request->send_email.'%');}
+        if($request->send_sms != null) {$list = $list->where('send_sms', '=', $request->send_sms);}
+        if($request->send_email != null) {$list = $list->where('send_email', '=', $request->send_email);}
         if($request->order != null && $request->orderType != null) {$list = $list->orderBy($request->order, $request->orderType);}
 
         return $list->paginate(15);
