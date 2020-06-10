@@ -43,6 +43,12 @@ body
     overflow: hidden !important;
 }
 
+.sb
+{
+    height: 38px !important;
+    overflow: hidden !important;
+}
+
 
 .d_menu
 {

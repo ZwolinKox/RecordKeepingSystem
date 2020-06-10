@@ -32,6 +32,8 @@
 .icon-resize-vertical-1:before { content: '\e81e'; } /* '' */
 .icon-plus:before { content: '\e81f'; } /* '' */
 .icon-minus:before { content: '\e820'; } /* '' */
+.icon-search:before { content: '\e821'; } /* '' */
+.icon-search-1:before { content: '\e822'; } /* '' */
 .icon-check-empty-1:before { content: '\f096'; } /* '' */
 .icon-exchange:before { content: '\f0ec'; } /* '' */
 .icon-down:before { content: '\f175'; } /* '' */

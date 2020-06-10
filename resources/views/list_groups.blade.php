@@ -21,12 +21,49 @@
                         <label for="lgr_search" class="sr-only">Wyszukaj</label>
                         <input type="text" class="form-control col-auto" id="lgr_search"
                             placeholder="Wpisz szukaną fraze">
-                    </div>
-                    <button type="submit" class="btn btn-primary mr-2 active">Wyszukaj</button>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2 active">Wyszukaj</button>
 
-                <button class="btn btn-primary active list-button" type="button" id="addgroup">
+                <button type="button" class="btn btn-primary list-button" data-toggle="modal" data-target="#addGroup">
                     <i class="icon-plus"></i>Dodaj grupę
                 </button>
+
+                <div class="modal fade" id="addGroup" tabindex="-1" role="dialog" aria-labelledby="addGroupLabel" aria-hidden="true">
+
+                    <div class="modal-dialog" role="document">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+
+                                <h5 class="modal-title" id="addGroupLabel">Dodaj grupę</h5>
+
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+
+                            </div>
+
+                            <div class="modal-body">
+
+                                <div id="GroupAddLogs"></div>
+
+                                <input type="text" class="form-control mt-2 w-100" placeholder="Wprowadź nazwę grupy" id="addGroup">
+
+                            </div>
+
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                                <button id="saveNewGroup" type="button" class="btn btn-primary">Zapisz</button>
+                                                        
+                            </div>
+                                                    
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -41,12 +78,39 @@
 
             <div class="side_m_list_content">
 
+                <div class="form-group ml-1">
+
+                    <div class="input-group mb-1 sb">
+
+                        <input type="text" class="form-control col-auto" id="lgr_msearch" placeholder="Wpisz szukaną fraze">
+
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-outline-secondary mr-2 active"><i class="icon-search"></i></button>
+                        </div>
+
+                    </div>
+
+                </div>
+
                 <a class="nav-link active" style="margin-bottom: 10px;" href="#">Lista</a>
 
-                <button class="btn btn-primary side-m-list-button" type="button" id="addgroup">
-                    <i class="icon-plus"></i>Dodaj grupę
-                </button>
+                <div class="form-group ml-1">
 
+                    <div class="input-group mb-1 sb">
+
+                        <input type="text" class="form-control col-auto" id="lgr_addSideGroup" placeholder="nowa grupa">
+
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-outline-secondary mr-2 active">
+                                <i class="icon-plus"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            
 
             </div>
 
@@ -113,7 +177,48 @@
                                 <td class="td_style_list">
 
                                     <button type="button" class="btn btn-danger list-button">Usuń</button>
-                                    <button type="button" class="btn btn-outline-secondary list-button">Edytuj</button>
+
+
+                                    <button type="button" class="btn btn-outline-secondary list-button" data-toggle="modal" data-target="#changeGroupName">
+                                        Edytuj
+                                    </button>
+
+                                    <div class="modal fade" id="changeGroupName" tabindex="-1" role="dialog" aria-labelledby="changeGroupNameLabel" aria-hidden="true">
+
+                                        <div class="modal-dialog" role="document">
+
+                                            <div class="modal-content">
+
+                                                <div class="modal-header">
+
+                                                    <h5 class="modal-title" id="changeGroupNameLabel">Zmiana nazwy</h5>
+
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+
+                                                </div>
+
+                                            <div class="modal-body">
+
+                                                <div id="GroupEditLogs"></div>
+
+                                                    <input type="text" class="form-control mt-2" placeholder="Wprowadź nową nazwę" id="editGroupName">
+
+                                                </div>
+
+                                                <div class="modal-footer">
+
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                                                    <button id="saveNewGroupName" type="button" class="btn btn-primary">Zapisz</button>
+                                                        
+                                                </div>
+                                                    
+                                            </div>
+
+                                        </div>
+
+                                    </div>
 
                                 </td>
 

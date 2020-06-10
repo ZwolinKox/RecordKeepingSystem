@@ -44,18 +44,22 @@
                 </li>
 
                 <div class="form-inline ml-auto top-menu">
+
                     <div class="form-group mx-sm-1">
+
                         <label for="lcus_search" class="sr-only">Wyszukaj</label>
-                        <input type="text" class="form-control col-auto" id="lcus_search"
-                            placeholder="Wpisz szukaną fraze">
+                        <input type="text" class="form-control col-auto" id="lcus_search" placeholder="Wpisz szukaną fraze">  
+
                     </div>
+
                     <button type="submit" class="btn btn-primary mr-2 active">Wyszukaj</button>
 
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary active"
-                            onclick="window.location.href='/new_client'">
+
+                        <button type="button" class="btn btn-primary active" onclick="window.location.href='/new_client'">
                             <i class="icon-plus"></i>
                         </button>
+
                         <button type="button" class="btn btn-primary active">
                             <i class="icon-article"></i>
                         </button>
@@ -74,6 +78,19 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav_list()">&times;</a>
 
                 <div class="side_m_list_content">
+
+                    <div class="form-group ml-1">
+
+                        <div class="input-group mb-1" id="sb">
+
+                            <input type="text" class="form-control col-auto" id="lcus_msearch" placeholder="Wpisz szukaną fraze">
+
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-outline-secondary mr-2 active"><i class="icon-search"></i></button>
+                            </div>
+
+                        </div>
+                    </div>
 
                     <a class="nav-link active" href="#">Wszyscy</a>
                     <a class="nav-link" href="#">Z otwartymi naprawami</a>
@@ -153,7 +170,7 @@
 
                     <div class="card list">
 
-                        <table class="card-table table table-sm">
+                        <table class="card-table table table-sm" style="overflow: hidden;">
 
                             <thead class="thead-light">
 

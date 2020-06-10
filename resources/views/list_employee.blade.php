@@ -61,6 +61,20 @@
 
                 <div class="side_m_list_content">
 
+                    <div class="form-group ml-1">
+
+                        <div class="input-group mb-1" id="sb">
+
+                            <input type="text" class="form-control col-auto" id="lemp_msearch" placeholder="Wpisz szukaną fraze">
+
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-outline-secondary mr-2 active"><i class="icon-search"></i></button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                     <a class="nav-link active" href="#">Wszyscy</a>
 
                     <div class="dropdown">
