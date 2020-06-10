@@ -9,6 +9,14 @@
 
     <div class="container-fluid">
 
+    <div id="loading" class="loading text-center">
+
+            <div class="display-4">Trwa ładowanie ustawień z serwera...</div>
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
+
+        </div>
+
+    <div id="main" style="display: none;">
 
         <ul class="nav nav-tabs list-top-menu">
 
@@ -132,25 +140,9 @@
 
                         </thead>
 
-                        <tbody>
+                        <tbody id="applicationTable">
 
-                            <tr>
-
-                                <td class="td_style_list"><a href="order_info" class="link-list-info">X5S2</a></td>
-                                <td class="td_style_list">Customer 1</td>
-                                <td class="td_style_list">Laptop Samsung</td>
-                                <td class="td_style_list">
-
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="70"
-                                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                        </div>
-                                    </div>
-
-                                </td>
-                                <td class="td_style_list"><span class="badge badge-warning">Warning</span></td>
-
-                            </tr>
+                            
 
                         </tbody>
 
@@ -194,5 +186,9 @@
         </div>
 
     </div>
+
+    </div>
+
+    <script src="js/listApplication.js"></script>
 
     @stop

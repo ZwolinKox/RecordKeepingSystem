@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\ClientNotes;
 use Illuminate\Http\Request;
 
-class ClientNodesController extends Controller
+class ClientNotesController extends Controller
 {
     public function __construct()
     {
