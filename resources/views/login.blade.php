@@ -48,10 +48,7 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                        <a href=""></a>
-                    </div>
+                        <a href="reset_pass">Zapomniałeś hasła?</a>
                 </div>
 
                 <div class="d-flex justify-content-end">
