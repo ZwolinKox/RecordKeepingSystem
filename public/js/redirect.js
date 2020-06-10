@@ -1,3 +1,5 @@
+    const fadeSpeed = 500;
+    
     if(Cookies.get("token") != null) {
         fetch("/api/user",
         {
@@ -13,11 +15,24 @@
             if(!res.ok) {
                 if(location.pathname != "/login")
                     location.href = "login";
+                else {
+                    $( "#loadingContainer" ).fadeOut( fadeSpeed , () => {
+                        $( "#pageContent" ).fadeIn( fadeSpeed , function() {
+                        });
+                    }); 
+                }
             }
             else if(location.pathname == "/login")
-                location.href = "/";        
+                location.href = "/";
+            else {
+                $( "#loadingContainer" ).fadeOut( fadeSpeed , () => {
+                    $( "#pageContent" ).fadeIn( fadeSpeed , function() {
+                    });
+                });        
+            }   
         })
-    
+
+       
     } else if(location.pathname != "/login") {
         location.href = "login";
     }

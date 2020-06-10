@@ -20,7 +20,15 @@
 
   <body>
 
+  <div class="container-fluid flex-column" id="loadingContainer">
+          <div class="row">
+          <div class="col-12 text-center align-items-center ">
+            <div class="spinner-border align-middle text-primary " style=" margin-top: 25%; width: 6rem; height: 6rem;" role="status"> </div>
+          </div>
+  </div>
+  </div>
 
+  <div id="pageContent" style="display: none;">
     <div class="container-fluid">
 
       <div class="row header p-3">
@@ -111,8 +119,12 @@
 
       <a href="#" class="scrollup"><i class="icon-up"></i></a>
 
+      
+
       <!-- To służy do rozszerzania szablonu  -->
+      
       @yield('content')
+      </div>
 
       <!-- Biblioteka js do łatwego obsługiwania ciasteczek  -->
       <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
