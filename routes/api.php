@@ -26,6 +26,7 @@ Route::post('clients/notes/update/{id}', 'ClientNodesController@updateClientNote
 
 Route::get('clients/', 'ClientsController@getClients');
 Route::get('clients/light', 'ClientsController@getClientsLight');
+Route::get('clients/search', 'ClientsController@searchClients');
 Route::get('clients/{id}', 'ClientsController@getClient');
 Route::put('clients/', 'ClientsController@createClient');
 Route::delete('clients/delete/{id}', 'ClientsController@deleteClient'); 
