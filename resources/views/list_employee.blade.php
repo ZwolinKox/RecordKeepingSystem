@@ -37,6 +37,12 @@
                 </li>
 
                 <div class="form-inline ml-auto top-menu">
+                     <div class="form-group mx-sm-1">
+                        <label for="lemp_search" class="sr-only">Wyszukaj</label>
+                        <input type="text" class="form-control col-auto" id="lemp_search"
+                            placeholder="Wpisz szukaną fraze">
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2 active">Wyszukaj</button>
 
                     <button class="btn btn-primary active list-button" type="button" id="addgroup"
                         onclick="window.location.href='/new_employee'">
