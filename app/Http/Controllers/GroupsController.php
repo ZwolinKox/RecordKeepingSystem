@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Groups;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class GroupsController extends Controller
 {
@@ -39,22 +40,20 @@ class GroupsController extends Controller
 
     function updateGroup(Request $request)
     {
-        if($request->body == null)
-            return response()->json(['error' => 'Body cant be null'], 401);
-        
-        try
-        {
-            $exist = Groups::find($request->id);
-
-            if($exist != null){
-                $exist->update($request->body);
-    
-                return response()->json(['message' => 'Successful edit group '.$request->id], 200);
-            }
+        $validator = Validator::make($request->all(),[
+            'body.name' => '',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
         }
-        catch(Illuminate\Database\QueryException $e)
-        {
-            return response()->json(['message' => 'Bad query '.$request->id], 401);
+
+        $group = Groups::find($request->id);
+        if($group != null){
+            if($request->has('body.name')){
+                $group->name = $request->input('body.name');
+            }
+            $group->save();
+            return response()->json(['message' => 'Successful edit group '.$request->id], 200);
         }
 
         return response()->json(['error' => 'Undefined id'], 401);
@@ -62,10 +61,14 @@ class GroupsController extends Controller
 
     function createGroup(Request $request)
     {
-        if($request->name == null)
-            return response()->json(['error' => 'Groups name cant be null'], 401);
+        $validator = Validator::make($request->all(),[
+            'name' => 'required',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
         
-        $user = Groups::create([
+        $group = Groups::create([
             'name' => $request->name,
         ]);
         

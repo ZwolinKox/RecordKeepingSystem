@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ItemTypes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ItemTypesController extends Controller
 {
@@ -29,10 +30,14 @@ class ItemTypesController extends Controller
 
     public function createItemTypes(Request $request)
     {
-        if($request->name == null)
-            return response()->json(['error' => 'Missing required data'], 401);
+        $validator = Validator::make($request->all(),[
+            'client' => 'required',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
         
-        $order = ItemTypes::create([
+        $itemtype = ItemTypes::create([
             'name' => $request->name,
         ]);
         

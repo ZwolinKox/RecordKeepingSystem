@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Scheme;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SchemeController extends Controller
 {
@@ -24,25 +25,35 @@ class SchemeController extends Controller
     }
 
     function updateScheme(Request $request)
-    {        
-        if(!$this->adminCheck())
-            return response()->json(['message' => "Permission denied"], 401);
-
-        if($request->body == null)
-            return response()->json(['error' => 'Body cant be null'], 401);
-        
-        try
+    {
+        function update($name, $request, $scheme)
         {
-            $exist = Scheme::find(1);
-
-            if($exist != null){
-                $exist->update($request->body);
-                return response()->json(['message' => 'Successful edit scheme '], 200);
+            if($request->has('body.'.$name)){
+                $scheme->$name = $request->input('body.'.$name);
             }
         }
-        catch(Illuminate\Database\QueryException $e)
-        {
-            return response()->json(['message' => 'Bad query '.$request->id], 401);
+
+        if(!$this->adminCheck()){
+            return response()->json(['message' => "Permission denied"], 401);  
+        }
+
+        $validator = Validator::make($request->all(),[
+            'body.scheme' => '',
+            'body.cycle' => 'numeric',
+            'body.total_number' => 'numeric',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
+
+        $scheme = Scheme::find(1);
+        if($scheme != null){
+            $fillable = ['scheme', 'cycle', 'total_number'];
+            foreach ($fillable as $name){
+                update($name, $request, $scheme);
+            }
+            $scheme->save();
+            return response()->json(['message' => 'Successful edit scheme '], 200);
         }
 
         return response()->json(['error' => 'Undefined id'], 401);

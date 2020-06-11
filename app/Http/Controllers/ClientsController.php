@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Clients;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Laravel\Scout\Searchable;
 
 class ClientsController extends Controller
@@ -61,22 +62,36 @@ class ClientsController extends Controller
 
     function updateClient(Request $request)
     {
-        if($request->body == null)
-            return response()->json(['error' => 'Body cant be null'], 401);
-        
-        try
+        function update($name, $request, $client)
         {
-            $exist = Clients::find($request->id);
-
-            if($exist != null){
-                $exist->update($request->body);
-    
-                return response()->json(['message' => 'Successful edit client '.$request->id], 200);
+            if($request->has('body.'.$name)){
+                $client->$name = $request->input('body.'.$name);
             }
         }
-        catch(Illuminate\Database\QueryException $e)
-        {
-            return response()->json(['message' => 'Bad query '.$request->id], 401);
+
+        $validator = Validator::make($request->all(),[
+            'name' => '',
+            'private' => 'boolean',
+            'phone1' => 'numeric',
+            'phone2' => 'numeric',
+            'email1' => 'email:rfc',
+            'email2' => 'email:rfc',
+            'address' => '',
+            'send_sms' => 'boolean',
+            'send_email' => 'boolean',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
+
+        $client = Clients::find($request->id);
+        if($client != null){
+            $fillable = ['name', 'private', 'phone1', 'phone2', 'email1', 'email2', 'address', 'send_sms', 'send_email'];
+            foreach ($fillable as $name){
+                update($name, $request, $client);
+            }
+            $client->save();
+            return response()->json(['message' => 'Successful edit client '.$request->id], 200);
         }
 
         return response()->json(['error' => 'Undefined id'], 401);
@@ -84,9 +99,21 @@ class ClientsController extends Controller
 
     function createClient(Request $request)
     {
-        if($request->name == null)
-            return response()->json(['error' => 'Private and name cant be null'], 401);
-        
+        $validator = Validator::make($request->all(),[
+            'name' => 'required',
+            'private' => 'required|boolean',
+            'phone1' => 'numeric',
+            'phone2' => 'numeric',
+            'email1' => 'email:rfc',
+            'email2' => 'email:rfc',
+            'address' => '',
+            'send_sms' => 'required|boolean',
+            'send_email' => 'required|boolean',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
+
         $user = Clients::create([
             'name' => $request->name,
             'private' => $request->private,

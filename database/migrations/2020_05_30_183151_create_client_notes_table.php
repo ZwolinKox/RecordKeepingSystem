@@ -17,7 +17,7 @@ class CreateClientNotesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user')->unsigned()->nullable(false);
             $table->bigInteger('client')->unsigned()->nullable(false);
-            $table->text('text');
+            $table->text('text')->nullable(false);
             $table->timestamps();
 
             $table->foreign('user')->references('id')->on('users');

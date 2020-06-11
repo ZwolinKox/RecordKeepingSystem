@@ -15,7 +15,7 @@ class CreateItemTypesTable extends Migration
     {
         Schema::create('item_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name')->nullable(false);
         });
     }
 
