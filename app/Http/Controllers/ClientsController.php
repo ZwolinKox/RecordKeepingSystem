@@ -25,8 +25,9 @@ class ClientsController extends Controller
     }
 
     function searchClients(Request $request){
-        $list = Clients::query();
+        //$list = Clients::query();
 
+        /*
         if($request->name != null) {$list = $list->where('name', 'like', '%'.$request->name.'%');}
         if($request->private != null) {$list = $list->where('private', '=', $request->private);}
         if($request->phone1 != null) {$list = $list->where('phone1', 'like', '%'.$request->phone1.'%');}
@@ -37,8 +38,13 @@ class ClientsController extends Controller
         if($request->send_sms != null) {$list = $list->where('send_sms', '=', $request->send_sms);}
         if($request->send_email != null) {$list = $list->where('send_email', '=', $request->send_email);}
         if($request->order != null && $request->orderType != null) {$list = $list->orderBy($request->order, $request->orderType);}
+        */ //Rozwiązanie bardziej zaawansowane, zostawiam na wypadek zmiany
 
-        return $list->paginate(15);
+        $client = Clients::where('name', 'LIKE', '%' . $request->name . '%')
+        ->orWhere('phone1', 'LIKE', '%' . $request->phone1 . '%')
+        ->orWhere('email1', 'LIKE', '%' . $request->email1 . '%');
+
+        return $client->paginate(15);
     }
 
     function getClient(Request $request)

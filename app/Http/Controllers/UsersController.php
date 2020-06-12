@@ -35,7 +35,7 @@ class UsersController extends Controller
     }
 
     function searchUsers(Request $request){
-        $list = User::query();
+        /*$list = User::query();
 
         if($request->name != null) {$list = $list->where('name', 'like', '%'.$request->name.'%');}
         if($request->email != null) {$list = $list->where('email', 'like', '%'.$request->email.'%');}
@@ -43,8 +43,13 @@ class UsersController extends Controller
         if($request->admin != null) {$list = $list->where('admin', '=', $request->admin);}
         if($request->ban != null) {$list = $list->where('ban', '=', $request->ban);}
         if($request->order != null && $request->orderType != null) {$list = $list->orderBy($request->order, $request->orderType);}
+        */
 
-        return $list->paginate(15);
+        $users = User::where('name', 'LIKE', '%' . $request->name . '%')
+            ->orWhere('email', 'LIKE', '%' . $request->email . '%');
+        
+
+        return $users->paginate(15);
     }
 
     function updateUser(Request $request)

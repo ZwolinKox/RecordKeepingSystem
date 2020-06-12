@@ -30,8 +30,9 @@
                         aria-haspopup="true" aria-expanded="false">Grupa</a>
 
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Pracownicy</a>
-                        <a class="dropdown-item" href="#">Administratorzy</a>
+                        <a class="dropdown-item" onclick="setAdmin(0)" href="#">Pracownicy</a>
+                        <a class="dropdown-item" onclick="setAdmin(1)" href="#">Administratorzy</a>
+                        <a class="dropdown-item" onclick="setAdmin(-1)" href="#">Wszyscy</a>
                     </div>
 
                 </li>
@@ -39,10 +40,10 @@
                 <div class="form-inline ml-auto top-menu">
                      <div class="form-group mx-sm-1">
                         <label for="lemp_search" class="sr-only">Wyszukaj</label>
-                        <input type="text" class="form-control col-auto" id="lemp_search"
+                        <input type="text" class="form-control col-auto searchPattern" id="lemp_search"
                             placeholder="Wpisz szukaną fraze">
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2 active">Wyszukaj</button>
+                    <button type="submit" class="btn btn-primary mr-2 active search">Wyszukaj</button>
 
                     <button class="btn btn-primary active list-button" type="button" id="addgroup"
                         onclick="window.location.href='/new_employee'">
@@ -65,10 +66,10 @@
 
                         <div class="input-group mb-1" id="sb">
 
-                            <input type="text" class="form-control col-auto" id="lemp_msearch" placeholder="Wpisz szukaną fraze">
+                            <input type="text" class="form-control col-auto searchPattern" id="lemp_msearch" placeholder="Wpisz szukaną fraze">
 
                             <div class="input-group-append">
-                                <button type="submit" class="btn btn-outline-secondary mr-2 active"><i class="icon-search"></i></button>
+                                <button type="submit" class="btn btn-outline-secondary mr-2 active search"><i class="icon-search"></i></button>
                             </div>
 
                         </div>
@@ -83,8 +84,9 @@
                             aria-haspopup="true" aria-expanded="false">Grupa</a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Pracownicy</a>
-                            <a class="dropdown-item" href="#">Administratorzy</a>
+                            <a class="dropdown-item" onclick="setAdmin(0)" href="#">Pracownicy</a>
+                            <a class="dropdown-item" onclick="setAdmin(1)" href="#">Administratorzy</a>
+                            <a class="dropdown-item" onclick="setAdmin(-1)" href="#">Wszyscy</a>
                         </div>
 
                     </div>
@@ -103,7 +105,7 @@
 
                     <nav aria-label="Page navigation example ">
 
-                        <ul class="pagination">
+                        <ul class="pagination paginationBody">
 
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
@@ -167,7 +169,7 @@
 
                     <nav aria-label="Page navigation example ">
 
-                        <ul class="pagination">
+                        <ul class="pagination paginationBody">
 
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">

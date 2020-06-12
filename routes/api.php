@@ -11,7 +11,7 @@ Route::get('user', 'AuthController@getAuthUser'); //Wysyła json z danymi o uży
 
 Route::get('users/', 'UsersController@getUsers');
 Route::get('users/light', 'UsersController@getUsersLight');
-Route::get('users/search', 'UsersController@searchUsers'); //Dodać do dokumentacji
+Route::post('users/search', 'UsersController@searchUsers'); //Dodać do dokumentacji
 Route::post('users/passreset', 'UsersController@passwordReset'); //Dodać do dokumentacji
 Route::get('users/{id}', 'UsersController@getUser');
 Route::delete('users/delete/{id}', 'UsersController@deleteUser');
@@ -27,7 +27,7 @@ Route::post('clients/notes/update/{id}', 'ClientNodesController@updateClientNote
 
 Route::get('clients/', 'ClientsController@getClients');
 Route::get('clients/light', 'ClientsController@getClientsLight');
-Route::get('clients/search', 'ClientsController@searchClients'); //Dodać do dokumentacji
+Route::post('clients/search', 'ClientsController@searchClients'); //Dodać do dokumentacji
 Route::get('clients/{id}', 'ClientsController@getClient');
 Route::put('clients/', 'ClientsController@createClient');
 Route::delete('clients/delete/{id}', 'ClientsController@deleteClient'); 
@@ -52,6 +52,7 @@ Route::delete('orders/notes/delete/{id}', 'OrderNotesController@deleteOrderNote'
 Route::post('orders/notes/update/{id}', 'OrderNotesController@updateOrderNote'); //Dodać do dokumentacji
 
 Route::get('orders/', 'OrdersController@getOrders'); 
+Route::get('orders/search', 'OrdersController@searchOrders'); 
 Route::get('orders/{id}', 'OrdersController@getOrder'); 
 Route::put('orders/', 'OrdersController@createOrders'); 
 Route::delete('orders/delete/{id}', 'OrdersController@deleteOrders'); 

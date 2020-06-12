@@ -48,11 +48,11 @@
                     <div class="form-group mx-sm-1">
 
                         <label for="lcus_search" class="sr-only">Wyszukaj</label>
-                        <input type="text" class="form-control col-auto" id="lcus_search" placeholder="Wpisz szukaną fraze">  
+                        <input type="text" class="form-control col-auto searchPattern" id="lcus_search" placeholder="Wpisz szukaną fraze">  
 
                     </div>
 
-                    <button type="submit" class="btn btn-primary mr-2 active">Wyszukaj</button>
+                    <button type="submit" class="btn btn-primary mr-2 active search">Wyszukaj</button>
 
                     <div class="btn-group" role="group" aria-label="Basic example">
 
@@ -68,9 +68,6 @@
 
             </ul>
 
-
-
-
             <div class="side_m_list" onclick="openNav_list()"><i class="icon-plus"></i></div>
 
             <div id="mySidenav-list" class="sidenav-list">
@@ -83,10 +80,10 @@
 
                         <div class="input-group mb-1" id="sb">
 
-                            <input type="text" class="form-control col-auto" id="lcus_msearch" placeholder="Wpisz szukaną fraze">
+                            <input type="text" class="form-control col-auto searchPattern" id="lcus_msearch"placeholder="Wpisz szukaną fraze">
 
                             <div class="input-group-append">
-                                <button type="submit" class="btn btn-outline-secondary mr-2 active"><i class="icon-search"></i></button>
+                                <button type="submit" class="btn btn-outline-secondary mr-2 active search"><i class="icon-search"></i></button>
                             </div>
 
                         </div>

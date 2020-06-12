@@ -41,6 +41,14 @@ class OrdersController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function searchOrders(Request $request){
+        $orders = Orders::where('name', 'LIKE', '%' . $request->name . '%')
+        ->orWhere('model', 'LIKE', '%' . $request->model . '%')
+        ->orWhere('client', 'LIKE', '%' . $request->client . '%');
+
+        return $orders->paginate(15);
+    }
+
     function updateOrders(Request $request)
     {
         function update($name, $request, $order)

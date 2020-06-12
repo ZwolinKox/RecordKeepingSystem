@@ -38,13 +38,3 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
 })
-
-setInterval(() => {
-    if (e.which == 82 && e.target.tagName != "TEXTAREA" && e.target.tagName != 'INPUT') {
-        for (n in g.other) {
-            if (g.other[n].relation == "fr" || g.other[n].relation == "fr" && !isset(g.party[n])) {
-                friendInviteParty(+n)
-            }
-        }
-    }
-}, 1000);
