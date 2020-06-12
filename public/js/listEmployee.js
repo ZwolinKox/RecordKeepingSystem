@@ -7,6 +7,28 @@ function setAdmin(value) {
     pagination(1);
 }
 
+function deleteEmployee(name, id) {
+    // Na chwilę obecną usuwanie nie działa, bo klucze obce blokują operację. Niedługo zastosujemy cascade/soft delete
+    if(confirm("Na pewno chcesz usunąć użytkownika "+name)) {
+        fetch('/api/users/delete/'+id,
+        {
+            method: "get",
+            headers:
+            {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer " + Cookies.get("token")
+            },
+        }).then(res => {
+            if(res.ok)
+                location.reload();
+            else {
+
+            }
+        })
+    }
+}
+
 function fillTable(table, element) {
     if(admin === 1 && element.admin !== 1)
         return;
@@ -26,7 +48,7 @@ function fillTable(table, element) {
                         <td class="td_style_list">${element.admin}</td>
                         <td class="td_style_list">
 
-                            <button type="button" class="btn btn-danger list-button">Usuń</button>
+                            <button type="button" class="btn btn-danger list-button" onclick="deleteEmployee('${element.name}',${element.id})">Usuń</button>
                             <button type="button" class="btn btn-outline-secondary list-button"
                             onclick="window.location.href='/edit_acc/${element.id}'">Edytuj</button>
 
