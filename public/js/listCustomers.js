@@ -47,14 +47,26 @@ function pagination(page) {
                 let paginationBodys = document.querySelectorAll(".paginationBody");
 
                 paginationBodys.forEach(body => {
-                    body.innerHTML = "";
-                    for(let i = 1; i <= value.last_page; i++) {
+                    let paginationBody = `<li class="page-item">
+                    <a class="page-link" onclick="pagination(1)" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                    </li>`;
 
-                        if(i != value.current_page)
-                            body.innerHTML += `<li class="page-item"><a onclick="pagination(${i})" href="#" class="page-link">${i}</a></li>`;
-                        else
-                            body.innerHTML += `<li class="page-item active"><a onclick="pagination(${i})" href="#" class="page-link">${i}</a></li>`;
-                    }
+
+                    if(value.current_page-1 >= 1)
+                        paginationBody += `<li class="page-item"><a onclick="pagination(${value.current_page-1})" href="#" class="page-link">...${value.current_page-1}</a></li>`;
+                    paginationBody += `<li class="page-item active"><a onclick="pagination(${value.current_page})" href="#" class="page-link">${value.current_page}</a></li>`;
+                        
+                    if(value.current_page+1 <= value.last_page)
+                        paginationBody += `<li class="page-item"><a onclick="pagination(${value.current_page+1})" href="#" class="page-link">${value.current_page+1}...</a></li>`;
+
+                    paginationBody += `<li class="page-item">
+                    <a class="page-link" onclick="pagination(${value.last_page})" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                    </li>`;
+                    body.innerHTML = paginationBody;
                 });
             }
                 

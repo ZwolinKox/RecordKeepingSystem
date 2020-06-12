@@ -140,7 +140,7 @@
 
                     <nav aria-label="Page navigation example ">
 
-                        <ul class="pagination">
+                        <ul class="pagination paginationBody">
 
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
@@ -203,7 +203,7 @@
 
                     <nav aria-label="Page navigation example ">
 
-                        <ul class="pagination">
+                        <ul class="pagination paginationBody">
 
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
