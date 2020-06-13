@@ -52,7 +52,7 @@ Route::get('orders/notes/delete/{id}', 'OrderNotesController@deleteOrderNote'); 
 Route::post('orders/notes/update/{id}', 'OrderNotesController@updateOrderNote'); //Dodać do dokumentacji
 
 Route::get('orders/', 'OrdersController@getOrders'); 
-Route::get('orders/search', 'OrdersController@searchOrders'); 
+Route::post('orders/search', 'OrdersController@searchOrders'); 
 Route::get('orders/{id}', 'OrdersController@getOrder'); 
 Route::put('orders/', 'OrdersController@createOrders'); 
 Route::get('orders/delete/{id}', 'OrdersController@deleteOrders'); 

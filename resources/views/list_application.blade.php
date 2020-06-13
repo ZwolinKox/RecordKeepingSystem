@@ -40,10 +40,10 @@
                 <div class="form-inline ml-auto top-menu">
                     <div class="form-group mx-sm-1">
                         <label for="lapp_search" class="sr-only">Wyszukaj</label>
-                        <input type="text" class="form-control col-auto" id="lapp_search"
+                        <input type="text" class="form-control col-auto searchPattern" id="lapp_search"
                             placeholder="Wpisz szukaną fraze">
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2 active">Wyszukaj</button>
+                    <button type="submit" class="btn btn-primary mr-2 activ search">Wyszukaj</button>
 
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <button type="button" class="btn btn-primary active"
@@ -71,10 +71,10 @@
 
                         <div class="input-group mb-1" id="sb">
 
-                            <input type="text" class="form-control col-auto" id="lapp_msearch" placeholder="Wpisz szukaną fraze">
+                            <input type="text" class="form-control col-auto searchPattern" id="lapp_msearch" placeholder="Wpisz szukaną fraze">
 
                             <div class="input-group-append">
-                                <button type="submit" class="btn btn-outline-secondary mr-2 active"><i class="icon-search"></i></button>
+                                <button type="submit" class="btn btn-outline-secondary mr-2 active search"><i class="icon-search"></i></button>
                             </div>
 
                         </div>
@@ -116,7 +116,7 @@
 
                     <nav aria-label="Page navigation example ">
 
-                        <ul class="pagination">
+                        <ul class="pagination paginationBody">
 
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
@@ -180,7 +180,7 @@
 
                     <nav aria-label="Page navigation example ">
 
-                        <ul class="pagination">
+                        <ul class="pagination paginationBody">
 
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
