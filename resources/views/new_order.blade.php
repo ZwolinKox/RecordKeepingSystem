@@ -54,21 +54,12 @@
                                             <div class="input-group-text"><strong>*</strong></div>
                                         </div>
                                
-                                            <input type="text" class="form-control" id="norder_type" placeholder="">
-
-                                        <select id="group">
+                                            
+                                        
+                                        <select id="type" class="form-control">
                                             
                                         </select>
 
-                                        
-
-                                        <div class="row">
-                                        <div class="d-flex justify-content-end">
-
-                                            <button class="btn btn-primary active m-1" id="typesubmit">Wyszukaj</button>
-
-                                        </div>
-                                        </div>
 
 
                                     </div>
@@ -391,7 +382,7 @@
 
                                 <input type="text" class="form-control" id="norder_group" placeholder="">
 
-                                <select id="grp">
+                                <select id="group">
                                             
                                 </select>
                                 <div class="d-flex justify-content-end">
