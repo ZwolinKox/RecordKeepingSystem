@@ -18,6 +18,10 @@ class ItemTypesController extends Controller
         return ItemTypes::paginate(15);
     }
 
+    function getItemTypesLight(Request $request){
+        return ItemTypes::all('id','name');
+    }
+
     function deleteItemTypes(Request $request)
     {
         $exist = ItemTypes::find($request->id);
