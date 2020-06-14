@@ -18,7 +18,7 @@
         }).then(res => {
             if(!res.ok) {
                 if(notAuthLinks.indexOf(location.pathname) == -1)
-                    location.href = "login";
+                    location.href = "/login";
                 else {
                     $( "#loadingContainer" ).fadeOut( fadeSpeed , () => {
                         $( "#pageContent" ).fadeIn( fadeSpeed , function() {
@@ -38,5 +38,5 @@
 
        
     } else if(location.pathname != "/login") {
-        location.href = "login";
+        location.href = "/login";
     }

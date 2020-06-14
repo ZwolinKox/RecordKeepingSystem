@@ -9,15 +9,15 @@
     <ul class="nav nav-tabs list-top-menu">
 
         <li class="nav-item">
-            <a class="nav-link" href="client_info">Informacje</a>
+            <a class="nav-link" href="/client_info">Informacje</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="client_application">Zgłoszenia</a>
+            <a class="nav-link" href="/client_application">Zgłoszenia</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="client_notes">Notatki</a>
+            <a class="nav-link" href="/client_notes">Notatki</a>
         </li>
 
         <li class="nav-item">
@@ -56,9 +56,9 @@
 
         <div class="side_m_list_content">
 
-            <a class="nav-link" href="client_info">Informacje</a>
-            <a class="nav-link" href="client_application">Zgłoszenia</a>
-            <a class="nav-link" href="client_notes">Notatki</a>
+            <a class="nav-link" href="/client_info">Informacje</a>
+            <a class="nav-link" href="/client_application">Zgłoszenia</a>
+            <a class="nav-link" href="/client_notes">Notatki</a>
             <a class="nav-link active" href="#">Historia zmian</a>
 
             <div class="dropdown">

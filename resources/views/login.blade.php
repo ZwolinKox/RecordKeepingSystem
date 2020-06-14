@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="form-group">
-                        <a href="reset_pass">Zapomniałeś hasła?</a>
+                        <a href="/reset_pass">Zapomniałeś hasła?</a>
                 </div>
 
                 <div class="d-flex justify-content-end">

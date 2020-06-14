@@ -123,7 +123,7 @@
 
             <div class="d-flex justify-content-end m-3">
 
-                <a href="list_employee"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
+                <a href="/list_employee"><button type="button" class="btn btn-danger m-1">Anuluj</button></a>
                 <button type="submit" class="btn btn-primary m-1">Zatwierdź</button>
 
             </div>

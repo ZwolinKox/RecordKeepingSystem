@@ -116,7 +116,7 @@ function pagination(page) {
                         table.innerHTML += `
                         <tr>
                 
-                            <td class="td_style_list"><a href="order_info/${element.id}" class="link-list-info">${element.name}</a></td>
+                            <td class="td_style_list"><a href="/order_info/${element.id}" class="link-list-info">${element.name}</a></td>
                             <td class="td_style_list">${element.client}</td>
                             <td class="td_style_list">${element.model}</td>
                             <td class="td_style_list">

@@ -8,13 +8,13 @@
 <div class="container-fluid">
     <ul class="nav nav-tabs list-top-menu">
         <li class="nav-item">
-            <a class="nav-link" href="order_info">Informacje</a>
+            <a class="nav-link" href="/order_info">Informacje</a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="#">Historia</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="order_notes">Notatki</a>
+            <a class="nav-link" href="/order_notes">Notatki</a>
         </li>
 
         <div class="form-inline ml-auto">
@@ -51,9 +51,9 @@
 
         <div class="side_m_list_content">
 
-            <a class="nav-link" href="order_info">Informacje</a>
+            <a class="nav-link" href="/order_info">Informacje</a>
             <a class="nav-link active" href="#">Historia</a>
-            <a class="nav-link" href="order_notes">Notatki</a>
+            <a class="nav-link" href="/order_notes">Notatki</a>
 
             <div class="dropdown">
                 <button type="button"

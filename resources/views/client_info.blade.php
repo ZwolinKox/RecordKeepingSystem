@@ -5,6 +5,9 @@
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
 
+    <script>
+    console.log(location.href.substring(location.href.lastIndexOf('/') + 1));
+    </script>
 
     <div class="container-fluid">
         <ul class="nav nav-tabs list-top-menu">
@@ -14,15 +17,15 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="client_application">Zgłoszenia</a>
+                <a class="nav-link" href="/client_application">Zgłoszenia</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="client_notes">Notatki</a>
+                <a class="nav-link" href="/client_notes">Notatki</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="client_history">Historia zmian</a>
+                <a class="nav-link" href="/client_history">Historia zmian</a>
             </li>
 
             <div class="form-inline ml-auto">
