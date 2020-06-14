@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\OrderNotes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class OrderNodesController extends Controller
 {
@@ -39,33 +40,46 @@ class OrderNodesController extends Controller
 
     function updateOrderNote(Request $request)
     {
-        if($request->body == null)
-            return response()->json(['error' => 'Body cant be null'], 401);
-        
-        try
+        function update($name, $request, $note)
         {
-            $exist = OrderNotes::find($request->id);
-
-            if($exist != null){
-                $exist->update($request->body);
-    
-                return response()->json(['message' => 'Successful edit note '.$request->id], 200);
+            if($request->has('body.'.$name)){
+                $note->$name = $request->input('body.'.$name);
             }
         }
-        catch(Illuminate\Database\QueryException $e)
-        {
-            return response()->json(['message' => 'Bad query '.$request->id], 401);
+
+        $validator = Validator::make($request->all(),[
+            'user' => 'numeric',
+            'text' => '',
+            'order' => 'numeric',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
         }
 
+        $note = OrderNotes::find($request->id);
+        if($note != null){
+            $fillable = ['user', 'text', 'order'];
+            foreach ($fillable as $name){
+                update($name, $request, $note);
+            }
+            $note->save();
+            return response()->json(['message' => 'Successful edit note '.$request->id], 200);
+        }
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
     function createOrderNote(Request $request)
     {
-        if($request->user == null || $request->text == null || $request->order == null)
-            return response()->json(['error' => 'Notes user, client and text cant be null'], 401);
+        $validator = Validator::make($request->all(),[
+            'user' => 'required|numeric',
+            'text' => 'required',
+            'order' => 'required|numeric',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
         
-        $user = OrderNotes::create([
+        $note = OrderNotes::create([
             'user' => $request->user,
             'text' => $request->text,
             'order' => $request->order,

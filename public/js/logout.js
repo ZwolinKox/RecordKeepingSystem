@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Authorization" : "Bearer "+Cookies.get("token")
                 },
             }).then(res => {
-                location.href = "login";
+                location.href = "/login";
             })
         
         })

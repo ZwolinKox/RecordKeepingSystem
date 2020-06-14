@@ -1,3 +1,9 @@
+    
+    //Linki, które nie wymagają
+    const notAuthLinks = ['/login', '/reset_pass'];
+    
+    const fadeSpeed = 500;
+
     if(Cookies.get("token") != null) {
         fetch("/api/user",
         {
@@ -11,13 +17,26 @@
             
         }).then(res => {
             if(!res.ok) {
-                if(location.pathname != "/login")
-                    location.href = "login";
+                if(notAuthLinks.indexOf(location.pathname) == -1)
+                    location.href = "/login";
+                else {
+                    $( "#loadingContainer" ).fadeOut( fadeSpeed , () => {
+                        $( "#pageContent" ).fadeIn( fadeSpeed , function() {
+                        });
+                    }); 
+                }
             }
-            else if(location.pathname == "/login")
-                location.href = "/";        
+            else if(notAuthLinks.indexOf(location.pathname) != -1)
+                location.href = "/";
+            else {
+                $( "#loadingContainer" ).fadeOut( fadeSpeed , () => {
+                    $( "#pageContent" ).fadeIn( fadeSpeed , function() {
+                    });
+                });        
+            }   
         })
-    
+
+       
     } else if(location.pathname != "/login") {
-        location.href = "login";
+        location.href = "/login";
     }

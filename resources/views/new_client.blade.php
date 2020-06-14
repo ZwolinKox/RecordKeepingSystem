@@ -1,5 +1,5 @@
 <!-- Tutaj definiujemy to, że używamy szablonu 'layout' -->
-@extends('layouts\layout')
+@extends('layouts.layout')
 
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
@@ -11,7 +11,20 @@
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
         </div>
     </div>
-    
+
+    <div id="successCreateClient" style="display: none;" class="text-center">
+        <div class="row">
+            <div class="col"><div class="display-4">Pomyślnie utworzono klienta</div></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col"><a href="/"><button type="button" class="btn btn-danger m-1">Powrót do menu</button></a>
+            <button onclick="location.reload()" class="btn btn-success m-1">Utwórz kolejnego klienta</button></div>
+        </div>
+        
+        </div>
+    </div>
+
     <div id="main" style="display: none;" >
 
         <div class="row">
@@ -28,15 +41,8 @@
                     <div class="col-auto my-3">
 
                         <div class="form-group">
-
                             <div class="form-check col-5">
-                                <div class="w-100"></div>
-                                <input class="form-check-input" type="radio" name="nclient_radio" id="nclient_priv" checked>
-                                <label class="form-check-label" for="nclient_priv">Osoba prywatna</label>
-                            </div>
-
-                            <div class="form-check col-5">
-                                <input class="form-check-input" type="radio" name="nclient_radio" id="nclient_fac">
+                                <input class="form-check-input" type="checkbox" id="nclient_fac">
                                 <label class="form-check-label" for="nclient_fac">Firma</label>
                             </div>
 
@@ -58,7 +64,6 @@
                             </div>
 
                         </div>
-
                         <div class="form-group">
 
                             <label for="nclient_group"><strong>Grupa</strong></label>

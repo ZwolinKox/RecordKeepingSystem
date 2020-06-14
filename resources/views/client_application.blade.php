@@ -1,5 +1,5 @@
 <!-- Tutaj definiujemy to, że używamy szablonu 'layout' -->
-@extends('layouts\layout')
+@extends('layouts.layout')
 
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
@@ -58,8 +58,8 @@
 
             <a class="nav-link" href="client_info">Informacje</a>
             <a class="nav-link active" href="#">Zgłoszenia</a>
-            <a class="nav-link" href="client_notes">Notatki</a>
-            <a class="nav-link" href="client_history">Historia zmian</a>
+            <a class="nav-link" href="/client_notes">Notatki</a>
+            <a class="nav-link" href="/client_history">Historia zmian</a>
 
             <div class="dropdown">
                 <button type="button"
@@ -149,7 +149,7 @@
 
                         <tr>
 
-                            <td class="td_style_list"><a href="order_info" class="link-list-info">X5S2</a></td>
+                            <td class="td_style_list"><a href="/order_info" class="link-list-info">X5S2</a></td>
                             <td class="td_style_list">Customer 1</td>
                             <td class="td_style_list">Laptop Samsung</td>
                             <td class="td_style_list">

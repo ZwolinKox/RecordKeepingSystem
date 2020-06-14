@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     })
     .then(res => {
+
+      console.log(res);
+
       if (res.ok) {
         $("#loading").fadeOut("slow", () => {
           $("#main").fadeIn("slow", function () {
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let groupSelect = document.querySelector("#nclient_group");
         groupSelect.innerHTML = '<option value="0">Brak grupy</option>';
 
-        value.data.forEach(element => {
+        value.forEach(element => {
           console.log(element);
           groupSelect.innerHTML += `<option value="${element.id}">${element.name}</option>`
         });
@@ -87,13 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     .then(res => {
                       if (res.ok) {
                         return res.json(),
-                          document.querySelector("#error").innerHTML +=
+                          /*document.querySelector("#error").innerHTML +=
                           `<div class="alert alert-success alert-dismissible fade show" role="alert">
                             Udało sie utworzyć klienta.
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
-                          </div>`;
+                          </div>`;*/
+
+                          $("#main").fadeOut("slow", () => {
+                            $("#successCreateClient").fadeIn("slow", () => {
+                            })
+                          })
                       }
                       else {
                         document.querySelector("#error").innerHTML +=

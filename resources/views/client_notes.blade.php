@@ -1,5 +1,5 @@
 <!-- Tutaj definiujemy to, że używamy szablonu 'layout' -->
-@extends('layouts\layout')
+@extends('layouts.layout')
 
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
@@ -9,11 +9,11 @@
     <ul class="nav nav-tabs list-top-menu">
 
         <li class="nav-item">
-            <a class="nav-link" href="client_info">Informacje</a>
+            <a class="nav-link" href="/client_info">Informacje</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="client_application">Zgłoszenia</a>
+            <a class="nav-link" href="/client_application">Zgłoszenia</a>
         </li>
 
         <li class="nav-item">
@@ -21,7 +21,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="client_history">Historia zmian</a>
+            <a class="nav-link" href="/client_history">Historia zmian</a>
         </li>
 
         <div class="form-inline ml-auto">
@@ -56,10 +56,10 @@
 
         <div class="side_m_list_content">
 
-            <a class="nav-link" href="client_info">Informacje</a>
-            <a class="nav-link" href="client_application">Zgłoszenia</a>
+            <a class="nav-link" href="/client_info">Informacje</a>
+            <a class="nav-link" href="/client_application">Zgłoszenia</a>
             <a class="nav-link active" href="#">Notatki</a>
-            <a class="nav-link" href="client_history">Historia zmian</a>
+            <a class="nav-link" href="/client_history">Historia zmian</a>
 
             <div class="dropdown">
                 <button type="button"

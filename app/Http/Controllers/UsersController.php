@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
@@ -33,26 +34,63 @@ class UsersController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function searchUsers(Request $request){
+        /*$list = User::query();
+
+        if($request->name != null) {$list = $list->where('name', 'like', '%'.$request->name.'%');}
+        if($request->email != null) {$list = $list->where('email', 'like', '%'.$request->email.'%');}
+        if($request->phone != null) {$list = $list->where('phone', 'like', '%'.$request->phone.'%');}
+        if($request->admin != null) {$list = $list->where('admin', '=', $request->admin);}
+        if($request->ban != null) {$list = $list->where('ban', '=', $request->ban);}
+        if($request->order != null && $request->orderType != null) {$list = $list->orderBy($request->order, $request->orderType);}
+        */
+
+        $users = User::where('name', 'LIKE', '%' . $request->name . '%')
+            ->orWhere('email', 'LIKE', '%' . $request->email . '%');
+        
+
+        return $users->paginate(15);
+    }
+
     function updateUser(Request $request)
     {
-        if(!$this->adminCheck() && !$this->isUserId($request->id))
-            return response()->json(['error' => 'Unauthorized'], 401);
-
-        if($request->body == null)
-            return response()->json(['error' => 'Body cant be null'], 441);
-        
-        try
+        function update($name, $request, $user)
         {
-            $exist = User::find($request->id);
-
-            if($exist != null){
-                $exist->update($request->body);
-                return response()->json(['message' => 'Successful edit user '.$request->id], 200);
+            if($request->has('body.'.$name)){
+                $user->$name = $request->input('body.'.$name);
             }
         }
-        catch(Illuminate\Database\QueryException $e)
-        {
-            return response()->json(['message' => 'Bad query '.$request->id], 404);
+
+        if(!$this->adminCheck() && !$this->isUserId($request->id)){
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        $validator = Validator::make($request->all(),[
+            'body.name' => '',
+            'body.email' => 'email:rfc',
+            'body.phone' => '',
+            'body.admin' => 'boolean',
+            'body.ban' => 'boolean',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
+
+        $user = User::find($request->id);
+        if($user != null){
+            $fillable = ['name', 'email', 'phone'];
+            foreach ($fillable as $name){
+                update($name, $request, $user);
+            }
+
+            if($request->has('body.admin') && $this->adminCheck()){
+                $user->admin = $request->input('body.admin');
+            }
+            if($request->has('body.ban') && $this->adminCheck()){
+                $user->ban = $request->input('body.ban');
+            }
+            $user->save();
+            return response()->json(['message' => 'Successful edit user '.$request->id], 200);
         }
 
         return response()->json(['error' => 'Undefined id'], 404);

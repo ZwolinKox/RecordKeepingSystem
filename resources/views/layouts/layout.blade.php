@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fontello.css') }}">
 
     <title>System zleceń</title>
 
@@ -20,7 +20,15 @@
 
   <body>
 
+  <div class="container-fluid flex-column" id="loadingContainer">
+          <div class="row">
+          <div class="col-12 text-center align-items-center ">
+            <div class="spinner-border align-middle text-primary " style=" margin-top: 25%; width: 6rem; height: 6rem;" role="status"> </div>
+          </div>
+  </div>
+  </div>
 
+  <div id="pageContent" style="display: none;">
     <div class="container-fluid">
 
       <div class="row header p-3">
@@ -111,8 +119,12 @@
 
       <a href="#" class="scrollup"><i class="icon-up"></i></a>
 
+      
+
       <!-- To służy do rozszerzania szablonu  -->
+      
       @yield('content')
+      </div>
 
       <!-- Biblioteka js do łatwego obsługiwania ciasteczek  -->
       <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
@@ -121,13 +133,12 @@
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-      <script src="js\side_menu.js"></script>
-      <script src="js\redirect.js"></script>
-      <script src="js\logout.js"></script>
-      <script src="js\userName.js"></script>
-      <script src="js\admin.js"></script>
-      <script src="js\scrollTop.js"></script>
-
+      <script src="{{ asset('js\side_menu.js') }}"></script>
+      <script src="{{ asset('js\redirect.js') }}"></script>
+      <script src="{{ asset('js\logout.js') }}"></script>
+      <script src="{{ asset('js\userName.js') }}"></script>
+      <script src="{{ asset('js\admin.js') }}"></script>
+      <script src="{{ asset('js\scrollTop.js') }}"></script>
 
   </body>
 </html>

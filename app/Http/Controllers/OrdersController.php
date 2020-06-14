@@ -8,6 +8,7 @@ use App\Http\Controllers\Helpers\SchemesController;
 use App\OrderFiles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class OrdersController extends Controller
 {
@@ -40,24 +41,53 @@ class OrdersController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function searchOrders(Request $request){
+        $orders = Orders::where('name', 'LIKE', '%' . $request->name . '%')
+        ->orWhere('model', 'LIKE', '%' . $request->model . '%')
+        ->orWhere('client', 'LIKE', '%' . $request->client . '%');
+
+        return $orders->paginate(15);
+    }
+
     function updateOrders(Request $request)
     {
-        if($request->body == null)
-            return response()->json(['error' => 'Body cant be null'], 401);
-        
-        try
+        function update($name, $request, $order)
         {
-            $exist = Orders::find($request->id);
-
-            if($exist != null){
-                $exist->update($request->body);
-    
-                return response()->json(['message' => 'Successful edit orders '.$request->id], 200);
+            if($request->has('body.'.$name)){
+                $order->$name = $request->input('body.'.$name);
             }
         }
-        catch(Illuminate\Database\QueryException $e)
-        {
-            return response()->json(['message' => 'Bad query '.$request->id], 401);
+
+        $validator = Validator::make($request->all(),[
+            'assigned' => 'numeric',
+            'client' => 'numeric',
+            'item_type' => 'numeric',
+            'producer' => '',
+            'model' => '',
+            'serial_number' => '',
+            'buy_date' => 'date',
+            'warranty_number' => '',
+            'begin_date' => 'date',
+            'end_date' => 'date',
+            'info' => '',
+            'issue' => '',
+            'delivery_method' => 'numeric|between:0,2',
+            'pickup_method' => 'numeric|between:0,2',
+            'estimated_price' => '',
+            'advance_pay' => '',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
+
+        $order = Orders::find($request->id);
+        if($order != null){
+            $fillable = ['assigned', 'client', 'item_type', 'producer', 'model', 'serial_number', 'buy_date', 'warranty_number', 'begin_date', 'end_date', 'info', 'issue', 'delivery_method', 'pickup_method', 'estimated_price', 'advance_pay'];
+            foreach ($fillable as $name){
+                update($name, $request, $order);
+            }
+            $order->save();
+            return response()->json(['message' => 'Successful edit orders '.$request->id], 200);
         }
 
         return response()->json(['error' => 'Undefined id'], 401);
@@ -65,8 +95,27 @@ class OrdersController extends Controller
 
     function createOrders(Request $request)
     {
-        if($request->client == null || $request->item_type == null || $request->producer == null || $request->model == null || $request->serial_number == null || $request->begin_date == null || $request->end_date == null || $request->delivery_method == null || $request->pickup_method == null)
-            return response()->json(['error' => 'Missing required data'], 401);
+        $validator = Validator::make($request->all(),[
+            'assigned' => 'numeric',
+            'client' => 'required|numeric',
+            'item_type' => 'required|numeric',
+            'producer' => 'required',
+            'model' => 'required',
+            'serial_number' => 'required',
+            'buy_date' => 'date',
+            'warranty_number' => '',
+            'begin_date' => 'required|date',
+            'end_date' => 'required|date',
+            'info' => '',
+            'issue' => '',
+            'delivery_method' => 'required|numeric|between:0,2',
+            'pickup_method' => 'required|numeric|between:0,2',
+            'estimated_price' => '',
+            'advance_pay' => '',
+          ]);
+          if($validator->fails()){
+              return response()->json(['error' => 'Validation failed'], 401);
+          }
         
         $order = Orders::create([
             'created_by' => auth()->user()->id,

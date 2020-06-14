@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ClientNotes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ClientNotesController extends Controller
 {
@@ -39,22 +40,31 @@ class ClientNotesController extends Controller
 
     function updateClientNote(Request $request)
     {
-        if($request->body == null)
-            return response()->json(['error' => 'Body cant be null'], 401);
-        
-        try
+        function update($name, $request, $note)
         {
-            $exist = ClientNotes::find($request->id);
-
-            if($exist != null){
-                $exist->update($request->body);
-    
-                return response()->json(['message' => 'Successful edit note '.$request->id], 200);
+            if($request->has('body.'.$name)){
+                $note->$name = $request->input('body.'.$name);
             }
         }
-        catch(Illuminate\Database\QueryException $e)
-        {
-            return response()->json(['message' => 'Bad query '.$request->id], 401);
+
+        $validator = Validator::make($request->all(),[
+            'user' => 'numeric',
+            'text' => '',
+            'client' => 'numeric',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
+
+        $note = ClientNotes::find($request->id);
+        if($note != null){
+            $fillable = ['user', 'text', 'client'];
+            foreach ($fillable as $name){
+                update($name, $request, $note);
+            }
+            $note->save();
+
+            return response()->json(['message' => 'Successful edit note '.$request->id], 200);
         }
 
         return response()->json(['error' => 'Undefined id'], 401);
@@ -62,10 +72,16 @@ class ClientNotesController extends Controller
 
     function createClientNote(Request $request)
     {
-        if($request->user == null || $request->text == null || $request->client == null)
-            return response()->json(['error' => 'Notes user, client and text cant be null'], 401);
+        $validator = Validator::make($request->all(),[
+            'user' => 'required|numeric',
+            'text' => 'required',
+            'client' => 'required|numeric',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
         
-        $user = ClientNotes::create([
+        $note = ClientNotes::create([
             'user' => $request->user,
             'text' => $request->text,
             'client' => $request->client,

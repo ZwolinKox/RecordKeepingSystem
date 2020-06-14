@@ -1,5 +1,5 @@
 <!-- Tutaj definiujemy to, że używamy szablonu 'layout' -->
-@extends('layouts\layout')
+@extends('layouts.layout')
 
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
@@ -8,10 +8,10 @@
 <div class="container-fluid">
 <ul class="nav nav-tabs list-top-menu">
         <li class="nav-item">
-            <a class="nav-link" href="order_info">Informacje</a>
+            <a class="nav-link" href="/order_info">Informacje</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="order_history">Historia</a>
+            <a class="nav-link" href="/order_history">Historia</a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="#">Notatki</a>
@@ -51,8 +51,8 @@
 
         <div class="side_m_list_content">
 
-            <a class="nav-link" href="order_info">Informacje</a>
-            <a class="nav-link" href="order_history">Historia</a>
+            <a class="nav-link" href="/order_info">Informacje</a>
+            <a class="nav-link" href="/order_history">Historia</a>
             <a class="nav-link active" href="#">Notatki</a>
 
             <div class="dropdown">
