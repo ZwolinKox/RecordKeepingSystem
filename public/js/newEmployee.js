@@ -33,14 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify(ob)
         })
         .then(res => {
-            
-            if(res.ok) 
-                document.querySelector("#errors").innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
-                Udało się stworzyć użytkownika
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>`;
+            if(res.ok) {
+                $("#main").fadeOut("slow", () => {
+                    $("#successCreateEmployee").fadeIn("slow", () => {
+                    })
+                })
+            }
             else {
                 document.querySelector("#errors").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
                 Nie udało się utworzyć użytkownika
