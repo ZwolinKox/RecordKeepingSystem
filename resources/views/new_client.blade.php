@@ -12,6 +12,19 @@
         </div>
     </div>
 
+    <div id="successCreateClient" style="display: none;" class="text-center">
+        <div class="row">
+            <div class="col"><div class="display-4">Pomyślnie utworzono klienta</div></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col"><a href="/"><button type="button" class="btn btn-danger m-1">Powrót do menu</button></a>
+            <button onclick="location.reload()" class="btn btn-success m-1">Utwórz kolejnego klienta</button></div>
+        </div>
+        
+        </div>
+    </div>
+
     <div id="main" style="display: none;" >
 
         <div class="row">

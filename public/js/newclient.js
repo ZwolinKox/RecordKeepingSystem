@@ -90,13 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     .then(res => {
                       if (res.ok) {
                         return res.json(),
-                          document.querySelector("#error").innerHTML +=
+                          /*document.querySelector("#error").innerHTML +=
                           `<div class="alert alert-success alert-dismissible fade show" role="alert">
                             Udało sie utworzyć klienta.
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
-                          </div>`;
+                          </div>`;*/
+
+                          $("#main").fadeOut("slow", () => {
+                            $("#successCreateClient").fadeIn("slow", () => {
+                            })
+                          })
                       }
                       else {
                         document.querySelector("#error").innerHTML +=
