@@ -58,7 +58,8 @@ Route::put('orders/', 'OrdersController@createOrders');
 Route::get('orders/delete/{id}', 'OrdersController@deleteOrders'); 
 Route::post('orders/update/{id}', 'OrdersController@updateOrders'); 
 
-Route::get('itemtypes/', 'ItemTypesController@getItemTypes'); 
+Route::get('itemtypes/', 'ItemTypesController@getItemTypes');
+Route::get('itemtypes/light', 'ItemTypesController@getItemTypesLight'); //Dodać do dokumentacji
 Route::put('itemtypes/', 'ItemTypesController@createItemTypes'); 
 Route::get('itemtypes/delete/{id}', 'ItemTypesController@deleteItemTypes'); 
 
