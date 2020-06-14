@@ -53,10 +53,22 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><strong>*</strong></div>
                                         </div>
+                               
+                                            <input type="text" class="form-control" id="norder_type" placeholder="">
 
-                                        <select class="form-control" id="norder_eotypeo" name="typ">
-                                            <option>1</option>
+                                        <select id="group">
+                                            
                                         </select>
+
+                                        
+
+                                        <div class="row">
+                                        <div class="d-flex justify-content-end">
+
+                                            <button class="btn btn-primary active m-1" id="typesubmit">Wyszukaj</button>
+
+                                        </div>
+                                        </div>
 
 
                                     </div>
@@ -377,9 +389,16 @@
                                     </div>
                                 </div>
 
-                                <select class="form-control" id="norder_group1" name="grupa">
-                                    <option>1</option>
+                                <input type="text" class="form-control" id="norder_group" placeholder="">
+
+                                <select id="grp">
+                                            
                                 </select>
+                                <div class="d-flex justify-content-end">
+
+                                    <button class="btn btn-primary active m-1" id="groupsubmit">Wyszukaj</button>
+
+                                </div>
 
                             </div>
 
@@ -404,9 +423,19 @@
                                     </div>
                                 </div>
 
-                                <select class="form-control" id="norder_group2" name="grupa">
-                                    <option>1</option>
+                                <input type="text" class="form-control" id="norder_employee" placeholder="">
+
+                                <select id="employee">
+                                    
                                 </select>
+
+                                <div class="row">
+                                <div class="d-flex justify-content-end">
+
+                                    <button class="btn btn-primary active m-1" id="employeesubmit">Wyszukaj</button>
+
+                                </div>
+                                </div>
 
                             </div>
 

@@ -1,3 +1,4 @@
+// klient
 document.querySelector("#submit").addEventListener("click", () =>
 {
     fetch("/api/clients/light",
@@ -30,8 +31,6 @@ document.querySelector("#submit").addEventListener("click", () =>
     })
     .then(res => {
             const clname=document.querySelector("#norder_client").value;
-            //koncowa lista do wyswietlenia dla klienta
-            let lista={};
             //dane pobrane z bazy
             let obj={};
             obj=JSON.parse(JSON.stringify(res));
@@ -39,9 +38,131 @@ document.querySelector("#submit").addEventListener("click", () =>
             table.innerHTML = "";
             obj.forEach(element => {
 
+                let siema=element.name;
+                if(siema.toLowerCase().search(clname.toLowerCase())!=-1)
+                {
+                    table.innerHTML += `                   
+                    <option value="${element.id}">${element.name}</option>`
+                }     
+            });
+                                      
+    })
+})
+
+//typ przedmiotu naprawy
+/*
+let typ;
+document.querySelector("#norder_eotype").addEventListener("mouseover"), () => 
+{
+    if(document.querySelector("#norder_eotype").checked)
+    {
+        typ=document.querySelector("#norder_eotypeo").value;
+    }
+    else
+    {
+        console.log("dzialo")
+        document.querySelector("#typesubmit").addEventListener("click", () =>
+        {
+            fetch("/api/itemtypes",
+            {
+                method: "get",
+                headers:
+                    {
+                        "Content-Type": "application/json",
+                        "Accept" : "application/json",
+                        "Authorization" : "Bearer "+Cookies.get("token")
+                    },
+            })
+            .then(res => {
+            
+                if(res.ok)
+                {
+                    return res.json();
+                    
+                } 
+                else
+                {
+                    document.querySelector("#error").innerHTML+=
+                    `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                     <strong>Uwaga!</strong> Problem z bazą danych.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>`;
+                }
+            })
+            .then(res => {
+                const clname=document.querySelector("#norder_type").value;
+                //dane pobrane z bazy
+                let obj={};
+                obj=JSON.parse(JSON.stringify(res));
+                let table = document.querySelector("#type");
+                table.innerHTML = "";
+                obj.forEach(element => {
+    
+                    console.log(element.name);
+                    let siema=element.name;
+                    if(siema.toLowerCase().search(clname.toLowerCase())!=-1)
+                    {
+                        table.innerHTML += `                   
+                        <option value="${element.id}">${element.name}</option>`
+                    }
+                    console.log(siema.search(clname)); 
+                    
+                });
+                                          
+        })
+    })
+    typ=document.querySelector("#type").value;
+    }
+}
+*/
+
+// grupa
+document.querySelector("#groupsubmit").addEventListener("click", () =>
+{
+    fetch("/api/groups/light",
+    {
+        method: "get",
+        headers:
+            {
+                "Content-Type": "application/json",
+                "Accept" : "application/json",
+                "Authorization" : "Bearer "+Cookies.get("token")
+            },
+    })
+    .then(res => {
+            
+        if(res.ok)
+        {
+            return res.json();
+            
+        } 
+        else
+        {
+            console.log(res);
+            document.querySelector("#error").innerHTML+=
+            `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+             <strong>Uwaga!</strong> Problem z bazą danych.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>`;
+        }
+    })
+    .then(res => {
+            const clname=document.querySelector("#norder_group").value;
+            //dane pobrane z bazy
+            console.log(res);
+            let obj={};
+            obj=JSON.parse(JSON.stringify(res));
+            let table = document.querySelector("#group");
+            table.innerHTML = "";
+            obj.forEach(element => {
+
                 console.log(element.name);
                 let siema=element.name;
-                if(siema.search(clname)!=-1)
+                if(siema.toLowerCase().search(clname.toLowerCase())!=-1)
                 {
                     table.innerHTML += `                   
                     <option value="${element.id}">${element.name}</option>`
@@ -53,6 +174,60 @@ document.querySelector("#submit").addEventListener("click", () =>
     })
 })
 
+
+//pracownik
+document.querySelector("#employeesubmit").addEventListener("click", () =>
+{
+    fetch("/api/users/light",
+    {
+        method: "get",
+        headers:
+            {
+                "Content-Type": "application/json",
+                "Accept" : "application/json",
+                "Authorization" : "Bearer "+Cookies.get("token")
+            },
+    })
+    .then(res => {
+            
+        if(res.ok)
+        {
+            return res.json();
+            
+        } 
+        else
+        {
+            document.querySelector("#error").innerHTML+=
+            `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+             <strong>Uwaga!</strong> Problem z bazą danych.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>`;
+        }
+    })
+    .then(res => {
+            const clname=document.querySelector("#norder_employee").value;
+            //dane pobrane z bazy
+            let obj={};
+            obj=JSON.parse(JSON.stringify(res));
+            let table = document.querySelector("#employee");
+            table.innerHTML = "";
+            obj.forEach(element => {
+
+                console.log(element.name);
+                let siema=element.name;
+                if(siema.toLowerCase().search(clname.toLowerCase())!=-1)
+                {
+                    table.innerHTML += `                   
+                    <option value="${element.id}">${element.name}</option>`
+                }
+                console.log(siema.search(clname)); 
+                
+            });
+                                      
+    })
+})
 
 
 
@@ -87,20 +262,13 @@ document.querySelector("#add_order").addEventListener("click", () =>
     {
         pck=3;
     }
-    let typ;
-    if(document.querySelector("#norder_eotype").checked)
-    {
-        typ=document.querySelector("#norder_eotypeo").value;
-    }
-    else
-    {
-        typ=document.querySelector("#norder_notypeo").value;
-    }
+
+    
 
     const ob = {
         producer : document.querySelector("#norder_mnfctr").value,
         model : document.querySelector("#norder_model").value,
-        assigned: document.querySelector("#norder_group2").value,
+        assigned: document.querySelector("#employee").value,
         client: document.querySelector("#sel").value,
         item_type: typ,
         serial_number: document.querySelector("#norder_serial").value,
