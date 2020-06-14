@@ -37,7 +37,7 @@ Route::get('/order_info', function () {
     return view('order_info');
 });
 
-Route::get('/client_info', function () {
+Route::get('/client_info/{id}', function ($id) {
     return view('client_info');
 });
 
