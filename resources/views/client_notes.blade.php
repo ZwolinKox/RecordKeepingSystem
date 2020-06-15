@@ -6,6 +6,19 @@
 
 
 <div class="container-fluid">
+<div id="successDelete" style="display: none;" class="text-center">
+        <div class="row">
+            <div class="col"><div class="display-4">Pomyślnie usunięto klienta</div></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col"><a href="/"><button type="button" class="btn btn-secondary m-1">Powrót do menu</button></a>
+            <button onclick="location.href='/list_customers'" class="btn btn-secondary m-1">Przejdź do listy klientów</button></div>
+        </div>
+        
+        </div>
+    </div>
+   <div id="main">
    <ul class="nav nav-tabs list-top-menu">
 
             <li class="nav-item">
@@ -22,12 +35,12 @@
 
             <div class="form-inline ml-auto">
                 
-                    <button type="button" class="btn btn-outline-secondary ml-2 editUser">
+                    <button type="button" class="btn btn-outline-secondary ml-2" onclick="editClient()">
                         <i class="icon-edit"></i>
                         Edytuj
                     </button>
 
-                    <button type="button" class="btn btn-outline-secondary ml-2 deleteUser">
+                    <button type="button" class="btn btn-outline-secondary ml-2" onclick="deleteClient()">
                         <i class="icon-cancel-circled"></i>
                         Usuń
                     </button>
@@ -49,11 +62,11 @@
                 <a class="nav-link active" href="#">Notatki</a>
 
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button editUser">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="editClient()">
                     <i class="icon-edit"></i>Edytuj    
                 </button>
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button deleteUser">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="deleteClient()">
                     <i class="icon-cancel-circled"></i>Usuń 
                 </button>
 
@@ -66,34 +79,7 @@
         <div class="col-md-9 mx-auto">
 
             <div class="card list">
-                <!--
-                <div class="card-header">
-
-                    <div class="row">
-
-                        <div class="col-3 text-center">Autor</div>
-                        <div class="col-2 text-center">Data</div>
-                        <div class="col-7 text-center">Notatka</div>
-
-                    </div>
-                </div>
-
-                <ul class="list-group list-group-flush">
-
-                    <li class="list-group-item">
-
-                        <div class="row">
-
-                            <div class="col-3 text-center">Andrzej Kowalski</div>
-                            <div class="col-2 text-center">05.06.2020</div>
-                            <div class="col-7 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-
-                        </div>
-
-                    </li>
-
-                </ul>
-                -->
+                
                 <table class="card-table table table-sm">
 
                     <thead class="thead-light">
@@ -118,7 +104,7 @@
         </div>
     </div>
 
-
+</div>
 </div>
 
 <script src="{{ asset('js\clientNavs.js') }}"></script>

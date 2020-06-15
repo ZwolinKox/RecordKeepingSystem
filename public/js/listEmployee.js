@@ -9,8 +9,8 @@ function setAdmin(value) {
 
 function deleteEmployee(name, id) {
     // Na chwilę obecną usuwanie nie działa, bo klucze obce blokują operację. Niedługo zastosujemy cascade/soft delete
-    if(confirm("Na pewno chcesz usunąć użytkownika "+name)) {
-        fetch('/api/users/delete/'+id,
+    if(confirm("Na pewno chcesz usunąć klienta "+name)) {
+        fetch('/api/clients/delete/'+id,
         {
             method: "get",
             headers:
@@ -20,9 +20,12 @@ function deleteEmployee(name, id) {
                 "Authorization": "Bearer " + Cookies.get("token")
             },
         }).then(res => {
-            if(res.ok)
-                location.reload();
-            else {
+            if(res.ok) {
+                $( "#main" ).fadeOut( "slow", () => {
+                    $( "#successDeleteClient" ).fadeIn( "slow", function() {
+                    });
+                });
+            } else {  
 
             }
         })

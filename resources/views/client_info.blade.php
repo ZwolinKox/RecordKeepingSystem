@@ -6,6 +6,19 @@
 @section('content')
 
     <div class="container-fluid">
+    <div id="successDelete" style="display: none;" class="text-center">
+        <div class="row">
+            <div class="col"><div class="display-4">Pomyślnie usunięto klienta</div></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col"><a href="/"><button type="button" class="btn btn-secondary m-1">Powrót do menu</button></a>
+            <button onclick="location.href='/list_customers'" class="btn btn-secondary m-1">Przejdź do listy klientów</button></div>
+        </div>
+        
+        </div>
+    </div>
+        <div id="main">
         <ul class="nav nav-tabs list-top-menu">
 
             <li class="nav-item">
@@ -22,12 +35,12 @@
 
             <div class="form-inline ml-auto">
                 
-                    <button type="button" class="btn btn-outline-secondary ml-2 editUser">
+                    <button type="button" class="btn btn-outline-secondary ml-2" onclick="editClient()">
                         <i class="icon-edit"></i>
                         Edytuj
                     </button>
 
-                    <button type="button" class="btn btn-outline-secondary ml-2 deleteUser">
+                    <button type="button" class="btn btn-outline-secondary ml-2" onclick="deleteClient()">
                         <i class="icon-cancel-circled"></i>
                         Usuń
                     </button>
@@ -49,11 +62,11 @@
                 <a class="nav-link client_notes" href="#">Notatki</a>
 
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button editUser">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="editClient()>
                     <i class="icon-edit"></i>Edytuj    
                 </button>
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button deleteUser">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="deleteClient()>
                     <i class="icon-cancel-circled"></i>Usuń 
                 </button>
 
@@ -230,7 +243,7 @@
             </div>
 
         </div>
-
+    </div>
     </div>
 
     <script src="{{ asset('js\clientNavs.js') }}"></script>
