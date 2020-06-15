@@ -9,19 +9,19 @@
     <ul class="nav nav-tabs list-top-menu">
 
         <li class="nav-item">
-            <a class="nav-link" href="/client_info">Informacje</a>
+            <a class="nav-link" href="#" id="client_info">Informacje</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="/client_application">Zgłoszenia</a>
+            <a class="nav-link" href="#" id="client_application">Zgłoszenia</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="/client_notes">Notatki</a>
+            <a class="nav-link" href="#" id="client_notes">Notatki</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link active" href="#">Historia zmian</a>
+            <a class="nav-link active" id="client_history" href="#">Historia zmian</a>
         </li>
 
         <div class="form-inline ml-auto">
@@ -143,6 +143,7 @@
 </div>
 
 
+<script src="{{ asset('js\clientNavs.js') }}"></script>
 
 
 @stop

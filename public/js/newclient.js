@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
     })
-
+})
   document.querySelector("#nclient_sbutton").addEventListener("click", () => {
     //////////////////ZMIENIŁEM ID W CLIENT_INFO
     //Dane logowania
@@ -203,6 +203,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   })
 
-})
 
 

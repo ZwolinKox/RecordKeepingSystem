@@ -57,15 +57,15 @@ Route::get('/list_groups', function () {
     return view('list_groups');
 });
 
-Route::get('/client_application', function () {
+Route::get('/client_application/{id}', function ($id) {
     return view('client_application');
 });
 
-Route::get('/client_notes', function () {
+Route::get('/client_notes/{id}', function ($id) {
     return view('client_notes');
 });
 
-Route::get('/client_history', function () {
+Route::get('/client_history/{id}', function ($id) {
     return view('client_history');
 });
 

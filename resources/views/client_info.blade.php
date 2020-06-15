@@ -5,27 +5,23 @@
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
 
-    <script>
-    console.log(location.href.substring(location.href.lastIndexOf('/') + 1));
-    </script>
-
     <div class="container-fluid">
         <ul class="nav nav-tabs list-top-menu">
 
             <li class="nav-item">
-                <a class="nav-link active" href="#">Informacje</a>
+                <a class="nav-link active" id="client_info" href="#">Informacje</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/client_application">Zgłoszenia</a>
+                <a class="nav-link" href="#" id="client_application">Zgłoszenia</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/client_notes">Notatki</a>
+                <a class="nav-link" href="#" id="client_notes">Notatki</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/client_history">Historia zmian</a>
+                <a class="nav-link" href="#" id="client_history">Historia zmian</a>
             </li>
 
             <div class="form-inline ml-auto">
@@ -221,13 +217,8 @@
                             </tr>
 
                             <tr>
-                                <td class="td_style">Grupa</td>
+                                <td class="td_style">Grupy</td>
                                 <td id="cust_group"></td>
-                            </tr>
-
-                            <tr>
-                                <td class="td_style">Utworzony przez</td>
-                                <td id="cust_creator"></td>
                             </tr>
                             
                             <tr>
@@ -343,12 +334,16 @@
                         <tbody>
 
                             <tr>
-                                <td class="td_style">Numer telefon</td>
-                                <td class="blue" id="cust_telnum">+48 123 456 789</td>
+                                <td class="td_style">Numery telefonu</td>
+                                <td class="blue" id="cust_telnum"></td>
+                            </tr>
+                            <tr>
+                                <td class="td_style">Emaile</td>
+                                <td class="blue" id="cust_emails"></td>
                             </tr>
                             <tr>
                                 <td class="td_style">Adres zamieszkania</td>
-                                <td class="blue" id="cust_telnum">47-470, Racibórz ul. Opawska 2</td>
+                                <td class="blue" id="cust_address"></td>
                             </tr>
 
                         </tbody>
@@ -381,7 +376,7 @@
 
     </div>
 
-
-
+    <script src="{{ asset('js\clientNavs.js') }}"></script>
+    <script src="{{ asset('js\clientInfo.js') }}"></script>
 
 @stop
