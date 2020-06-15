@@ -11,6 +11,8 @@ class Groups extends Model
 
     public $timestamps = false;
     protected $hidden = array('pivot');
+    protected $appends = ['count'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,5 +24,9 @@ class Groups extends Model
 
     public function clients(){
         return $this->belongsToMany('App\Clients', 'clients_groups','group','client');
+    }
+
+    public function getCountAttribute(){
+        return $this->attributes['status'] = $this->clients()->count();
     }
 }
