@@ -30,7 +30,7 @@ class Clients extends Model
         'created_at' => 'datetime'
     ];
 
-    public function notes(){
+    public function clientNotes(){
         return $this->hasMany('App\ClientNotes','client','id');
     }
 

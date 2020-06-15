@@ -40,6 +40,14 @@ class ClientsController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function getClientNotes(Request $request){
+        $client = Clients::find($request->id);
+        if($client != null){
+            return $client->clientNotes->toJson();
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function searchClients(Request $request){
         //$list = Clients::query();
 
