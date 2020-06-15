@@ -28,6 +28,7 @@ Route::post('clients/notes/update/{id}', 'ClientNodesController@updateClientNote
 Route::get('clients/', 'ClientsController@getClients');
 Route::get('clients/light', 'ClientsController@getClientsLight');
 Route::get('clients/groups/{id}', 'ClientsController@getClientGroups'); //Dodać do dokumentacji
+Route::get('clients/orders/{id}', 'ClientsController@getClientOrders'); //Dodać do dokumentacji
 Route::post('clients/search', 'ClientsController@searchClients'); //Dodać do dokumentacji
 Route::get('clients/{id}', 'ClientsController@getClient');
 Route::put('clients/', 'ClientsController@createClient');
@@ -72,5 +73,5 @@ Route::post('scheme/update/', 'SchemeController@updateScheme'); //Dodać do doku
 Route::get('scheme/', 'SchemeController@getScheme'); //Dodać do dokumentacji
 
 Route::get('test-mail', function () {
-    Mail::to('mateks301@interia.pl')->send(new App\Mail\TestMail());
+    Mail::to('zwolin2001@gmail.com')->send(new App\Mail\TestMail());
 });
