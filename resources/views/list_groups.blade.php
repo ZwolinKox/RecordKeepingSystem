@@ -9,6 +9,14 @@
 
     <div class="container-fluid">
 
+        <div id="loading" class="loading text-center">
+
+            <div class="display-4">Trwa ładowanie ustawień z serwera...</div>
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
+
+        </div>
+
+        <div id="main" style="display: none;">
 
         <ul class="nav nav-tabs list-top-menu">
 
@@ -19,10 +27,10 @@
             <div class="form-inline ml-auto top-menu">
                 <div class="form-group mx-sm-1">
                         <label for="lgr_search" class="sr-only">Wyszukaj</label>
-                        <input type="text" class="form-control col-auto" id="lgr_search"
+                        <input type="text" class="form-control col-auto searchPattern" id="lgr_search"
                             placeholder="Wpisz szukaną fraze">
                 </div>
-                <button type="submit" class="btn btn-primary mr-2 active">Wyszukaj</button>
+                <button type="submit" class="btn btn-primary mr-2 active search">Wyszukaj</button>
 
                 <button type="button" class="btn btn-primary list-button" data-toggle="modal" data-target="#addGroup">
                     <i class="icon-plus"></i>Dodaj grupę
@@ -48,14 +56,14 @@
 
                                 <div id="GroupAddLogs"></div>
 
-                                <input type="text" class="form-control mt-2 w-100" placeholder="Wprowadź nazwę grupy" id="addGroup">
+                                <input type="text" class="form-control mt-2 w-100" placeholder="Wprowadź nazwę grupy" id="addGroupinp">
 
                             </div>
 
                             <div class="modal-footer">
 
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                                <button id="saveNewGroup" type="button" class="btn btn-primary">Zapisz</button>
+                                <button id="saveNewGroup" type="button" class="btn btn-primary" onclick="addGroup()" >Zapisz</button>
                                                         
                             </div>
                                                     
@@ -82,10 +90,10 @@
 
                     <div class="input-group mb-1 sb">
 
-                        <input type="text" class="form-control col-auto" id="lgr_msearch" placeholder="Wpisz szukaną fraze">
+                        <input type="text" class="form-control col-auto searchPattern" id="lgr_msearch" placeholder="Wpisz szukaną fraze">
 
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-outline-secondary mr-2 active"><i class="icon-search"></i></button>
+                            <button type="submit" class="btn btn-outline-secondary mr-2 active search"><i class="icon-search"></i></button>
                         </div>
 
                     </div>
@@ -98,10 +106,10 @@
 
                     <div class="input-group mb-1 sb">
 
-                        <input type="text" class="form-control col-auto" id="lgr_addSideGroup" placeholder="nowa grupa">
+                        <input type="text" class="form-control col-auto" id="addSideGroup" placeholder="nowa grupa">
 
                         <div class="input-group-append">
-                            <button type="button" class="btn btn-outline-secondary mr-2 active">
+                            <button type="button" class="btn btn-outline-secondary mr-2 active" onclick="addSideGroup()">
                                 <i class="icon-plus"></i>
                             </button>
                         </div>
@@ -122,7 +130,7 @@
 
                 <nav aria-label="Page navigation example ">
 
-                    <ul class="pagination">
+                    <ul class="pagination paginationBody">
 
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
@@ -160,69 +168,16 @@
 
                                 <th class="td_style_list">Nazwa</th>
                                 <th class="td_style_list">Ilość klientów</th>
-                                <th class="td_style_list">Utworzona przez</th>
                                 <th class="td_style_list">Akcja</th>
 
                             </tr>
 
                         </thead>
 
-                        <tbody>
+                        <tbody id="groupTable">
 
-                            <tr>
+                            
 
-                                <td class="td_style_list">Grupa 1</td>
-                                <td class="td_style_list">--</td>
-                                <td class="td_style_list">Pracownik 1</td>
-                                <td class="td_style_list">
-
-                                    <button type="button" class="btn btn-danger list-button">Usuń</button>
-
-
-                                    <button type="button" class="btn btn-outline-secondary list-button" data-toggle="modal" data-target="#changeGroupName">
-                                        Edytuj
-                                    </button>
-
-                                    <div class="modal fade" id="changeGroupName" tabindex="-1" role="dialog" aria-labelledby="changeGroupNameLabel" aria-hidden="true">
-
-                                        <div class="modal-dialog" role="document">
-
-                                            <div class="modal-content">
-
-                                                <div class="modal-header">
-
-                                                    <h5 class="modal-title" id="changeGroupNameLabel">Zmiana nazwy</h5>
-
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-
-                                                </div>
-
-                                            <div class="modal-body">
-
-                                                <div id="GroupEditLogs"></div>
-
-                                                    <input type="text" class="form-control mt-2" placeholder="Wprowadź nową nazwę" id="editGroupName">
-
-                                                </div>
-
-                                                <div class="modal-footer">
-
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                                                    <button id="saveNewGroupName" type="button" class="btn btn-primary">Zapisz</button>
-                                                        
-                                                </div>
-                                                    
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </td>
-
-                            </tr>
 
                         </tbody>
 
@@ -239,7 +194,7 @@
 
                 <nav aria-label="Page navigation example ">
 
-                    <ul class="pagination">
+                    <ul class="pagination paginationBody">
 
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
@@ -264,7 +219,11 @@
             </div>
 
         </div>
+    
+    </div>
 
     </div>
+
+    <script src="js/listGroups.js"></script>
 
     @stop
