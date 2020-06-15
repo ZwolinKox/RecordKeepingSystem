@@ -69,3 +69,7 @@ Route::get('itemtypes/delete/{id}', 'ItemTypesController@deleteItemTypes');
 
 Route::post('scheme/update/', 'SchemeController@updateScheme'); //Dodać do dokumentacji
 Route::get('scheme/', 'SchemeController@getScheme'); //Dodać do dokumentacji
+
+Route::get('test-mail', function () {
+    Mail::to('mateks301@interia.pl')->send(new App\Mail\TestMail());
+});
