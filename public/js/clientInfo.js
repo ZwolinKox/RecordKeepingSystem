@@ -48,5 +48,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.querySelector("#cust_address").innerHTML = res.address;
 
+        fetch('/api/clients/groups/'+getParam(),
+        {
+            method: "get",
+            headers:
+            {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer " + Cookies.get("token")
+            },
+        }).then(res => {
+            if(!res.ok) {
+                location.href = "/client_info";
+            }
+
+            return res.json();
+        }).then(res => {
+            console.log(res);
+            res.forEach(element => {
+                document.querySelector("#cust_group").innerHTML += element.name +" , ";
+            });
+
+            let groups = document.querySelector("#cust_group").innerHTML;
+            document.querySelector("#cust_group").innerHTML = groups.substr(0, groups.length - 2);
+        })
+
     })
 })
