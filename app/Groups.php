@@ -27,6 +27,6 @@ class Groups extends Model
     }
 
     public function getCountAttribute(){
-        return $this->attributes['status'] = $this->clients()->count();
+        return $this->attributes['count'] = $this->clients()->count();
     }
 }
