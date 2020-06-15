@@ -34,10 +34,10 @@ class CreateOrdersTable extends Migration
             $table->float('estimated_price')->default(0);
             $table->float('advance_pay')->default(0);
 
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('assigned')->references('id')->on('users');
-            $table->foreign('client')->references('id')->on('clients');
-            $table->foreign('item_type')->references('id')->on('item_types');
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('assigned')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('client')->references('id')->on('clients')->onDelete('cascade');;
+            $table->foreign('item_type')->references('id')->on('item_types')->onDelete('cascade');;
         });
     }
 

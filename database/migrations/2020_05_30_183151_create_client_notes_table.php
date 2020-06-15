@@ -20,8 +20,8 @@ class CreateClientNotesTable extends Migration
             $table->text('text')->nullable(false);
             $table->timestamps();
 
-            $table->foreign('user')->references('id')->on('users');
-            $table->foreign('client')->references('id')->on('clients');
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('client')->references('id')->on('clients')->onDelete('cascade');;
         });
     }
 

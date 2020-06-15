@@ -20,8 +20,8 @@ class CreateOrderNotesTable extends Migration
             $table->text('text')->nullable(false);
             $table->timestamps();
 
-            $table->foreign('user')->references('id')->on('users');
-            $table->foreign('order')->references('id')->on('orders');
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('order')->references('id')->on('orders')->onDelete('cascade');;
         });
     }
 

@@ -17,8 +17,8 @@ class CreateClientsGroupsConnectionTable extends Migration
             $table->bigInteger('client')->unsigned()->nullable(false);
             $table->bigInteger('group')->unsigned()->nullable(false);
 
-            $table->foreign('client')->references('id')->on('clients');
-            $table->foreign('group')->references('id')->on('groups');
+            $table->foreign('client')->references('id')->on('clients')->onDelete('cascade');;
+            $table->foreign('group')->references('id')->on('groups')->onDelete('cascade');;
         });
     }
 

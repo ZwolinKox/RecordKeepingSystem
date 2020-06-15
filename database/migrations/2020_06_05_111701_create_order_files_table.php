@@ -19,7 +19,7 @@ class CreateOrderFilesTable extends Migration
             $table->string('name')->nullable(false);
             $table->bigInteger('order')->unsigned()->nullable(false);
 
-            $table->foreign('order')->references('id')->on('orders');
+            $table->foreign('order')->references('id')->on('orders')->onDelete('cascade');;
         });
     }
 

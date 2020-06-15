@@ -20,8 +20,8 @@ class CreateStatusTable extends Migration
             $table->bigInteger('order')->unsigned()->nullable(false);
             $table->timestamp('date')->nullable(false);
 
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('order')->references('id')->on('orders');
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('order')->references('id')->on('orders')->onDelete('cascade');;
         });
     }
 
