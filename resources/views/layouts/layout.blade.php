@@ -59,9 +59,9 @@
               <div class="dropdown-menu d_menu" aria-labelledby="drop">
 
                 <a class="dropdown-header text-muted font-weight-bold userType"></a>
-                <a class="dropdown-item" href="edit_my_acc">Ustawienia konta</a>
-                <a class="dropdown-item admin" href="list_employee">Zarządzaj użytkownikami</a>
-                <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
+                <a class="dropdown-item" href="/edit_my_acc">Ustawienia konta</a>
+                <a class="dropdown-item admin" href="/list_employee">Zarządzaj użytkownikami</a>
+                <a class="dropdown-item admin" href="/scheme">Schemat numeracji</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item logout" href="#">Wyloguj się</a>
 
@@ -109,9 +109,9 @@
         </div>
 
         <a class="dropdown-header text-muted font-weight-bold userType"></a>
-        <a class="dropdown-item" href="edit_my_acc">Ustawienia konta</a>
-        <a class="dropdown-item admin" href="list_employee">Zarządzaj użytkownikami</a>
-        <a class="dropdown-item admin" href="scheme">Schemat numeracji</a>
+        <a class="dropdown-item" href="/edit_my_acc">Ustawienia konta</a>
+        <a class="dropdown-item admin" href="/list_employee">Zarządzaj użytkownikami</a>
+        <a class="dropdown-item admin" href="/scheme">Schemat numeracji</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item logout" href="#">Wyloguj się</a>
 

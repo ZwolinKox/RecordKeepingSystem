@@ -20,25 +20,16 @@
                 <a class="nav-link client_notes" href="#">Notatki</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link client_history" href="#">Historia zmian</a>
-            </li>
-
             <div class="form-inline ml-auto">
                 
-                    <button type="button" class="btn btn-outline-secondary ml-2" onclick="window.location.href='/edit_client'">
+                    <button type="button" class="btn btn-outline-secondary ml-2 editUser">
                         <i class="icon-edit"></i>
                         Edytuj
                     </button>
 
-                    <button type="button" class="btn btn-outline-secondary ml-2">
+                    <button type="button" class="btn btn-outline-secondary ml-2 deleteUser">
                         <i class="icon-cancel-circled"></i>
                         Usuń
-                    </button>
-
-                    <button type="button" class="btn btn-outline-secondary ml-2"> 
-                        <i class="icon-ok-circled"></i>
-                        Zamknij
                     </button>
                 
             </div>
@@ -56,14 +47,13 @@
                 <a class="nav-link active" class="#">Informacje</a>
                 <a class="nav-link client_application" href="#" >Zgłoszenia</a>
                 <a class="nav-link client_notes" href="#">Notatki</a>
-                <a class="nav-link client_history" href="#">Historia zmian</a>
 
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="window.location.href='/edit_client'">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button editUser">
                     <i class="icon-edit"></i>Edytuj    
                 </button>
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button deleteUser">
                     <i class="icon-cancel-circled"></i>Usuń 
                 </button>
 
@@ -152,22 +142,7 @@
             
 
             
-                <div class="card">
-
-                    <div class="card-header">Dodatkowe informacje
-
-                        <i class="icon-info-circled float-right"></i>
-
-                    </div>
-
-                    <div class="col-auto  mt-3 mb-2">
-                        <div class="alert alert-primary" role="alert">
-                            Brak zdefiniowanych tresci dodatkowych.
-                        </div>
-
-                    </div>
-
-                </div>
+        
             
 
 
@@ -243,8 +218,8 @@
 
                     <div class="col-auto  mt-3 mb-2">
 
-                        <div class="alert alert-primary" role="alert">
-                            Brak zdefiniowanych adresów przejdź do edycji aby dodać jakiś.
+                        <div class="alert alert-primary" id="moreInformation" role="alert">
+                            
                         </div>
 
                     </div>
