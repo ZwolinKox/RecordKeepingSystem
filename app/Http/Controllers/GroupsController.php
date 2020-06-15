@@ -28,6 +28,11 @@ class GroupsController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function searchGroups(Request $request){
+        $groups = Groups::where('name', 'LIKE', '%' . $request->name . '%');
+        return $groups->paginate(15);
+    }
+
     function getGroupClients(Request $request){
         $client = Groups::find($request->id);
         if($client != null){
