@@ -28,6 +28,14 @@ class GroupsController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function getGroupClients(Request $request){
+        $client = Groups::find($request->id);
+        if($client != null){
+            return $client->clients->toJson();
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function deleteGroup(Request $request)
     {
         $exist = Groups::find($request->id);

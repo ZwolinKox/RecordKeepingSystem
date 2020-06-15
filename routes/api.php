@@ -27,6 +27,7 @@ Route::post('clients/notes/update/{id}', 'ClientNodesController@updateClientNote
 
 Route::get('clients/', 'ClientsController@getClients');
 Route::get('clients/light', 'ClientsController@getClientsLight');
+Route::get('clients/groups/{id}', 'ClientsController@getClientGroups'); //Dodać do dokumentacji
 Route::post('clients/search', 'ClientsController@searchClients'); //Dodać do dokumentacji
 Route::get('clients/{id}', 'ClientsController@getClient');
 Route::put('clients/', 'ClientsController@createClient');
@@ -36,6 +37,7 @@ Route::post('clients/update/{id}', 'ClientsController@updateClient');
 
 Route::get('groups/', 'GroupsController@getGroup');
 Route::get('groups/light', 'GroupsController@getGroupsLight'); //Dodać do dokumentacji
+Route::get('groups/clients', 'GroupsController@getGroupClients'); //Dodać do dokumentacji
 Route::get('groups/{id}', 'GroupsController@getGroups');
 Route::put('groups/', 'GroupsController@createGroup');
 Route::get('groups/delete/{id}', 'GroupsController@deleteGroup'); 
@@ -53,6 +55,7 @@ Route::post('orders/notes/update/{id}', 'OrderNotesController@updateOrderNote');
 
 Route::get('orders/', 'OrdersController@getOrders'); 
 Route::post('orders/search', 'OrdersController@searchOrders'); 
+Route::get('orders/statuses/{id}', 'OrdersController@getOrderStatuses'); //Dodać do dokumentacji
 Route::get('orders/{id}', 'OrdersController@getOrder'); 
 Route::put('orders/', 'OrdersController@createOrders'); 
 Route::get('orders/delete/{id}', 'OrdersController@deleteOrders'); 

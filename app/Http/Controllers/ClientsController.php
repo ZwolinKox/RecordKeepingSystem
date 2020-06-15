@@ -24,6 +24,14 @@ class ClientsController extends Controller
         return Clients::all('id','name', 'phone1');
     }
 
+    function getClientGroups(Request $request){
+        $client = Clients::find($request->id);
+        if($client != null){
+            return $client->groups->toJson();
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function searchClients(Request $request){
         //$list = Clients::query();
 

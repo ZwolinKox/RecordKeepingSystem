@@ -31,6 +31,15 @@ class OrdersController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
+    function getOrderStatuses(Request $request)
+    {
+        $order = Orders::find($request->id);
+        if($order != null){
+            return  $order->statuses->toJson();
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function deleteOrders(Request $request)
     {
         $exist = Orders::find($request->id);
