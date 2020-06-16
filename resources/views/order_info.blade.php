@@ -34,21 +34,21 @@
                         <div class="dropdown-divider"></div>
 
                         <a class="dropdown-header text-muted font-weight-bold">Statusy naprawy</a>
-                        <a class="dropdown-item" class="setStatus" id="1" href="#">Oczekuje na dostarczenie</a>
-                        <a class="dropdown-item" class="setStatus" id="2" href="#">W trakcie diagnozy</a>
-                        <a class="dropdown-item" class="setStatus" id="3" href="#">Wymaga potwierdzeia kosztów u klienta</a>
-                        <a class="dropdown-item" class="setStatus" id="4" href="#">Potwierdzone</a>
-                        <a class="dropdown-item" class="setStatus" id="5" href="#">W trakcie naprawy</a>
-                        <a class="dropdown-item" class="setStatus" id="6" href="#">Oczekuje na podzespoły</a>
-                        <a class="dropdown-item" class="setStatus" id="7" href="#">W trakcie testów</a>
-                        <a class="dropdown-item" class="setStatus" id="8" href="#">Podsumowanie naprawy</a>
-                        <a class="dropdown-item" class="setStatus" id="9" href="#">Nie zaakceptowane</a>
-                        <a class="dropdown-item" class="setStatus" id="10" href="#">Anulowane</a>
-                        <a class="dropdown-item" class="setStatus" id="11" href="#">Naprawa nie jest możliwa</a>
-                        <a class="dropdown-item" class="setStatus" id="12" href="#">Do odbioru</a>
-                        <a class="dropdown-item" class="setStatus" id="13" href="#">Przekazano do wysyłki</a>
-                        <a class="dropdown-item" class="setStatus" id="14" href="#">Odebrane</a>
-                        <a class="dropdown-item" class="setStatus" id="15" href="#">Zezłomowane</a>
+                        <a class="dropdown-item setStatus" id="1" href="#">Oczekuje na dostarczenie</a>
+                        <a class="dropdown-item setStatus" id="2" href="#">W trakcie diagnozy</a>
+                        <a class="dropdown-item setStatus" id="3" href="#">Wymaga potwierdzeia kosztów u klienta</a>
+                        <a class="dropdown-item setStatus" id="4" href="#">Potwierdzone</a>
+                        <a class="dropdown-item setStatus" id="5" href="#">W trakcie naprawy</a>
+                        <a class="dropdown-item setStatus" id="6" href="#">Oczekuje na podzespoły</a>
+                        <a class="dropdown-item setStatus" id="7" href="#">W trakcie testów</a>
+                        <a class="dropdown-item setStatus" id="8" href="#">Podsumowanie naprawy</a>
+                        <a class="dropdown-item setStatus" id="9" href="#">Nie zaakceptowane</a>
+                        <a class="dropdown-item setStatus" id="10" href="#">Anulowane</a>
+                        <a class="dropdown-item setStatus" id="11" href="#">Naprawa nie jest możliwa</a>
+                        <a class="dropdown-item setStatus" id="12" href="#">Do odbioru</a>
+                        <a class="dropdown-item setStatus" id="13" href="#">Przekazano do wysyłki</a>
+                        <a class="dropdown-item setStatus" id="14" href="#">Odebrane</a>
+                        <a class="dropdown-item setStatus" id="15" href="#">Zezłomowane</a>
 
                     </div>
                 </div>
@@ -110,21 +110,21 @@
                         <div class="dropdown-divider"></div>
 
                         <a class="dropdown-header text-muted font-weight-bold">Statusy naprawy</a>
-                        <a class="dropdown-item" class="setStatus" id="1" href="#">Oczekuje na dostarczenie</a>
-                        <a class="dropdown-item" class="setStatus" id="2" href="#">W trakcie diagnozy</a>
-                        <a class="dropdown-item" class="setStatus" id="3" href="#">Wymaga potwierdzeia kosztów u klienta</a>
-                        <a class="dropdown-item" class="setStatus" id="4" href="#">Potwierdzone</a>
-                        <a class="dropdown-item" class="setStatus" id="5" href="#">W trakcie naprawy</a>
-                        <a class="dropdown-item" class="setStatus" id="6" href="#">Oczekuje na podzespoły</a>
-                        <a class="dropdown-item" class="setStatus" id="7" href="#">W trakcie testów</a>
-                        <a class="dropdown-item" class="setStatus" id="8" href="#">Podsumowanie naprawy</a>
-                        <a class="dropdown-item" class="setStatus" id="9" href="#">Nie zaakceptowane</a>
-                        <a class="dropdown-item" class="setStatus" id="10" href="#">Anulowane</a>
-                        <a class="dropdown-item" class="setStatus" id="11" href="#">Naprawa nie jest możliwa</a>
-                        <a class="dropdown-item" class="setStatus" id="12" href="#">Do odbioru</a>
-                        <a class="dropdown-item" class="setStatus" id="13" href="#">Przekazano do wysyłki</a>
-                        <a class="dropdown-item" class="setStatus" id="14" href="#">Odebrane</a>
-                        <a class="dropdown-item" class="setStatus" id="15" href="#">Zezłomowane</a>
+                        <a class="dropdown-item setStatus" id="1" href="#">Oczekuje na dostarczenie</a>
+                        <a class="dropdown-item setStatus" id="2" href="#">W trakcie diagnozy</a>
+                        <a class="dropdown-item setStatus" id="3" href="#">Wymaga potwierdzeia kosztów u klienta</a>
+                        <a class="dropdown-item setStatus" id="4" href="#">Potwierdzone</a>
+                        <a class="dropdown-item setStatus" id="5" href="#">W trakcie naprawy</a>
+                        <a class="dropdown-item setStatus" id="6" href="#">Oczekuje na podzespoły</a>
+                        <a class="dropdown-item setStatus" id="7" href="#">W trakcie testów</a>
+                        <a class="dropdown-item setStatus" id="8" href="#">Podsumowanie naprawy</a>
+                        <a class="dropdown-item setStatus" id="9" href="#">Nie zaakceptowane</a>
+                        <a class="dropdown-item setStatus" id="10" href="#">Anulowane</a>
+                        <a class="dropdown-item setStatus" id="11" href="#">Naprawa nie jest możliwa</a>
+                        <a class="dropdown-item setStatus" id="12" href="#">Do odbioru</a>
+                        <a class="dropdown-item setStatus" id="13" href="#">Przekazano do wysyłki</a>
+                        <a class="dropdown-item setStatus" id="14" href="#">Odebrane</a>
+                        <a class="dropdown-item setStatus" id="15" href="#">Zezłomowane</a>
 
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                                 <td id="order_number"></td>
                             </tr>
                             <tr>
-                                <td class="td_style">Id klienta</td>
+                                <td class="td_style">Klient</td>
                                 <td id="order_custid"></td>
                             </tr>
                             <tr>
@@ -315,25 +315,7 @@
                             <tr>
                                 <td class="td_style">Ilość dni od przyjęcia</td>
                                 <td>
-                                    <span class="badge badge-success">- dni</span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="td_style">Ilość dni pozostałych do zakończenia</td>
-                                <td>
-                                    <span class="badge badge-success">- dni</span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="td_style">Sytuacja czasowa</td>
-                                <td>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="00"
-                                            aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                                        </div>
-                                    </div>
+                                    <span class="badge badge-success" id="order_days_begin">- dni</span>
                                 </td>
                             </tr>
 
@@ -358,21 +340,7 @@
                         </li>
                         
 
-                        <li class="list-group-item">
-
-                            <div class="alert alert-success" role="alert">
-
-                                <i class="icon-info-circled"></i>Brak diagnozy, użyj przycisku
-
-                                <button class="btn btn-primary" disabled>
-                                    <i class="icon-arrows-cw"></i>
-                                    Akcje naprawy
-                                </button>
-
-                                aby opisać tę naprawę diagnozą
-                            </div>
-
-                        </li>
+                    
 
                     </ul>
 
