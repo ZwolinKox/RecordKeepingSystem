@@ -227,7 +227,7 @@ document.querySelector("#add_order").addEventListener("click", () => {
     }
 
 
-    let date="0000-00-00";
+    let date="";
     let warranty="";
     if(document.querySelector("#norder_wrrnt").checked)
     {
@@ -267,11 +267,10 @@ document.querySelector("#add_order").addEventListener("click", () => {
             body: JSON.stringify(ob)
         })
 
-        .then(res => res.json())
-
         .then(res => {
-            console.log(res);
+            console.log(res.status);
             if (res.ok) {
+
                 document.querySelector("#error").innerHTML +=
                     `<div class="alert alert-success alert-dismissible fade show" role="alert">
             Udało sie utworzyć zamówienie.
@@ -279,6 +278,10 @@ document.querySelector("#add_order").addEventListener("click", () => {
               <span aria-hidden="true">&times;</span>
             </button>
           </div>`;
+            $("#main").fadeOut("slow", () => {
+            $("#successCreateOrder").fadeIn("slow", () => {
+                })
+            })
             }
             else {
                 document.querySelector("#error").innerHTML +=
@@ -289,7 +292,6 @@ document.querySelector("#add_order").addEventListener("click", () => {
             </button>
           </div>`;
             }
-            console.log(res);
         })
 
 })
