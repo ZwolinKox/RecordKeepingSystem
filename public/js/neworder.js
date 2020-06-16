@@ -46,7 +46,6 @@ document.querySelector("#submit").addEventListener("click", () => {
 })
 
 
-
 document.addEventListener("DOMContentLoaded", () =>{
     fetch("/api/itemtypes/light",
     {
@@ -77,28 +76,15 @@ document.addEventListener("DOMContentLoaded", () =>{
     .then(res => {
 
         //dane pobrane z bazy
-        console.log(res);
         const obj = JSON.parse(JSON.stringify(res));
         let table = document.querySelector("#type");
         table.innerHTML = "";
         obj.forEach(element => {
 
-            
-            
-            
-                table.innerHTML += `                   
+            table.innerHTML += `                   
             <option value="${element.id}">${element.name}</option>`
             
-            
-
-
         });
-        if (document.querySelector("#norder_eotype").checked) {
-            typ = document.querySelector("#norder_eotypeo").value;
-        }
-        else {
-            typ = document.querySelector("#type").value;
-        }
     });
 }) 
 
@@ -121,7 +107,7 @@ document.querySelector("#groupsubmit").addEventListener("click", () => {
 
             }
             else {
-                console.log(res);
+                
                 document.querySelector("#error").innerHTML +=
                     `<div class="alert alert-danger alert-dismissible fade show" role="alert">
              <strong>Uwaga!</strong> Problem z bazą danych.
@@ -134,20 +120,20 @@ document.querySelector("#groupsubmit").addEventListener("click", () => {
         .then(res => {
             const clname = document.querySelector("#norder_group").value;
             //dane pobrane z bazy
-            console.log(res);
+           
             let obj = {};
             obj = JSON.parse(JSON.stringify(res));
             let table = document.querySelector("#group");
             table.innerHTML = "";
             obj.forEach(element => {
 
-                console.log(element.name);
+                
                 let siema = element.name;
                 if (siema.toLowerCase().search(clname.toLowerCase()) != -1) {
                     table.innerHTML += `                   
                     <option value="${element.id}">${element.name}</option>`
                 }
-                console.log(siema.search(clname));
+                
 
             });
 
@@ -192,13 +178,13 @@ document.querySelector("#employeesubmit").addEventListener("click", () => {
             table.innerHTML = "";
             obj.forEach(element => {
 
-                console.log(element.name);
+                
                 let siema = element.name;
                 if (siema.toLowerCase().search(clname.toLowerCase()) != -1) {
                     table.innerHTML += `                   
                     <option value="${element.id}">${element.name}</option>`
                 }
-                console.log(siema.search(clname));
+                
 
             });
 
@@ -232,6 +218,22 @@ document.querySelector("#add_order").addEventListener("click", () => {
         pck = 3;
     }
 
+    let typ;
+    if (document.querySelector("#norder_eotype").checked) {
+        typ = document.querySelector("#type").value;
+    }
+    else {
+        typ = document.querySelector("#norder_notypeo").value;
+    }
+
+
+    let date="0000-00-00";
+    let warranty="";
+    if(document.querySelector("#norder_wrrnt").checked)
+    {
+        date=document.querySelector("#norder_stwrrnt").value;
+        warranty=document.querySelector("#norder_sewrrnt").value;
+    }
 
 
     const ob = {
@@ -239,10 +241,10 @@ document.querySelector("#add_order").addEventListener("click", () => {
         model: document.querySelector("#norder_model").value,
         assigned: document.querySelector("#employee").value,
         client: document.querySelector("#sel").value,
-        item_type: 1,
+        item_type: typ,
         serial_number: document.querySelector("#norder_serial").value,
-        buy_date: document.querySelector("#norder_stwrrnt").value,
-        warranty_number: document.querySelector("#norder_sewrrnt").value,
+        buy_date: date,
+        warranty_number: warranty,
         begin_date: document.querySelector("#norder_in").value,
         end_date: document.querySelector("#norder_out").value,
         info: document.querySelector("#norder_descom").value,
@@ -268,9 +270,9 @@ document.querySelector("#add_order").addEventListener("click", () => {
         .then(res => res.json())
 
         .then(res => {
+            console.log(res);
             if (res.ok) {
-                return res.json(),
-                    document.querySelector("#error").innerHTML +=
+                document.querySelector("#error").innerHTML +=
                     `<div class="alert alert-success alert-dismissible fade show" role="alert">
             Udało sie utworzyć zamówienie.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
