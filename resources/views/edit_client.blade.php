@@ -4,9 +4,18 @@
 <!-- Ta część będzie wklejona ostatecznie w środek layoutu -->
 @section('content')
 
+
 	<div class="container-fluid">
 
-		<div>
+	<div id="loading" class="loading text-center">
+            <div class="display-4">Trwa ładowanie ustawień z serwera...</div>
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            </div>
+    </div>
+
+	<div id="logs"></div>
+
+		<div id="main" style="display:none;">
 
 			<div class="row">
 
@@ -22,14 +31,13 @@
 							<div class="form-group">
 
 								<div class="form-check col-5">
-									<input class="form-check-input" checked="checked" type="radio" name="eclient_radio" id="eclient_def">
-									<label class="form-check-label" for="eclient_def">Osoba prywatna</label>
-                                    <div class="w-100"></div>
-                                    <input class="form-check-input" type="radio" name="eclient_radio" id="eclient_fac">
+
+									<input class="form-check-input" type="checkbox" id="eclient_fac">
 									<label class="form-check-label" for="eclient_fac">Firma</label>
+
 								</div>
 
-							</div>
+                        	</div>
 
 							<div class="form-group">
 
@@ -41,7 +49,7 @@
 										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i></div>
 									</div>
 
-									<input type="text" class="form-control" id="eclient_name" value="poprzednia nazwa" placeholder="">
+									<input type="text" class="form-control" id="eclient_name" value="" placeholder="">
 
 								</div>
 
@@ -79,12 +87,12 @@
 							<div class="form-group">
 
 								<div class="form-check">
-									<input class="form-check-input"  checked="checked" type="checkbox" id="eclient_email" value="option1">
+									<input class="form-check-input"  checked="checked" type="checkbox" id="eclient_email">
 									<label class="form-check-label" for="eclient_email">Wysyłaj emaile informacyjne</label>
 								</div>
 
 								<div class="form-check">
-									<input class="form-check-input"  checked="checked" type="checkbox" id="eclient_sms" value="option2">
+									<input class="form-check-input"  checked="checked" type="checkbox" id="eclient_sms">
 									<label class="form-check-label" for="eclient_sms">Wysyłaj SMSy informacyjne</label>
 								</div>
 
@@ -116,7 +124,7 @@
 										<div class="input-group-text">+48</div>
 									</div>
 
-									<input type="text" class="form-control" id="eclient_tnum" value="000 000 000" placeholder="">
+									<input type="text" class="form-control" id="eclient_tnum" placeholder="">
 
 								</div>
 
@@ -132,7 +140,7 @@
 										<div class="input-group-text">+48</div>
 									</div>
 
-									<input type="text" class="form-control" id="eclient_atnum" value="000 000 000" placeholder="">
+									<input type="text" class="form-control" id="eclient_atnum" placeholder="">
 
 								</div>
 
@@ -158,7 +166,7 @@
 										<div class="input-group-text">@</div>
 									</div>
 
-									<input type="text" class="form-control" id="eclient_dea" value="defaultemailaddress@example.com" placeholder="">
+									<input type="text" class="form-control" id="eclient_dea" placeholder="">
 
 								</div>
 
@@ -174,7 +182,7 @@
 										<div class="input-group-text">@</div>
 									</div>
 
-									<input type="text" class="form-control" id="eclient_aea" value="alteremailaddress@example.com" placeholder="">
+									<input type="text" class="form-control" id="eclient_aea" placeholder="">
 
 								</div>
 
@@ -199,6 +207,6 @@
 
 	</div>
 
-<script src="js\newclient.js"></script>
+<script src="{{ asset('js\editClient.js') }}"></script>
 @stop
 					
