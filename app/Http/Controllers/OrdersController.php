@@ -165,6 +165,27 @@ class OrdersController extends Controller
         return response()->json(['message' => 'Successful added new Order'], 200);
     }
 
+    function createStatus(Request $request){
+        $validator = Validator::make($request->all(),[
+            'status' => 'between:1,15',
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
+
+        $order = Orders::find($request->id);
+        if($order != null){
+            $order->statuses()->create([
+                'status' => $request->status,
+                'created_by' => auth()->user()->id,
+                'date' => Carbon::now(),
+            ]);
+            $order->save();
+            return response()->json(['message' => 'Successful added new status'], 200);
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function fileUpload(Request $request){
 
         $order = Orders::find($request->id);
