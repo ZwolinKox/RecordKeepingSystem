@@ -60,7 +60,8 @@ Route::get('orders/', 'OrdersController@getOrders');
 Route::post('orders/search', 'OrdersController@searchOrders'); 
 Route::get('orders/statuses/{id}', 'OrdersController@getOrderStatuses'); //Dodać do dokumentacji
 Route::get('orders/notes/{id}', 'OrdersController@getOrderNotes'); //Dodać do dokumentacji
-Route::get('orders/{id}', 'OrdersController@getOrder'); 
+Route::get('orders/{id}', 'OrdersController@getOrder');
+Route::put('orders/status/{id}', 'OrdersController@createStatus');  //Dodać do dokumentacji
 Route::put('orders/', 'OrdersController@createOrders'); 
 Route::get('orders/delete/{id}', 'OrdersController@deleteOrders'); 
 Route::post('orders/update/{id}', 'OrdersController@updateOrders'); 
