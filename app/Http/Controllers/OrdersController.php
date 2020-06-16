@@ -208,7 +208,6 @@ class OrdersController extends Controller
     function fileUpload(Request $request){
         
         $order = Orders::find($request->id);
-
         if($order != null){
             if($request->file('file') != null){
                 $path = Storage::putFile('orders', $request->file('file'));
