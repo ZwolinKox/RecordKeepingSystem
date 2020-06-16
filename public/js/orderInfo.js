@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }).then(res => {
         
         document.querySelector("#order_number").innerHTML = res.id;
-        document.querySelector("#order_custid").innerHTML = res.client;
-        document.querySelector("#order_type").innerHTML = res.item_type;
-        document.querySelector("#order_creator").innerHTML = res.created_by;
-        document.querySelector("#order_empl").innerHTML = res.assigned;        
+        document.querySelector("#order_custid").innerHTML = res.client_name;
+        document.querySelector("#order_type").innerHTML = res.item_type_name;
+        document.querySelector("#order_creator").innerHTML = res.created_by_name;
+        document.querySelector("#order_empl").innerHTML = res.assigned_name;        
         document.querySelector("#order_rma").innerHTML = res.name;
         document.querySelector("#order_mnfctr").innerHTML = res.producer;
         document.querySelector("#order_model").innerHTML = res.model;
@@ -100,6 +100,15 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         </div>`;
             
+        document.querySelector("#order_date_begin").innerHTML = res.begin_date;
+
+        if(now < endDate)
+            document.querySelector("#order_date_end").innerHTML = Math.floor((now - endDate) / (1000 * 60 * 60 * 24));
+        else 
+            document.querySelector("#order_date_end").innerHTML = "0"
+
+        document.querySelector("#order_days_begin").innerHTML = Math.floor((now - beginDate) / (1000 * 60 * 60 * 24));
+        document.querySelector("#oinfo_problem").innerHTML = res.issue;
 
     })
 

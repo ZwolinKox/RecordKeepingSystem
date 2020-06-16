@@ -36,6 +36,34 @@ function getStatusName(id) {
     }
 }
 
+function setStatus(id) {
+
+    const obj = {
+        status : id
+    };
+
+    fetch('/api/orders/status/'+getParam(),
+    {
+        method: "post",
+        headers:
+        {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer " + Cookies.get("token")
+        },
+        body: JSON.stringify(obj)
+    }).then(res => {
+        location.reload();
+    })
+}
+
 function getParam() {
     return location.href.substring(location.href.lastIndexOf('/') + 1);
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".setStatus").forEach(element => {
+        element.addEventListener('click', setStatus(element.id));
+    });
+})

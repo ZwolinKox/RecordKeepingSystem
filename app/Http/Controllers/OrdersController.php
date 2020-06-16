@@ -10,6 +10,7 @@ use App\OrderFiles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\UploadedFile;
 
 class OrdersController extends Controller
 {
@@ -197,6 +198,8 @@ class OrdersController extends Controller
     function fileUpload(Request $request){
 
         $order = Orders::find($request->id);
+
+        return response()->json(['error' => $request->hasFile('file')], 401);
         if($order != null){
             if($request->file('file') != null){
                 $path = Storage::putFile('orders', $request->file('file'));
@@ -205,6 +208,8 @@ class OrdersController extends Controller
                     'name' => $request->file('file')->getClientOriginalName(),
                 ]);
                 return response()->json(['message' => 'Successful added new file'], 200);
+            } else {
+                return response()->json(['error' => 'File cant be null'], 401);
             }
         }
         return response()->json(['error' => 'Undefined id'], 401);

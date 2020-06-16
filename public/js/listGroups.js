@@ -190,8 +190,6 @@ function pagination(page) {
 
                     <div class="modal-body">
 
-                        <div id="GroupEditLogs${element.id}"></div>
-
                         <input type="text" class="form-control mt-2 nname" placeholder="Wprowadź nową nazwę" id="nname${element.id}">
 
                     </div>
