@@ -382,16 +382,17 @@
 
                                 <input type="text" class="form-control" id="norder_group" placeholder="">
 
-                                <select id="group">
+                                <select id="group" class="form-control">
                                             
                                 </select>
+
+                            </div>
+
                                 <div class="d-flex justify-content-end">
 
                                     <button class="btn btn-primary active m-1" id="groupsubmit">Wyszukaj</button>
 
-                                </div>
-
-                            </div>
+                                </div>       
 
                         </div>
 
@@ -416,17 +417,14 @@
 
                                 <input type="text" class="form-control" id="norder_employee" placeholder="">
 
-                                <select id="employee">
+                                <select id="employee" class="form-control">
                                     
                                 </select>
-
-                                <div class="row">
+                                </div>
+                                
                                 <div class="d-flex justify-content-end">
 
-                                    <button class="btn btn-primary active m-1" id="employeesubmit">Wyszukaj</button>
-
-                                </div>
-                                </div>
+                                    <button class="btn btn-primary active m-1" id="employeesubmit">Wyszukaj</button>     
 
                             </div>
 
@@ -446,21 +444,19 @@
 
                                 <label for="norder_client"><strong>Klient</strong></label>
 
-								<div class="input-group">
-                                <div id="cl_name">                              
-
-									<div class="input-group-prepend">
-										<div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i>
-										</div>
-									</div>
+								    <div class="input-group">
+                                                                     
+								        	<div class="input-group-prepend">
+										        <div class="input-group-text"><i class="icon-user" style="font-size: 15px;"></i>
+										        </div>
+									        </div>
                                     
-									<input type="text" class="form-control" id="norder_client" placeholder="">
+									        <input type="text" class="form-control" id="norder_client" placeholder="">
 
-                                <select id="sel">
+                                            <select id="sel" class="form-control">
                                     
-                                </select>
-								</div>
-                                </div>
+                                            </select>	                                        
+                                    </div>
 
                             </div>
 
