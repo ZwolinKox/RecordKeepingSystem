@@ -60,9 +60,19 @@ class OrdersController extends Controller
     }
 
     function searchOrders(Request $request){
-        $orders = Orders::where('name', 'LIKE', '%' . $request->name . '%')
-        ->orWhere('model', 'LIKE', '%' . $request->model . '%')
-        ->orWhere('client', 'LIKE', '%' . $request->client . '%');
+        $orders;
+
+        if($request->myOrder != null && $request->myOrder) {
+
+            $orders = Orders::where('assigned', "=" ,auth()->user()->id)
+            ->where('name', 'LIKE', '%' . $request->name . '%')
+            ->orWhere('model', 'LIKE', '%' . $request->model . '%')
+            ->orWhere('client', 'LIKE', '%' . $request->client . '%');
+        } else {
+            $orders = Orders::where('name', 'LIKE', '%' . $request->name . '%')
+            ->orWhere('model', 'LIKE', '%' . $request->model . '%')
+            ->orWhere('client', 'LIKE', '%' . $request->client . '%');
+        }
 
         return $orders->paginate(15);
     }

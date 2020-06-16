@@ -16,7 +16,7 @@
             <button onclick="location.href='/list_customers'" class="btn btn-secondary m-1">Przejdź do listy klientów</button></div>
         </div>
         
-        </div>
+    </div>
     </div>
         <div id="main">
         <ul class="nav nav-tabs list-top-menu">

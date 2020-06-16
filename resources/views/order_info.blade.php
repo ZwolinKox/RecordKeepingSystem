@@ -7,6 +7,18 @@
 
 
     <div class="container-fluid">
+    <div id="successDelete" style="display: none;" class="text-center">
+        <div class="row">
+            <div class="col"><div class="display-4">Pomyślnie usunięto zamówienie</div></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col"><a href="/"><button type="button" class="btn btn-secondary m-1">Powrót do menu</button></a>
+            <button onclick="location.href='/list_application'" class="btn btn-secondary m-1">Przejdź do listy zamówień</button></div>
+        </div>
+        
+    </div>
+    <span id="main">
         <ul class="nav nav-tabs list-top-menu">
             <li class="nav-item">
                 <a class="nav-link active" href="#">Informacje</a>
@@ -349,6 +361,7 @@
             </div>
 
         </div>
+        </span>
 
     </div>
 

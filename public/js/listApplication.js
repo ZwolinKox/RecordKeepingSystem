@@ -1,4 +1,6 @@
 
+let filtr = 0;
+
 function getStatusName(id) {
     switch (id) {
         case 1:
@@ -36,6 +38,11 @@ function getStatusName(id) {
     }
 }
 
+function setFiltr(id) {
+    filtr = id;
+    pagination(1);
+}
+
 let patternValue = "";
 
 function setPattern() {
@@ -51,11 +58,15 @@ function setPattern() {
 function pagination(page) {
     let validData = false;
 
-    const ob = {
+    let ob = {
         name : patternValue,
         model: patternValue,
-        client: patternValue 
+        client: patternValue, 
+        myOrder: false
     }
+
+    if(filtr == 1)
+        ob.myOrder = true;
 
     fetch('/api/orders/search?page='+page,
         {
@@ -90,7 +101,6 @@ function pagination(page) {
                 
                 table.innerHTML = "";
                 value.data.forEach(element => {
-                    element.status = getStatusName(element.status);
 
                     const beginDate = new Date(Date.parse(element.begin_date)).getTime();
                     const endDate = new Date(Date.parse(element.end_date)).getTime();
@@ -105,15 +115,13 @@ function pagination(page) {
                     if(endDate <= now)
                         procent = 100;
 
-                        console.log(procent);
-
                         if(procent >= 90)
                             color = "danger";
                         else if (procent >= 50)
                             color = "warning";
-                    
 
-                        table.innerHTML += `
+                            element.status = getStatusName(element.status);
+                            table.innerHTML += `
                         <tr>
                 
                             <td class="td_style_list"><a href="/order_info/${element.id}" class="link-list-info">${element.name}</a></td>
@@ -132,7 +140,7 @@ function pagination(page) {
                             <td class="td_style_list"><span class="badge badge-warning">${element.status}</span></td>
                 
                         </tr>
-                    `;
+                    `;                        
 
                 });
 
