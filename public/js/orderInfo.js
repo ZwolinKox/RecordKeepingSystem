@@ -1,4 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
+    document.querySelector("#sendFile").addEventListener("click", () => {
+        const file = document.querySelector("#inputGroupFile01").files[0];
+
+
+        let formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/api/orders/upload/'+getParam(),
+        {
+            method: "post",
+            headers:
+            {
+                "Authorization": "Bearer " + Cookies.get("token")
+            },
+            body: formData
+        }).then(res => {
+            if(!res.ok) {
+                document.querySelector("#fileLogs").innerHTML =
+                `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Nie udało się załączyć pliku!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>`;
+
+            } else {
+                document.querySelector("#fileLogs").innerHTML =
+                `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Pomyślnie załączono plik.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>`;
+            }
+        })
+
+
+    })
+    
     fetch('/api/orders/'+getParam(),
     {
         method: "get",
@@ -109,6 +149,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.querySelector("#order_days_begin").innerHTML = Math.floor((now - beginDate) / (1000 * 60 * 60 * 24));
         document.querySelector("#oinfo_problem").innerHTML = res.issue;
+
+        files = res.filles;
+        files.forEach(element => {
+            document.querySelector("#fileList").innerHTML += `<a target="_blank" href="/api/orders/download/${element.id}"><li class="list-group-item">${element.name}</li></a>`;
+        });
 
     })
 

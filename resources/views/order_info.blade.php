@@ -19,6 +19,33 @@
         
     </div>
     <span id="main">
+
+        <div class="modal fade" id="uploadFile" tabindex="-1" role="dialog" aria-labelledby="uploadFileLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="uploadFileLabel">Załączenie pliku</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        <div id="fileLogs"></div>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                <label class="custom-file-label" for="inputGroupFile01">Wybierz plik</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                            <button id="sendFile" type="button" class="btn btn-primary">Wyślij</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
         <ul class="nav nav-tabs list-top-menu">
             <li class="nav-item">
                 <a class="nav-link active" href="#">Informacje</a>
@@ -41,26 +68,26 @@
                 
 
                         <a class="dropdown-header text-muted font-weight-bold">Operacje</a>
-                        <a class="dropdown-item" href="#">Dodaj notatkę</a>
-                        <a class="dropdown-item" href="#">Załącz pliki</a>
+                        <a class="dropdown-item cursor-pointer">Dodaj notatkę</a>
+                        <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#uploadFile">Załącz pliki</a>
                         <div class="dropdown-divider"></div>
 
                         <a class="dropdown-header text-muted font-weight-bold">Statusy naprawy</a>
-                        <a class="dropdown-item setStatus" id="1" href="#">Oczekuje na dostarczenie</a>
-                        <a class="dropdown-item setStatus" id="2" href="#">W trakcie diagnozy</a>
-                        <a class="dropdown-item setStatus" id="3" href="#">Wymaga potwierdzeia kosztów u klienta</a>
-                        <a class="dropdown-item setStatus" id="4" href="#">Potwierdzone</a>
-                        <a class="dropdown-item setStatus" id="5" href="#">W trakcie naprawy</a>
-                        <a class="dropdown-item setStatus" id="6" href="#">Oczekuje na podzespoły</a>
-                        <a class="dropdown-item setStatus" id="7" href="#">W trakcie testów</a>
-                        <a class="dropdown-item setStatus" id="8" href="#">Podsumowanie naprawy</a>
-                        <a class="dropdown-item setStatus" id="9" href="#">Nie zaakceptowane</a>
-                        <a class="dropdown-item setStatus" id="10" href="#">Anulowane</a>
-                        <a class="dropdown-item setStatus" id="11" href="#">Naprawa nie jest możliwa</a>
-                        <a class="dropdown-item setStatus" id="12" href="#">Do odbioru</a>
-                        <a class="dropdown-item setStatus" id="13" href="#">Przekazano do wysyłki</a>
-                        <a class="dropdown-item setStatus" id="14" href="#">Odebrane</a>
-                        <a class="dropdown-item setStatus" id="15" href="#">Zezłomowane</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="1" >Oczekuje na dostarczenie</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="2" >W trakcie diagnozy</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="3">Wymaga potwierdzeia kosztów u klienta</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="4">Potwierdzone</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="5">W trakcie naprawy</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="6">Oczekuje na podzespoły</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="7">W trakcie testów</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="8">Podsumowanie naprawy</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="9">Nie zaakceptowane</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="10">Anulowane</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="11">Naprawa nie jest możliwa</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="12">Do odbioru</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="13">Przekazano do wysyłki</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="14">Odebrane</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="15">Zezłomowane</a>
 
                     </div>
                 </div>
@@ -117,26 +144,26 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                         <a class="dropdown-header text-muted font-weight-bold">Operacje</a>
-                        <a class="dropdown-item" href="#">Dodaj notatkę</a>
-                        <a class="dropdown-item" href="#">Załącz pliki</a>
+                        <a class="dropdown-item cursor-pointer" >Dodaj notatkę</a>
+                        <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#uploadFile">Załącz pliki</a>
                         <div class="dropdown-divider"></div>
 
                         <a class="dropdown-header text-muted font-weight-bold">Statusy naprawy</a>
-                        <a class="dropdown-item setStatus" id="1" href="#">Oczekuje na dostarczenie</a>
-                        <a class="dropdown-item setStatus" id="2" href="#">W trakcie diagnozy</a>
-                        <a class="dropdown-item setStatus" id="3" href="#">Wymaga potwierdzeia kosztów u klienta</a>
-                        <a class="dropdown-item setStatus" id="4" href="#">Potwierdzone</a>
-                        <a class="dropdown-item setStatus" id="5" href="#">W trakcie naprawy</a>
-                        <a class="dropdown-item setStatus" id="6" href="#">Oczekuje na podzespoły</a>
-                        <a class="dropdown-item setStatus" id="7" href="#">W trakcie testów</a>
-                        <a class="dropdown-item setStatus" id="8" href="#">Podsumowanie naprawy</a>
-                        <a class="dropdown-item setStatus" id="9" href="#">Nie zaakceptowane</a>
-                        <a class="dropdown-item setStatus" id="10" href="#">Anulowane</a>
-                        <a class="dropdown-item setStatus" id="11" href="#">Naprawa nie jest możliwa</a>
-                        <a class="dropdown-item setStatus" id="12" href="#">Do odbioru</a>
-                        <a class="dropdown-item setStatus" id="13" href="#">Przekazano do wysyłki</a>
-                        <a class="dropdown-item setStatus" id="14" href="#">Odebrane</a>
-                        <a class="dropdown-item setStatus" id="15" href="#">Zezłomowane</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="1">Oczekuje na dostarczenie</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="2">W trakcie diagnozy</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="3">Wymaga potwierdzeia kosztów u klienta</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="4">Potwierdzone</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="5">W trakcie naprawy</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="6">Oczekuje na podzespoły</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="7">W trakcie testów</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="8">Podsumowanie naprawy</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="9">Nie zaakceptowane</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="10">Anulowane</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="11">Naprawa nie jest możliwa</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="12">Do odbioru</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="13">Przekazano do wysyłki</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="14">Odebrane</a>
+                        <a class="dropdown-item setStatus cursor-pointer" id="15">Zezłomowane</a>
 
                     </div>
                 </div>
@@ -267,6 +294,9 @@
                     <div class="col-auto  mt-3 mb-2">
 
                         <div class="alert alert-success" role="alert">
+                        
+                        <ul class="list-group" id="fileList">
+                        </ul>
 
                             <i class="icon-info-circled"></i>Dodaj więcej plików używając przycisku
                             

@@ -24,24 +24,6 @@
                     <a class="nav-link active" href="#">Wszyscy</a>
                 </li>
 
-                <li class="nav-item top-menu">
-                    <a class="nav-link" href="#">Z otwartymi naprawami</a>
-                </li>
-
-                <li class="nav-item dropdown top-menu">
-
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">Grupa</a>
-
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-
-                </li>
 
                 <div class="form-inline ml-auto top-menu">
 

@@ -20,6 +20,10 @@ body
     font-weight: 300;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .user_btn, .user_btn:hover
 {
     background-color: rgb(54, 54, 54) !important; 

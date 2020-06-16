@@ -50,7 +50,7 @@ Route::post('groups/update/{id}', 'GroupsController@updateGroup');
 Route::get('groups/findClient/{id}', 'GroupsController@findClient'); //Dodać do dokumentacji
 
 Route::post('orders/upload/{id}', 'OrdersController@fileUpload'); //Dodać do dokumentacji
-Route::post('orders/download/{id}', 'OrdersController@fileDownload'); //Dodać do dokumentacji
+Route::get('orders/download/{id}', 'OrdersController@fileDownload'); //Dodać do dokumentacji
 
 Route::get('ordernotes/', 'OrderNotesController@getOrderNotes'); //Dodać do dokumentacji
 Route::get('ordernotes/{id}', 'OrderNotesController@getOrderNote'); //Dodać do dokumentacji

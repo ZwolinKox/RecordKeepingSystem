@@ -105,4 +105,22 @@ document.addEventListener("DOMContentLoaded", () => {
            deleteOrder();
         })
     });
+
+    document.querySelectorAll(".order_history").forEach(element => {
+        element.addEventListener('click', () => {
+            location.href ="/order_history/"+getParam();
+        });
+    });
+
+    document.querySelectorAll(".order_info").forEach(element => {
+        element.addEventListener('click', () => {
+            location.href ="/order_info/"+getParam();
+        });
+    });
+
+    document.querySelectorAll(".order_notes").forEach(element => {
+        element.addEventListener('click', () => {
+            location.href ="/order_notes/"+getParam();
+        });
+    });
 })

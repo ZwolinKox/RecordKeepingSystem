@@ -206,7 +206,7 @@ class OrdersController extends Controller
     }
 
     function fileUpload(Request $request){
-
+        
         $order = Orders::find($request->id);
 
         if($order != null){
@@ -218,7 +218,7 @@ class OrdersController extends Controller
                 ]);
                 return response()->json(['message' => 'Successful added new file'], 200);
             } else {
-                return response()->json(['error' => 'File cant be null'], 401);
+                return response()->json(['error' => 'File cant be null'], 403);
             }
         }
         return response()->json(['error' => 'Undefined id'], 401);
