@@ -10,8 +10,8 @@ class Orders extends Model
     use Notifiable;
 
     public $timestamps = false;
-    protected $hidden = ['clientRelation', 'itemTypeRelation', 'assignedRelation'];
-    protected $appends = ['status', 'client_name', 'item_type_name', 'assigned_name'];
+    protected $hidden = ['clientRelation', 'itemTypeRelation', 'assignedRelation', 'filesShortInfo'];
+    protected $appends = ['status', 'client_name', 'item_type_name', 'assigned_name' , 'filles'];
     
     /**
      * The attributes that are mass assignable.
@@ -50,6 +50,14 @@ class Orders extends Model
         return $this->hasMany('App\Status', 'order', 'id');
     }
 
+    public function filesRelation(){
+        return $this->hasMany('App\OrderFiles', 'order', 'id');
+    }
+
+    public function filesShortInfo(){
+        return $this->hasMany('App\OrderFiles', 'order', 'id')->select('id', 'name');
+    }
+
     public function status(){
         return $this->statuses()->latest('date')->first()->status;
     }
@@ -74,7 +82,7 @@ class Orders extends Model
         return $this->attributes['assigned_name'] = null;
     }
 
-    public function files(){
-        return $this->hasMany('App\OrderFiles', 'order', 'id');
+    public function getFillesAttribute(){
+        return $this->attributes['filles'] = $this->filesShortInfo;
     }
 }

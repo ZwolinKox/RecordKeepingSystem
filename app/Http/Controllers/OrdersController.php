@@ -43,7 +43,7 @@ class OrdersController extends Controller
     function getClientNotes(Request $request){
         $order = Orders::find($request->id);
         if($order != null){
-            return $order->orderNotes->toJson();
+            return $order->orderNotesRelation->toJson();
         }
         return response()->json(['error' => 'Undefined id'], 401);
     }
@@ -170,7 +170,7 @@ class OrdersController extends Controller
         if($order != null){
             if($request->file('file') != null){
                 $path = Storage::putFile('orders', $request->file('file'));
-                $order->files()->create([
+                $order->filesRelation()->create([
                     'path' => $path,
                     'name' => $request->file('file')->getClientOriginalName(),
                 ]);
