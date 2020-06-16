@@ -278,6 +278,10 @@ document.querySelector("#add_order").addEventListener("click", () => {
               <span aria-hidden="true">&times;</span>
             </button>
           </div>`;
+            $("#main").fadeOut("slow", () => {
+            $("#successCreateOrder").fadeIn("slow", () => {
+                })
+            })
             }
             else {
                 document.querySelector("#error").innerHTML +=
