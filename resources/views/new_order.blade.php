@@ -380,41 +380,6 @@
 
                     <div class="col-auto my-3">
 
-                        <div class="form-group1">
-
-                            <label for="norder_group1"><strong>Grupa</strong></label>
-
-                            <div class="input-group mb-2">
-
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="icon-users" style="font-size: 15px;"></i>
-                                    </div>
-                                </div>
-
-                                <input type="text" class="form-control" id="norder_group" placeholder="">
-
-                                <select id="group" class="form-control">
-                                            
-                                </select>
-
-                            </div>
-
-                                <div class="d-flex justify-content-end">
-
-                                    <button class="btn btn-primary active m-1" id="groupsubmit">Wyszukaj</button>
-
-                                </div>       
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="card">
-
-                    <div class="col-auto my-3">
-
                         <div class="form-group">
 
                             <label for="norder_group2"><strong>Przypisany pracownik</strong></label>

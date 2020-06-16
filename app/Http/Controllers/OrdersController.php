@@ -209,7 +209,6 @@ class OrdersController extends Controller
 
         $order = Orders::find($request->id);
 
-        return response()->json(['error' => $request->hasFile('file')], 401);
         if($order != null){
             if($request->file('file') != null){
                 $path = Storage::putFile('orders', $request->file('file'));
