@@ -36,6 +36,30 @@ function getStatusName(id) {
     }
 }
 
+function deleteOrder() {
+    if(confirm("Na pewno chcesz usunąć to zlecenie?")) {
+        fetch('/api/orders/delete/'+getParam(),
+        {
+            method: "get",
+            headers:
+            {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer " + Cookies.get("token")
+            },
+        }).then(res => {
+            if(res.ok)
+                $( "#main" ).fadeOut( "slow", () => {
+                    $( "#successDelete" ).fadeIn( "slow", function() {
+                    });
+                });
+            else {
+
+            }
+        })
+    }
+}
+
 function setStatus(id) {
 
     const obj = {
@@ -44,7 +68,7 @@ function setStatus(id) {
 
     fetch('/api/orders/status/'+getParam(),
     {
-        method: "post",
+        method: "put",
         headers:
         {
             "Content-Type": "application/json",
@@ -64,6 +88,21 @@ function getParam() {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".setStatus").forEach(element => {
-        element.addEventListener('click', setStatus(element.id));
+        element.addEventListener('click', () => {
+            setStatus(element.id);
+        });
+    });
+
+    
+    document.querySelectorAll(".editOrder").forEach(element => {
+        element.addEventListener("click", () => {
+            location.href = "/edit_order/"+getParam();
+        })
+    });
+
+    document.querySelectorAll(".deleteOrder").forEach(element => {
+        element.addEventListener("click", () => {
+           deleteOrder();
+        })
     });
 })

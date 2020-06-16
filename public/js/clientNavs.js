@@ -3,7 +3,6 @@ function getParam() {
 }
 
 function deleteClient() {
-    // Na chwilę obecną usuwanie nie działa, bo klucze obce blokują operację. Niedługo zastosujemy cascade/soft delete
     if(confirm("Na pewno chcesz usunąć klienta?")) {
         fetch('/api/clients/delete/'+getParam(),
         {

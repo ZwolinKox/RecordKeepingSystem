@@ -61,9 +61,19 @@ class OrdersController extends Controller
     }
 
     function searchOrders(Request $request){
-        $orders = Orders::where('name', 'LIKE', '%' . $request->name . '%')
-        ->orWhere('model', 'LIKE', '%' . $request->model . '%')
-        ->orWhere('client', 'LIKE', '%' . $request->client . '%');
+        $orders;
+
+        if($request->myOrder != null && $request->myOrder) {
+
+            $orders = Orders::where('assigned', "=" ,auth()->user()->id)
+            ->where('name', 'LIKE', '%' . $request->name . '%')
+            ->orWhere('model', 'LIKE', '%' . $request->model . '%')
+            ->orWhere('client', 'LIKE', '%' . $request->client . '%');
+        } else {
+            $orders = Orders::where('name', 'LIKE', '%' . $request->name . '%')
+            ->orWhere('model', 'LIKE', '%' . $request->model . '%')
+            ->orWhere('client', 'LIKE', '%' . $request->client . '%');
+        }
 
         return $orders->paginate(15);
     }
@@ -199,7 +209,10 @@ class OrdersController extends Controller
 
         $order = Orders::find($request->id);
 
+<<<<<<< HEAD
         //return response()->json(['error' => $request->hasFile('file')], 401);
+=======
+>>>>>>> ea0256d1a9fd7f18e694f4684426d96b8ead4c01
         if($order != null){
             if($request->file('file') != null){
                 $path = Storage::putFile('orders', $request->file('file'));

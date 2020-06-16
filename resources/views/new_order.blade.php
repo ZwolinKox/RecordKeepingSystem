@@ -6,8 +6,19 @@
 
 <div class="container-fluid">
 
+<div id="successCreateOrder" style="display: none;" class="text-center">
+        <div class="row">
+            <div class="col"><div class="display-4">Pomyślnie utworzono zlecenie</div></div>
+        </div>
     
-    <div>
+    <div class="row" style="margin-top: 15px;">
+            <div class="col"><a href="/"><button type="button" class="btn btn-danger m-1">Powrót do menu</button></a>
+            <button onclick="location.reload()" class="btn btn-success m-1">Utwórz kolejne zlecenie</button></div>
+    </div>
+</div>
+    
+    <div id="main">
+
 
         <div class="row">
 
@@ -359,41 +370,6 @@
                         <div class="form-group">
                             <label for="norder_descom"><strong>Uwagi</strong></label>
                             <textarea class="form-control" id="norder_descom" name="opis" rows="4"></textarea>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="card">
-
-                    <div class="col-auto my-3">
-
-                        <div class="form-group1">
-
-                            <label for="norder_group1"><strong>Grupa</strong></label>
-
-                            <div class="input-group mb-2">
-
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="icon-users" style="font-size: 15px;"></i>
-                                    </div>
-                                </div>
-
-                                <input type="text" class="form-control" id="norder_group" placeholder="">
-
-                                <select id="group" class="form-control">
-                                            
-                                </select>
-
-                            </div>
-
-                                <div class="d-flex justify-content-end">
-
-                                    <button class="btn btn-primary active m-1" id="groupsubmit">Wyszukaj</button>
-
-                                </div>       
-
                         </div>
 
                     </div>

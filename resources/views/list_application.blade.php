@@ -21,19 +21,11 @@
             <ul class="nav nav-tabs list-top-menu">
 
                 <li class="nav-item top-menu">
-                    <a class="nav-link active" href="#">Lista</a>
+                    <a class="nav-link active"  href="#" onclick="setFiltr(0)">Lista</a>
                 </li>
 
                 <li class="nav-item top-menu">
-                    <a class="nav-link" href="#">Otwarte</a>
-                </li>
-
-                <li class="nav-item top-menu">
-                    <a class="nav-link" href="#">Do odbioru</a>
-                </li>
-
-                <li class="nav-item top-menu">
-                    <a class="nav-link" href="#">Moje</a>
+                    <a class="nav-link" href="#" onclick="setFiltr(1)">Moje</a>
                 </li>
 
 
@@ -81,10 +73,8 @@
 
                     </div>
 
-                    <a class="nav-link active" href="#">Lista</a>
-                    <a class="nav-link" href="#">Otwarte</a>
-                    <a class="nav-link" href="#">Do odbioru</a>
-                    <a class="nav-link" href="#">Moje</a>
+                    <a class="nav-link active" onclick="setFiltr(0)" >Lista</a>
+                    <a class="nav-link"  onclick="setFiltr(1)" >Moje</a>
 
                     <button type="button" class="btn btn-primary active side_m_list_button"
                         onclick="window.location.href='/new_order'">
