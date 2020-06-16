@@ -81,11 +81,11 @@ Route::get('/edit_my_acc', function () {
     return view('edit_my_acc');
 });
 
-Route::get('/edit_client', function () {
+Route::get('/edit_client/{id}', function ($id) {
     return view('edit_client');
 });
 
-Route::get('/edit_order', function () {
+Route::get('/edit_order/{id}', function ($id) {
     return view('edit_order');
 });
 
