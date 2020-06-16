@@ -98,12 +98,14 @@ class GroupsController extends Controller
         }
         $group = Groups::find($request->group);
         if($group != null){
-            $group->clients->detach($request->client);
-        }
+            $group->clients()->detach($request->client);
+            return response()->json(['error' => 'Success delete client from Group'], 200);
+        } else
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
     function createConnection(Request $request){
+
         $validator = Validator::make($request->all(),[
             'client' => 'required',
             'group' => 'required'
@@ -113,9 +115,10 @@ class GroupsController extends Controller
         }
         $group = Groups::find($request->group);
         if($group != null){
-            $group->clients->detach($request->client);
-        }
-        return response()->json(['error' => 'Undefined id'], 401);
+            $group->clients()->detach($request->client);
+            return response()->json(['error' => 'Success add client to Group'], 200);
+        } else
+            return response()->json(['error' => 'Undefined id'], 401);
     }
 
     function findClient(Request $request){
