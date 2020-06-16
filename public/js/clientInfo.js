@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }).then(res => {
         document.querySelector("#cust_name").innerHTML = res.name;
 
-        if(res.address == "") 
+        if(res.address == null) 
             document.querySelector("#moreInformation").innerHTML = "Brak zdefiniowanych adresów przejdź do edycji aby dodać jakiś.";
         else
             document.querySelector("#moreInformation").innerHTML = "Brak dodatkowych informacji";

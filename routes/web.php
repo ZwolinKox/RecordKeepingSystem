@@ -33,7 +33,7 @@ Route::get('/new_employee', function () {
     return view('new_employee');
 });
 
-Route::get('/order_info', function () {
+Route::get('/order_info/{id}', function ($id) {
     return view('order_info');
 });
 
@@ -89,11 +89,11 @@ Route::get('/edit_order', function () {
     return view('edit_order');
 });
 
-Route::get('/order_history', function () {
+Route::get('/order_history/{id}', function ($id) {
     return view('order_history');
 });
 
-Route::get('/order_notes', function () {
+Route::get('/order_notes/{id}', function ($id) {
     return view('order_notes');
 });
 

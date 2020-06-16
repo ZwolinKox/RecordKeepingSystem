@@ -12,10 +12,10 @@
                 <a class="nav-link active" href="#">Informacje</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/order_history">Historia</a>
+                <a class="nav-link order_history" href="#">Historia</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/order_notes">Notatki</a>
+                <a class="nav-link order_notes" href="#">Notatki</a>
             </li>
 
             <div class="form-inline ml-auto">
@@ -26,34 +26,29 @@
                     </button>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                
 
                         <a class="dropdown-header text-muted font-weight-bold">Operacje</a>
-                        <a class="dropdown-item" href="#">Zapisz wynikiem diagnozy</a>
-                        <a class="dropdown-item" href="#">Zanotuj czynność naprawczą</a>
-                        <a class="dropdown-item" href="#">Opisz naprawę podsumowaniem</a>
-                        <div class="dropdown-divider"></div>
-
-                        <a class="dropdown-header text-muted font-weight-bold">Inne operacje</a>
                         <a class="dropdown-item" href="#">Dodaj notatkę</a>
                         <a class="dropdown-item" href="#">Załącz pliki</a>
                         <div class="dropdown-divider"></div>
 
                         <a class="dropdown-header text-muted font-weight-bold">Statusy naprawy</a>
-                        <a class="dropdown-item" href="#">Oczekuje na dostarczenie</a>
-                        <a class="dropdown-item" href="#">W trakcie diagnozy</a>
-                        <a class="dropdown-item" href="#">Wymaga potwierdzeia kosztów u klienta</a>
-                        <a class="dropdown-item" href="#">Potwierdzone</a>
-                        <a class="dropdown-item" href="#">W trakcie naprawy</a>
-                        <a class="dropdown-item" href="#">Oczekuje na podzespoły</a>
-                        <a class="dropdown-item" href="#">W trakcie testów</a>
-                        <a class="dropdown-item" href="#">Podsumowanie naprawy</a>
-                        <a class="dropdown-item" href="#">Nie zaakceptowane</a>
-                        <a class="dropdown-item" href="#">Anulowane</a>
-                        <a class="dropdown-item" href="#">Naprawa nie jest możliwa</a>
-                        <a class="dropdown-item" href="#">Do odbioru</a>
-                        <a class="dropdown-item" href="#">Przekazano do wysyłki</a>
-                        <a class="dropdown-item" href="#">Odebrane</a>
-                        <a class="dropdown-item" href="#">Zezłomowane</a>
+                        <a class="dropdown-item" class="setStatus" id="1" href="#">Oczekuje na dostarczenie</a>
+                        <a class="dropdown-item" class="setStatus" id="2" href="#">W trakcie diagnozy</a>
+                        <a class="dropdown-item" class="setStatus" id="3" href="#">Wymaga potwierdzeia kosztów u klienta</a>
+                        <a class="dropdown-item" class="setStatus" id="4" href="#">Potwierdzone</a>
+                        <a class="dropdown-item" class="setStatus" id="5" href="#">W trakcie naprawy</a>
+                        <a class="dropdown-item" class="setStatus" id="6" href="#">Oczekuje na podzespoły</a>
+                        <a class="dropdown-item" class="setStatus" id="7" href="#">W trakcie testów</a>
+                        <a class="dropdown-item" class="setStatus" id="8" href="#">Podsumowanie naprawy</a>
+                        <a class="dropdown-item" class="setStatus" id="9" href="#">Nie zaakceptowane</a>
+                        <a class="dropdown-item" class="setStatus" id="10" href="#">Anulowane</a>
+                        <a class="dropdown-item" class="setStatus" id="11" href="#">Naprawa nie jest możliwa</a>
+                        <a class="dropdown-item" class="setStatus" id="12" href="#">Do odbioru</a>
+                        <a class="dropdown-item" class="setStatus" id="13" href="#">Przekazano do wysyłki</a>
+                        <a class="dropdown-item" class="setStatus" id="14" href="#">Odebrane</a>
+                        <a class="dropdown-item" class="setStatus" id="15" href="#">Zezłomowane</a>
 
                     </div>
                 </div>
@@ -66,27 +61,20 @@
                         <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="sr-only">Rozwiń listę</span>
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Pierwszy link</a>
-                            <a class="dropdown-item" href="#">Drugi link</a>
-                            <a class="dropdown-item" href="#">Trzeci link</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Czwarty link</a>
-                        </div>
-                    </div>
+                        
 
-                    <button type="button" class="btn btn-outline-secondary ml-2" onclick="window.location.href='/edit_order'">
+                    <button type="button" class="btn btn-outline-secondary ml-2 editOrder">
                         <i class="icon-edit"></i>
                         Edytuj
                     </button>
 
-                    <button type="button" class="btn btn-outline-secondary ml-2">
+                    <button type="button" class="btn btn-outline-secondary ml-2 deleteOrder">
                         <i class="icon-cancel-circled"></i>
                         Usuń
                     </button>
 
 
-                    <button type="button" class="btn btn-outline-secondary ml-2">
+                    <button type="button" class="btn btn-outline-secondary ml-2 closeOrder">
                         <i class="icon-ok-circled"></i>
                         Zamknij
                     </button>
@@ -117,60 +105,46 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                         <a class="dropdown-header text-muted font-weight-bold">Operacje</a>
-                        <a class="dropdown-item" href="#">Zapisz wynikiem diagnozy</a>
-                        <a class="dropdown-item" href="#">Zanotuj czynność naprawczą</a>
-                        <a class="dropdown-item" href="#">Opisz naprawę podsumowaniem</a>
-                        <div class="dropdown-divider"></div>
-
-                        <a class="dropdown-header text-muted font-weight-bold">Inne operacje</a>
                         <a class="dropdown-item" href="#">Dodaj notatkę</a>
                         <a class="dropdown-item" href="#">Załącz pliki</a>
                         <div class="dropdown-divider"></div>
 
                         <a class="dropdown-header text-muted font-weight-bold">Statusy naprawy</a>
-                        <a class="dropdown-item" href="#">Oczekuje na dostarczenie</a>
-                        <a class="dropdown-item" href="#">W trakcie diagnozy</a>
-                        <a class="dropdown-item" href="#">Wymaga potwierdzeia kosztów u klienta</a>
-                        <a class="dropdown-item" href="#">Potwierdzone</a>
-                        <a class="dropdown-item" href="#">W trakcie naprawy</a>
-                        <a class="dropdown-item" href="#">Oczekuje na podzespoły</a>
-                        <a class="dropdown-item" href="#">W trakcie testów</a>
-                        <a class="dropdown-item" href="#">Podsumowanie naprawy</a>
-                        <a class="dropdown-item" href="#">Nie zaakceptowane</a>
-                        <a class="dropdown-item" href="#">Anulowane</a>
-                        <a class="dropdown-item" href="#">Naprawa nie jest możliwa</a>
-                        <a class="dropdown-item" href="#">Do odbioru</a>
-                        <a class="dropdown-item" href="#">Przekazano do wysyłki</a>
-                        <a class="dropdown-item" href="#">Odebrane</a>
-                        <a class="dropdown-item" href="#">Zezłomowane</a>
+                        <a class="dropdown-item" class="setStatus" id="1" href="#">Oczekuje na dostarczenie</a>
+                        <a class="dropdown-item" class="setStatus" id="2" href="#">W trakcie diagnozy</a>
+                        <a class="dropdown-item" class="setStatus" id="3" href="#">Wymaga potwierdzeia kosztów u klienta</a>
+                        <a class="dropdown-item" class="setStatus" id="4" href="#">Potwierdzone</a>
+                        <a class="dropdown-item" class="setStatus" id="5" href="#">W trakcie naprawy</a>
+                        <a class="dropdown-item" class="setStatus" id="6" href="#">Oczekuje na podzespoły</a>
+                        <a class="dropdown-item" class="setStatus" id="7" href="#">W trakcie testów</a>
+                        <a class="dropdown-item" class="setStatus" id="8" href="#">Podsumowanie naprawy</a>
+                        <a class="dropdown-item" class="setStatus" id="9" href="#">Nie zaakceptowane</a>
+                        <a class="dropdown-item" class="setStatus" id="10" href="#">Anulowane</a>
+                        <a class="dropdown-item" class="setStatus" id="11" href="#">Naprawa nie jest możliwa</a>
+                        <a class="dropdown-item" class="setStatus" id="12" href="#">Do odbioru</a>
+                        <a class="dropdown-item" class="setStatus" id="13" href="#">Przekazano do wysyłki</a>
+                        <a class="dropdown-item" class="setStatus" id="14" href="#">Odebrane</a>
+                        <a class="dropdown-item" class="setStatus" id="15" href="#">Zezłomowane</a>
 
                     </div>
                 </div>
 
                 <div class="dropdown">
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split side_m_list_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split side_m_list_button printOrder" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="icon-print"></i>Drukuj 
                     </button>
-
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Pierwszy link</a>
-                        <a class="dropdown-item" href="#">Drugi link</a>
-                        <a class="dropdown-item" href="#">Trzeci link</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Czwarty link</a>
-                    </div>
                 </div>
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="window.location.href='/new_order'">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button editOrder">
                     <i class="icon-edit"></i>Edytuj    
                 </button>
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button deleteOrder">
                     <i class="icon-cancel-circled"></i>Usuń 
                 </button>
 
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button">
+                <button type="button" class="btn btn-outline-secondary side_m_list_button closeOrder">
                     <i class="icon-ok-circled"></i>Zamknij    
                 </button>
 
@@ -189,11 +163,11 @@
                         <tbody>
                             <tr>
                                 <td class="td_style">Numer zlecenia</td>
-                                <td id="order_umber"></td>
+                                <td id="order_number"></td>
                             </tr>
                             <tr>
-                                <td class="td_style">Nazwa klienta</td>
-                                <td id="order_custname"></td>
+                                <td class="td_style">Id klienta</td>
+                                <td id="order_custid"></td>
                             </tr>
                             <tr>
                                 <td class="td_style">Przedmiot naprawy</td>
@@ -210,10 +184,6 @@
                             <tr>
                                 <td class="td_style">RMA</td>
                                 <td id="order_rma"></td>
-                            </tr>
-                            <tr>
-                                <td class="td_style">Rodzaj</td>
-                                <td id="order_kind"></td>
                             </tr>
                             <tr>
                                 <td class="td_style">Producent</td>
@@ -233,15 +203,11 @@
                             </tr>
                             <tr>
                                 <td class="td_style">Data zakupu</td>
-                                <td id="order_wrrnt_date">--</td>
+                                <td id="order_buy_date">--</td>
                             </tr>
                             <tr>
                                 <td class="td_style">Numer dokumentu zakupu</td>
                                 <td id="order_wrrnt_number">--</td>
-                            </tr>
-                            <tr>
-                                <td class="td_style">Uwagi wewnętrzne</td>
-                                <td id="order_com"></td>
                             </tr>
                             <tr>
                                 <td class="td_style">Sposób dostarczenia naprawy</td>
@@ -272,7 +238,7 @@
                     </div>
 
                     <div class="col-auto  mt-3 mb-2">
-                        <div class="alert alert-primary" role="alert">
+                        <div class="alert alert-primary" id="order_info" role="alert">
                             Brak zdefiniowanych tresci dodatkowych.
                         </div>
                     </div>
@@ -321,37 +287,27 @@
                             <tr>
                                 <td class="td_style">Status</td>
                                 <td>
-                                    <span class="badge badge-warning">-</span>
+                                    <span class="badge badge-warning" id="order_status">-</span>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td class="td_style">Postęp prac</td>
-                                <td>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="0"
-                                            aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                                        </div>
-                                    </div>
+                                <td id="order_progres">
+                                    
                                 </td>
                             </tr>
 
                             <tr>
-                                <td class="td_style">Data utworzenia</td>
-                                <td id="utworzenie"></td>
-                            </tr>
-
-                            <tr>
                                 <td class="td_style">Data rozpoczęcia</td>
-                                <td id="rozpoczecie"></td>
+                                <td id="order_date_begin"></td>
                             </tr>
 
                             <tr>
                                 <td class="td_style">Planowana data zkończenia</td>
                                 <td>
-                                    <span id="zakonczenie">
-                                    </span>
-                                    <span class="badge badge-pill badge-secondary">-</span>
+                                    
+                                    <span class="badge badge-pill badge-secondary" id="order_date_end">-</span>
                                     dni
                                 </td>
                             </tr>
@@ -400,10 +356,7 @@
                             <p><strong>Opis problemu:</strong></p>
                             <p id="oinfo_problem">Treść</p>
                         </li>
-                        <li class="list-group-item">
-                            <p><strong>Uwagi:</strong></p>
-                            <p id="oinfo_attnt">Treść</p>
-                        </li>
+                        
 
                         <li class="list-group-item">
 
@@ -430,5 +383,8 @@
         </div>
 
     </div>
+
+    <script src="{{ asset('js\orderNavs.js') }}"></script>
+    <script src="{{ asset('js\orderInfo.js') }}"></script>
 
 @stop

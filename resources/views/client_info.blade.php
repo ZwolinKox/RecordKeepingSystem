@@ -62,11 +62,11 @@
                 <a class="nav-link client_notes" href="#">Notatki</a>
 
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="editClient()>
+                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="editClient()">
                     <i class="icon-edit"></i>Edytuj    
                 </button>
 
-                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="deleteClient()>
+                <button type="button" class="btn btn-outline-secondary side_m_list_button" onclick="deleteClient()">
                     <i class="icon-cancel-circled"></i>Usuń 
                 </button>
 
