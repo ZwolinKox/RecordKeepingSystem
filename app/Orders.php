@@ -10,8 +10,9 @@ class Orders extends Model
     use Notifiable;
 
     public $timestamps = false;
-    protected $appends = ['status'];
-
+    protected $hidden = ['clientRelation', 'itemTypeRelation', 'assignedRelation'];
+    protected $appends = ['status', 'client_name', 'item_type_name', 'assigned_name'];
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -22,26 +23,26 @@ class Orders extends Model
         'client', 'item_type', 'producer', 'model',
         'serial_number', 'buy_date', 'warranty_number', 'begin_date',
         'end_date', 'info', 'issue', 'delivery_method', 'pickup_method',
-        'estimated_price', 'advance_pay', 'status'
+        'estimated_price', 'advance_pay',
     ];
 
-    public function itemType(){
+    public function itemTypeRelation(){
         return $this->belongsTo('App\ItemTypes', 'item_type', 'id');
     }
 
-    public function assigned(){
+    public function assignedRelation(){
         return $this->belongsTo('App\User', 'assigned', 'id');
     }
 
-    public function client(){
+    public function clientRelation(){
         return $this->belongsTo('App\Clients', 'client', 'id');
     }
 
-    public function createdBy(){
-        return $this->belongsTo('App\User', 'created_by', 'id');
+    public function createdByRelation(){
+        return dd($this->belongsTo('App\User', 'created_by', 'id'));
     }
 
-    public function orderNotes(){
+    public function orderNotesRelation(){
         return $this->hasMany('App\OrderNotes', 'order', 'id');
     }
 
@@ -55,6 +56,22 @@ class Orders extends Model
 
     public function getStatusAttribute(){
         return $this->attributes['status'] = $this->status();
+    }
+
+    public function getClientNameAttribute(){
+       return $this->attributes['client_name'] = $this->clientRelation->name;
+    }
+
+    public function getItemTypeNameAttribute(){
+        return $this->attributes['item_type_name'] = $this->itemTypeRelation->name;
+    }
+
+    public function getAssignedNameAttribute(){
+        $assigned = $this->assignedRelation;
+        if($assigned != null){
+            return $this->attributes['assigned_name'] = $assigned->name;
+        }
+        return $this->attributes['assigned_name'] = null;
     }
 
     public function files(){
