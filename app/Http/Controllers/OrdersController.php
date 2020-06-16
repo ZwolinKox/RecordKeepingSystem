@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Orders;
 use App\Http\Controllers\Helpers\SchemesController;
+use App\ItemTypes;
 use App\OrderFiles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -115,24 +116,32 @@ class OrdersController extends Controller
         $validator = Validator::make($request->all(),[
             'assigned' => 'numeric',
             'client' => 'required|numeric',
-            'item_type' => 'required|numeric',
+            'item_type' => 'numeric',
             'producer' => 'required',
             'model' => 'required',
             'serial_number' => 'required',
-            'buy_date' => 'date',
+            'buy_date' => '',
             'warranty_number' => '',
             'begin_date' => 'required|date',
             'end_date' => 'required|date',
             'info' => '',
             'issue' => '',
-            'delivery_method' => 'required|numeric|between:0,2',
-            'pickup_method' => 'required|numeric|between:0,2',
+            'delivery_method' => 'required|numeric|between:1,3',
+            'pickup_method' => 'required|numeric|between:1,3',
             'estimated_price' => '',
             'advance_pay' => '',
-          ]);
-          if($validator->fails()){
-              return response()->json(['error' => 'Validation failed'], 401);
-          }
+            'new_item_type' => ''
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'.$validator->messages()], 401);
+        }
+
+        if($request->item_type == null && $request->new_item_type){
+            $new = ItemTypes::create([
+                'name' => $request->new_item_type
+            ]);
+            $request->item_type = $new->id;
+        }
         
         $order = Orders::create([
             'created_by' => auth()->user()->id,

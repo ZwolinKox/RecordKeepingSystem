@@ -88,6 +88,36 @@ class GroupsController extends Controller
         return response()->json(['message' => 'Successful added new Group'], 200);
     }
 
+    function deleteConnection(Request $request){
+        $validator = Validator::make($request->all(),[
+            'client' => 'required',
+            'group' => 'required'
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
+        $group = Groups::find($request->group);
+        if($group != null){
+            $group->clients->detach($request->client);
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
+    function createConnection(Request $request){
+        $validator = Validator::make($request->all(),[
+            'client' => 'required',
+            'group' => 'required'
+        ]);
+        if($validator->fails()){
+            return response()->json(['error' => 'Validation failed'], 401);
+        }
+        $group = Groups::find($request->group);
+        if($group != null){
+            $group->clients->detach($request->client);
+        }
+        return response()->json(['error' => 'Undefined id'], 401);
+    }
+
     function findClient(Request $request){
         if($request->id != null){
             return Groups::find($request->id)->clients()->paginate(15);

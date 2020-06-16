@@ -239,7 +239,7 @@ document.querySelector("#add_order").addEventListener("click", () => {
         model: document.querySelector("#norder_model").value,
         assigned: document.querySelector("#employee").value,
         client: document.querySelector("#sel").value,
-        item_type: typ,
+        item_type: 1,
         serial_number: document.querySelector("#norder_serial").value,
         buy_date: document.querySelector("#norder_stwrrnt").value,
         warranty_number: document.querySelector("#norder_sewrrnt").value,
@@ -252,7 +252,7 @@ document.querySelector("#add_order").addEventListener("click", () => {
         estimated_price: document.querySelector("#norder_cost").value,
         advance_pay: document.querySelector("#norder_poa").value
     }
-    console.log(ob.client);
+    console.log(ob);
     fetch("/api/orders",
         {
             method: "put",
@@ -287,6 +287,7 @@ document.querySelector("#add_order").addEventListener("click", () => {
             </button>
           </div>`;
             }
+            console.log(res);
         })
 
 })
