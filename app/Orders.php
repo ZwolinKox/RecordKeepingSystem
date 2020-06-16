@@ -10,8 +10,8 @@ class Orders extends Model
     use Notifiable;
 
     public $timestamps = false;
-    protected $hidden = ['clientRelation', 'itemTypeRelation', 'assignedRelation', 'filesShortInfo'];
-    protected $appends = ['status', 'client_name', 'item_type_name', 'assigned_name' , 'filles'];
+    protected $hidden = ['clientRelation', 'itemTypeRelation', 'assignedRelation', 'createdByRelation', 'filesShortInfo'];
+    protected $appends = ['status', 'client_name', 'created_by_name', 'item_type_name', 'assigned_name', 'filles'];
     
     /**
      * The attributes that are mass assignable.
@@ -39,7 +39,7 @@ class Orders extends Model
     }
 
     public function createdByRelation(){
-        return dd($this->belongsTo('App\User', 'created_by', 'id'));
+        return $this->belongsTo('App\User', 'created_by', 'id');
     }
 
     public function orderNotesRelation(){
@@ -72,6 +72,10 @@ class Orders extends Model
 
     public function getItemTypeNameAttribute(){
         return $this->attributes['item_type_name'] = $this->itemTypeRelation->name;
+    }
+
+    public function getCreatedByNameAttribute(){
+        return $this->attributes['item_type_name'] = $this->createdByRelation->name;
     }
 
     public function getAssignedNameAttribute(){
