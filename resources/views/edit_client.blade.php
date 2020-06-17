@@ -57,18 +57,39 @@
 
 							<div class="form-group">
 
-                            <label for="eclient_group"><strong>Grupa</strong></label>
+                            <label for="eclient_group"><strong>Grupy</strong></label>
 
-                            <div class="input-group mb-2">
+							<div class="input-group mb-2">
 
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="icon-users" style="font-size: 15px;"></i>
-                                    </div>
-                                </div>
+                                <select class="form-control" id="eclient_addgroup">
+									
 
-                                <select class="form-control" id="eclient_group">
-                                    <option>Brak grupy</option>
-                                </select>
+								</select>
+
+								<div class="w-100"></div>
+
+								<div class="w-100 d-flex justify-content-end">
+								
+									<button id="eclient_addGroupButton" class="btn btn-primary m-1 btn">Dodaj grupe</button>
+
+								</div>
+
+							</div>
+							
+							<div class="input-group mb-2">
+
+                                <select class="form-control" id="eclient_deleteGroup">
+									
+
+								</select>
+
+								<div class="w-100"></div>
+
+								<div class="w-100 d-flex justify-content-end">
+								
+									<button id="eclient_deleteGroupButton" class="btn btn-primary m-1 btn">Usun grupe</button>
+
+								</div>
 
                             </div>
 
