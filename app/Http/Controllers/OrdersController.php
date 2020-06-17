@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Orders;
 use App\Http\Controllers\Helpers\SchemesController;
 use App\ItemTypes;
+use App\Clients;
 use App\OrderFiles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -42,7 +43,7 @@ class OrdersController extends Controller
         return response()->json(['error' => 'Undefined id'], 401);
     }
 
-    function getClientNotes(Request $request){
+    function getOrderNotes(Request $request){
         $order = Orders::find($request->id);
         if($order != null){
             return $order->orderNotesRelation->toJson();
@@ -180,6 +181,8 @@ class OrdersController extends Controller
             'date' => Carbon::now(),
         ]);
         $order->save();
+
+
 
         return response()->json(['message' => 'Successful added new Order'], 200);
     }

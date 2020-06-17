@@ -24,7 +24,6 @@
                     <a class="nav-link active" href="#">Wszyscy</a>
                 </li>
 
-
                 <div class="form-inline ml-auto top-menu">
 
                     <div class="form-group mx-sm-1">

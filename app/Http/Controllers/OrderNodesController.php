@@ -19,6 +19,11 @@ class OrderNodesController extends Controller
         return OrderNotes::paginate(15);
     }
 
+    function getOrderNotesLight(Request $request)
+    {
+        return OrderNotes::all()->toJson();
+    }
+
     function getOrderNote(Request $request)
     {
         $exist = OrderNotes::find($request->id);
