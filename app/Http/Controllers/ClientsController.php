@@ -102,10 +102,6 @@ class ClientsController extends Controller
         $validator = Validator::make($request->all(),[
             'name' => '',
             'private' => 'boolean',
-            'phone1' => 'numeric',
-            'phone2' => 'numeric',
-            'email1' => 'email:rfc',
-            'email2' => 'email:rfc',
             'address' => '',
             'send_sms' => 'boolean',
             'send_email' => 'boolean',
@@ -132,10 +128,6 @@ class ClientsController extends Controller
         $validator = Validator::make($request->all(),[
             'name' => 'required',
             'private' => 'required|boolean',
-            'phone1' => 'numeric',
-            'phone2' => 'numeric',
-            'email1' => 'email:rfc',
-            'email2' => 'email:rfc',
             'address' => '',
             'send_sms' => 'required|boolean',
             'send_email' => 'required|boolean',

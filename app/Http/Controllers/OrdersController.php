@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Orders;
 use App\Http\Controllers\Helpers\SchemesController;
+use App\Http\Controllers\Helpers\Messages;
 use App\ItemTypes;
 use App\Clients;
 use App\OrderFiles;
@@ -182,7 +183,7 @@ class OrdersController extends Controller
         ]);
         $order->save();
 
-
+        
 
         return response()->json(['message' => 'Successful added new Order'], 200);
     }
@@ -197,6 +198,27 @@ class OrdersController extends Controller
 
         $order = Orders::find($request->id);
         if($order != null){
+
+            $client = Clients::find($order->client);
+
+            if($client->send_sms) {
+                $phone1 = $client->phone1;
+                $phone2 = $client->phone1;
+    
+                if($request->status == 4) {
+                    if($phone1 != null)
+                        Messages::sendSms($phone1 , "accepted", $order->id);
+                    if($phone2 != null)
+                        Messages::sendSms($phone2, "accepted", $order->id);
+                } else if ($request->status == 12 || $request->status == 13) {
+                    if($phone1 != null)
+                        Messages::sendSms($phone1 , "pickup", $order->id);
+                    if($phone2 != null)
+                        Messages::sendSms($phone2, "pickup", $order->id);
+                }
+    
+            }
+
             $order->statuses()->create([
                 'status' => $request->status,
                 'created_by' => auth()->user()->id,
