@@ -214,14 +214,7 @@
 
                     <tbody id="tableBody">
 
-                        <tr>
-
-                            <td class="td_style_list">1</td>
-                            <td class="td_style_list">Kamil Kowalski</td>
-                            <td class="td_style_list">05.06.2020</td>
-                            <td class="td_style_list"><span class="badge badge-warning">Warning</span></td>
-
-                        </tr>
+                        
                         
 
                     </tbody>

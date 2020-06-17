@@ -123,4 +123,84 @@ document.addEventListener("DOMContentLoaded", () => {
             location.href ="/order_notes/"+getParam();
         });
     });
+
+    document.querySelector("#sendFile").addEventListener("click", () => {
+        const file = document.querySelector("#inputGroupFile01").files[0];
+
+
+        let formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/api/orders/upload/'+getParam(),
+        {
+            method: "post",
+            headers:
+            {
+                "Authorization": "Bearer " + Cookies.get("token")
+            },
+            body: formData
+        }).then(res => {
+            if(!res.ok) {
+                document.querySelector("#fileLogs").innerHTML =
+                `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Nie udało się załączyć pliku!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>`;
+
+            } else {
+                document.querySelector("#fileLogs").innerHTML =
+                `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Pomyślnie załączono plik.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>`;
+            }
+        })
+
+
+    })
+
+    document.querySelector("#sendNoteButton").addEventListener("click", () => {
+
+        const ob = {
+            order : getParam(),
+            text: document.querySelector("#noteText").value
+        }
+
+        fetch('/api/ordernotes/',
+        {
+            method: "put",
+            headers:
+            {
+                "Accept" : "application/json",
+                "Content-Type" : "application/json",
+                "Authorization": "Bearer " + Cookies.get("token")
+            },
+            body: JSON.stringify(ob)
+        }).then(res => {
+            if(!res.ok) {
+                document.querySelector("#noteLogs").innerHTML =
+                `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Nie udało się utworzyć notatki!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>`;
+
+            } else {
+                document.querySelector("#noteLogs").innerHTML =
+                `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Pomyślnie dodano notatkę.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>`;
+            }
+        })
+
+
+    })
 })

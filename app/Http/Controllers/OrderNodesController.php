@@ -76,7 +76,6 @@ class OrderNodesController extends Controller
     function createOrderNote(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'user' => 'required|numeric',
             'text' => 'required',
             'order' => 'required|numeric',
         ]);
@@ -85,7 +84,7 @@ class OrderNodesController extends Controller
         }
         
         $note = OrderNotes::create([
-            'user' => $request->user,
+            'user' => auth()->user()->id,
             'text' => $request->text,
             'order' => $request->order,
         ]);

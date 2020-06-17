@@ -209,14 +209,7 @@
                     </thead>
 
                     <tbody id="tableBody">
-                        <tr>
-
-                            <td class="td_style_list">Andrzej Kowalski</td>
-                            <td class="td_style_list">05.06.2020</td>
-                            <td class="td_style_list">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-
-                        </tr>
+                       
 
                     </tbody>
 
