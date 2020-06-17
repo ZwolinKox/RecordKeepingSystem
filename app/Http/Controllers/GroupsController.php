@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Groups;
+use App\Clients;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -113,9 +114,10 @@ class GroupsController extends Controller
         if($validator->fails()){
             return response()->json(['error' => 'Validation failed'], 401);
         }
-        $group = Groups::find($request->group);
-        if($group != null){
-            $group->clients()->detach($request->client);
+        //$group = Groups::find($request->group);
+        $client = Clients::find($request->client);
+        if($client != null){
+            $client->groups()->attach($request->groups);
             return response()->json(['error' => 'Success add client to Group'], 200);
         } else
             return response()->json(['error' => 'Undefined id'], 401);
