@@ -88,58 +88,6 @@ document.addEventListener("DOMContentLoaded", () =>{
     });
 }) 
 
-// grupa
-document.querySelector("#groupsubmit").addEventListener("click", () => {
-    fetch("/api/groups/light",
-        {
-            method: "get",
-            headers:
-            {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "Authorization": "Bearer " + Cookies.get("token")
-            },
-        })
-        .then(res => {
-
-            if (res.ok) {
-                return res.json();
-
-            }
-            else {
-                
-                document.querySelector("#error").innerHTML +=
-                    `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-             <strong>Uwaga!</strong> Problem z bazą danych.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            </div>`;
-            }
-        })
-        .then(res => {
-            const clname = document.querySelector("#norder_group").value;
-            //dane pobrane z bazy
-           
-            let obj = {};
-            obj = JSON.parse(JSON.stringify(res));
-            let table = document.querySelector("#group");
-            table.innerHTML = "";
-            obj.forEach(element => {
-
-                
-                let siema = element.name;
-                if (siema.toLowerCase().search(clname.toLowerCase()) != -1) {
-                    table.innerHTML += `                   
-                    <option value="${element.id}">${element.name}</option>`
-                }
-                
-
-            });
-
-        })
-})
-
 
 //pracownik
 document.querySelector("#employeesubmit").addEventListener("click", () => {
