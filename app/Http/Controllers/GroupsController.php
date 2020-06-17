@@ -117,7 +117,7 @@ class GroupsController extends Controller
         //$group = Groups::find($request->group);
         $client = Clients::find($request->client);
         if($client != null){
-            $client->groups()->attach($request->groups);
+            $client->groups()->attach($request->group);
             return response()->json(['error' => 'Success add client to Group'], 200);
         } else
             return response()->json(['error' => 'Undefined id'], 401);
