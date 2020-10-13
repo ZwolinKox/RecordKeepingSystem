@@ -39,4 +39,9 @@
        
     } else if(location.pathname != "/login") {
         location.href = "/login";
+    } else {
+        $( "#loadingContainer" ).fadeOut( fadeSpeed , () => {
+            $( "#pageContent" ).fadeIn( fadeSpeed , function() {
+            });
+        });     
     }
